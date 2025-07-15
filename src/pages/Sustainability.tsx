@@ -9,6 +9,7 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import { Leaf, Users, Shield, Award, Droplets, Recycle } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
+// import { heroSlides } from './Index';
 
 const Sustainability = () => {
   const commitments = [
@@ -46,22 +47,50 @@ const Sustainability = () => {
     'Zero Liquid Discharge Certification',
     'SEZ Environmental Clearances'
   ];
-
+  const heroSlides = [
+    {
+      title:"Sustainability & ESG: For Planet & People",
+      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      backgroundImage:"/paper&pulp/pulp2.jpg",
+      buttons:[
+        { text: 'Our Commitment', href: '#commitment' },
+        { text: 'Environmental Initiatives', href: '#environmental', variant: 'outline' }
+      ]
+    },
+    {
+      title:"Sustainability & ESG: For Planet & People",
+      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      backgroundImage:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      buttons:[
+        { text: 'Our Commitment', href: '#commitment' },
+        { text: 'Environmental Initiatives', href: '#environmental', variant: 'outline' }
+      ]
+    },
+    {
+      title:"Sustainability & ESG: For Planet & People",
+      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      backgroundImage:"/paper&pulp/pulp3.jpg",
+      buttons:[
+        { text: 'Our Commitment', href: '#commitment' },
+        { text: 'Environmental Initiatives', href: '#environmental', variant: 'outline' }
+      ]
+    },
+  ];
   return (
     <div className="min-h-screen">
       <Header />
       <StickyContactButton />
 
       {/* Hero Section */}
-      
-      <HeroSection
-        title="Sustainability & ESG: For Planet & People"
-        subtitle="Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders."
-        backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        buttons={[
-          { text: 'Our Commitment', href: '#commitment' },
-          { text: 'Environmental Initiatives', href: '#environmental', variant: 'outline' }
-        ]}
+
+      <HeroSection slides={heroSlides}
+      // title="Sustainability & ESG: For Planet & People"
+      // subtitle="Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders."
+      // backgroundImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      // buttons={[
+      //   { text: 'Our Commitment', href: '#commitment' },
+      //   { text: 'Environmental Initiatives', href: '#environmental', variant: 'outline' }
+      // ]}
       />
 
       {/* Our Commitment */}
@@ -159,7 +188,7 @@ const Sustainability = () => {
                 title="Creating Shared Value for Local Communities"
                 description="Our projects generate significant employment opportunities and support local economic development, creating lasting positive impact."
               />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-2">35,000+</div>
@@ -172,7 +201,7 @@ const Sustainability = () => {
               </div>
             </div>
             <div>
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Community Development"
                 className="rounded-lg shadow-lg"

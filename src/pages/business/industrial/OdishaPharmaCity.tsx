@@ -261,9 +261,9 @@ const OdishaPharmaCity = () => {
 
       {/* Hero Section */}
       <HeroSection
-        title="Odisha Pharma City"
+        title="ODISHA PHARMA CITY"
         subtitle="India's premier pharmaceutical manufacturing hub, fostering innovation and excellence in healthcare manufacturing."
-        backgroundImage="/carousels/odishaB.jpg"
+        backgroundImage="/odishaparma/image.png"
       />
 
       <section className="section-padding">

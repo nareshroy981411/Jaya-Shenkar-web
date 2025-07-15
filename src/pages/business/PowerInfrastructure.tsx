@@ -72,6 +72,49 @@ const PowerInfrastructure = () => {
     }
   ];
 
+    const heroSlides = [
+    {
+      title:"Powering Progress: Robust Infrastructure Solutions",
+      subtitle:"Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      backgroundImage:"https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      theme:"power",
+      buttons:[
+        { text: 'Our Solutions', href: '#solutions' },
+          { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
+      ]
+    },
+     {
+      title:"Powering Progress: Robust Infrastructure Solutions",
+      subtitle:"Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      backgroundImage:"/power/solar_power.png",
+      theme:"power",
+      buttons:[
+        { text: 'Our Solutions', href: '#solutions' },
+          { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
+      ]
+    },
+     {
+      title:"Powering Progress: Robust Infrastructure Solutions",
+      subtitle:"Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      backgroundImage:"/power/tunnel-1.png",
+      theme:"power",
+      buttons:[
+        { text: 'Our Solutions', href: '#solutions' },
+          { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
+      ]
+    },
+     {
+      title:"Powering Progress: Robust Infrastructure Solutions",
+      subtitle:"Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      backgroundImage:"https://media.discordapp.net/attachments/1390617522109288519/1394682836459720704/karsten-wurth-rafblRbne3o-unsplash.jpg?ex=6877b31c&is=6876619c&hm=b6c8d4b1dfc8ff74e69a286e78ed21b6411ecd18a8a3fe0943fbe113595971a8&=&format=webp&width=1116&height=744",
+      theme:"power",
+      buttons:[
+        { text: 'Our Solutions', href: '#solutions' },
+          { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen power-theme">
       <Header />
@@ -79,15 +122,15 @@ const PowerInfrastructure = () => {
 
       {/* Hero Section */}
       
-      <HeroSection
-        title="Powering Progress: Robust Infrastructure Solutions"
-        subtitle="Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure."
-        theme="power"
-        backgroundImage="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        buttons={[
-          { text: 'Our Solutions', href: '#solutions' },
-          { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
-        ]}
+      <HeroSection slides={heroSlides}
+        // title="Powering Progress: Robust Infrastructure Solutions"
+        // subtitle="Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure."
+        // theme="power"
+        // backgroundImage="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        // buttons={[
+        //   { text: 'Our Solutions', href: '#solutions' },
+        //   { text: 'BOOT Model', href: '#boot-model', variant: 'outline' },
+        // ]}
       />
 
       {/* Solutions Overview */}

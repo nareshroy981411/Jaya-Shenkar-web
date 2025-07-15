@@ -255,7 +255,7 @@ const projects = [
     theme: 'paper',
     href: '/business/paper/bayyavaram',
     images: [
-      "/paper&pulp/paper_packs.webp",
+      "https://media.discordapp.net/attachments/1390617522109288519/1394684675896770703/WhatsApp_Image_2025-07-15_at_14.50.57_0e7607da.jpg?ex=6877b4d2&is=68766352&hm=e01e95a615f3597223148c9467c425aa96e05fbe610d03600dcde17dde5d35b1&=&format=webp&width=1365&height=744",
       "/paper&pulp/paper_2.webp",
       "/paper&pulp/Packaging.jpg",
     ]
@@ -274,7 +274,7 @@ const projects = [
     ]
   },
   {
-    title: 'Assam Bambu & Augro Forestry Based Pulp and Paper Investment',
+    title: 'Assam Bamboo & Agro Forestry Based Pulp and Paper Investment',
     location: 'Assam',
     area: '271 acres in SEZ',
     capacity: '1,200 t/day Carton Board',

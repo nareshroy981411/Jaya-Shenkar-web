@@ -17,7 +17,7 @@ const Index = () => {
       title: 'Jaya Shankar Group: Pioneering Sustainable Industrial Growth Across India',
       subtitle: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
       // backgroundImage: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-      backgroundImage: './public/banner2.png',
+      backgroundImage: '/banner2.png',
       buttons: [
         { text: 'Explore Our Companies', href: '#verticals' },
         { text: 'Our Projects', href: '/projects', variant: 'outline' as const },
@@ -27,7 +27,7 @@ const Index = () => {
       title: 'Enabling a Sustainable Tomorrow',
       subtitle: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
       // backgroundImage: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-      backgroundImage: './public/paper.png',
+      backgroundImage: '/paper.png',
       buttons: [
         { text: 'Learn About Sustainability', href: '/sustainability' },
         { text: 'Our Impact', href: '/sustainability', variant: 'outline' as const },
@@ -37,7 +37,7 @@ const Index = () => {
       title: 'World-Class Industrial Parks & Special Economic Zones',
       subtitle: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
       // backgroundImage: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-      backgroundImage: './public/electric-power.png',
+      backgroundImage: '/odishaparma/pharma6.png',
       buttons: [
         { text: 'Industrial Solutions', href: '/business/industrial' },
         { text: 'View Projects', href: '/projects', variant: 'outline' as const },
@@ -48,6 +48,7 @@ const Index = () => {
       subtitle: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
       // backgroundImage: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/power/solar_power.png',
+
       buttons: [
         { text: 'Power Solutions', href: '/business/power' },
         { text: 'Our Services', href: '/business/power', variant: 'outline' as const },
@@ -58,7 +59,7 @@ const Index = () => {
   const companies = [
     {
       icon: <Building2 className="w-8 h-8" />,
-      title: "JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PVT LTD",
+      title: "JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED",
       short: "Ultra-modern pharma infrastructure and SEZs in Andhra Pradhesh & Odisha.",
       link: "/business/industrial",
       // image: "https://images.unsplash.com/photo-1474674556023-efef886fa147?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -66,11 +67,11 @@ const Index = () => {
     },
     {
       icon: <Factory className="w-8 h-8" />,
-      title: "JAYASHANKAR PULP & PAPER MILLS PVT LIMITED",
+      title: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
       short: "Sustainable paper and pulp manufacturing with global standards.",
       link: "/business/paper",
       // image: "https://images.unsplash.com/photo-1595798896730-9fdf2e709649?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      image: '/paper&pulp/paper_2.webp'
+      image: '/images_jayashankar/paper_mill_1.jpg'
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -80,59 +81,67 @@ const Index = () => {
       // image: "https://plus.unsplash.com/premium_photo-1695559212636-422fcdb4bf3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       image: '/power/tunnel.png'
     },
-  ];
-
-  const sustainabilityImages = [
     {
-      title: 'Green Forest Conservation',
-      description: 'Protecting natural ecosystems through sustainable practices',
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      color: 'from-green-500 to-green-700',
-    },
-    {
-      title: 'Renewable Energy Solutions',
-      description: 'Harnessing clean energy for a sustainable future',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      color: 'from-orange-500 to-orange-700',
-    },
-    {
-      title: 'Water Conservation',
-      description: 'Preserving our most precious resource',
-      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      color: 'from-blue-500 to-blue-700',
-    },
-    {
-      title: 'Sustainable Innovation',
-      description: 'Building tomorrow with responsible technology',
-      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      color: 'from-yellow-500 to-yellow-700',
+      icon: <Zap className="w-8 h-8" />,
+      title: "JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED",
+      short: "Assam’s next-gen hub for green pulp, chemicals, and biocomposites",
+      link: "/business/pulp/assam-agroforestry",
+      // image: "https://plus.unsplash.com/premium_photo-1695559212636-422fcdb4bf3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image: '/paper&pulp/pulp1.jpg'
     },
   ];
 
-  const projects = [
-    {
-      title: 'Hindupur Integrated Industrial Park',
-      location: 'Andhra Pradesh',
-      area: '1,800 acres',
-      description: 'Strategic gateway to South India\'s industrial growth with excellent connectivity and multi-sector ecosystem.',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  // const sustainabilityImages = [
+  //   {
+  //     title: 'Green Forest Conservation',
+  //     description: 'Protecting natural ecosystems through sustainable practices',
+  //     image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //     color: 'from-green-500 to-green-700',
+  //   },
+  //   {
+  //     title: 'Renewable Energy Solutions',
+  //     description: 'Harnessing clean energy for a sustainable future',
+  //     image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //     color: 'from-orange-500 to-orange-700',
+  //   },
+  //   {
+  //     title: 'Water Conservation',
+  //     description: 'Preserving our most precious resource',
+  //     image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //     color: 'from-blue-500 to-blue-700',
+  //   },
+  //   {
+  //     title: 'Sustainable Innovation',
+  //     description: 'Building tomorrow with responsible technology',
+  //     image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //     color: 'from-yellow-500 to-yellow-700',
+  //   },
+  // ];
+
+  // const projects = [
+  //   {
+  //     title: 'Hindupur Integrated Industrial Park',
+  //     location: 'Andhra Pradesh',
+  //     area: '1,800 acres',
+  //     description: 'Strategic gateway to South India\'s industrial growth with excellent connectivity and multi-sector ecosystem.',
+  //     image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
        
-    },
-    {
-      title: 'Odisha Pharma City Project',
-      location: 'Odisha',
-      area: '1,800 acres',
-      description: 'State-of-the-art pharmaceutical and allied industrial park, creating 35,000+ jobs and attracting Rs 10,000 Crores investment.',
-      image: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      title: 'West Godavari Pulp & Paper Mill',
-      location: 'Andhra Pradesh',
-      area: '271 acres',
-      description: 'Sustainable packaging solutions with advanced technology and 360° approach to environmental stewardship.',
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    },
-  ];
+  //   },
+  //   {
+  //     title: 'Odisha Pharma City Project',
+  //     location: 'Odisha',
+  //     area: '1,800 acres',
+  //     description: 'State-of-the-art pharmaceutical and allied industrial park, creating 35,000+ jobs and attracting Rs 10,000 Crores investment.',
+  //     image: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //   },
+  //   {
+  //     title: 'West Godavari Pulp & Paper Mill',
+  //     location: 'Andhra Pradesh',
+  //     area: '271 acres',
+  //     description: 'Sustainable packaging solutions with advanced technology and 360° approach to environmental stewardship.',
+  //     image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  //   },
+  // ];
 
   const stats = [
     { label: 'Years of Experience', value: '25+', icon: Award },
@@ -258,11 +267,15 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold]"
+                className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
+                onClick={() => window.location.assign(company.link)}
+                tabIndex={0}
+                role="button"
+                aria-label={`View details for ${company.title}`}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -284,7 +297,8 @@ const Index = () => {
                   <div className="mt-auto">
                     <Link
                       to={company.link}
-                      className="inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg"
+                      className="inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg pointer-events-none"
+                      tabIndex={-1}
                     >
                       View More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />

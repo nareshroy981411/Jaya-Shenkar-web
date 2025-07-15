@@ -9,6 +9,7 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
 import { Building2, MapPin, Users, Award, Target, Zap, Leaf, Factory } from 'lucide-react';
+import { sub } from 'date-fns';
 
 const IndustrialPark = () => {
   const keyFeatures = [
@@ -22,18 +23,19 @@ const IndustrialPark = () => {
 
   const projects = [
     {
-      title: 'Hindupur Integrated Industrial Park',
-      location: 'Anantapur District, Andhra Pradesh',
-      area: '1,800 acres (1,000 acres SEZ, 800 acres DTA)',
-      distance: '110 km from Bengaluru',
-      href: '/business/industrial/hindupur'
-    },
-    {
       title: 'Odisha Pharma City Project',
       location: 'Titilagarh, Balangir District, Odisha',
       area: '1,800 acres',
       jobs: '35,000+ direct/indirect jobs (10 years)',
       href: '/business/industrial/odisha'
+    },
+        {
+      subtitle: 'UPCOMING PROJECT ',
+      title: 'Hindupur Integrated Industrial Park',
+      location: 'Anantapur District, Andhra Pradesh',
+      area: '1,800 acres (1,000 acres SEZ, 800 acres DTA)',
+      distance: '110 km from Bengaluru',
+      href: '/business/industrial/hindupur'
     },
   ];
 
@@ -45,11 +47,10 @@ const IndustrialPark = () => {
       {/* Hero Section */}
       
       <HeroSection
-        title="JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED"
-        subtitle="A Private Limited Company incorporated under the Companies Act, 1956, promoted by the Jaya Shankar Group. The company's primary objective is to establish industrial parks across India, with focus on pharmaceutical infrastructure and modern manufacturing facilities."
+        title={<span className="text-blue/90 drop-shadow-lg">JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED</span>}
+        subtitle={<span className="text-white/90 drop-shadow-md">A Private Limited Company incorporated under the Companies Act, 1956, promoted by the Jaya Shankar Group. The company's primary objective is to establish industrial parks across India, with focus on pharmaceutical infrastructure and modern manufacturing facilities.</span>}
         theme="industrial"
         backgroundImage="/carousels/ind.jpg"
-        // backgroundImage="https://images.unsplash.com/photo-1474674556023-efef886fa147?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         buttons={[
           { text: 'Explore Projects', href: '#projects' },
           { text: 'For Businesses', href: '/business/industrial/tenants', variant: 'outline' },
@@ -135,6 +136,7 @@ const IndustrialPark = () => {
             {projects.map((project, index) => (
               <Card key={index} className="hover-lift ">
                 <CardContent className="p-6">
+                  <h2 className="text-xl font-bold text-blue-800 mb-3">{project.subtitle}</h2>
                   <h3 className="text-xl font-semibold text-[hsl(var(--industrial-primary))] mb-3">{project.title}</h3>
                   <div className="space-y-2 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center space-x-2">

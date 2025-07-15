@@ -9,16 +9,19 @@ const Footer = () => {
     { name: 'Jaya Shankar Multi Product Industrial Park & SEZ Pvt Ltd', href: '/business/industrial' },
     { name: 'Jaya Shankar Multi Product Industrial Park & SEZ Pvt Ltd', href: '/business/paper' },
     { name: 'Jaya Shankar Power & Infrastructure', href: '/business/power' },
+    { name: 'Jaya Shankar Chemicals & Packings Pvt Ltd', href: '/business/pulp/assam-agroforestry' }
+
   ];
 
   const quickLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Clients', href: '/clients' },
+    // { name: 'Clients', href: '/clients' },
     { name: 'Investors', href: '/investors' },
     { name: 'Sustainability', href: '/sustainability' },
     { name: 'News', href: '/news' },
-    { name: 'Careers', href: '/careers' },
+    // { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (

@@ -27,6 +27,7 @@ import HindupurIndustrialPark from "./pages/business/industrial/HindupurIndustri
 import BayyavaramPaperMill from "./pages/business/paper/BayyavaramPaperMill";
 import KontaPaperMill from "./pages/business/paper/KontaPaperMill";
 import AssamAgroforestryProject from "./pages/business/paper/AssamAgroforestryProject";
+import ChemicalsPackaging from "./pages/business/ChemicalsPackaging";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* Responsive viewport meta tag for mobile scaling */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -54,6 +57,7 @@ const App = () => (
           <Route path="/business/pulp/assam-agroforestry" element={<AssamAgroforestryProject />} />
           <Route path="/business/paper/konta" element={<KontaPaperMill />} />
           <Route path="/business/power" element={<PowerInfrastructure />} />
+          <Route path="/business/ChemicalsPackaging" element={<ChemicalsPackaging/>}/>
           {/* Main Pages */}
           <Route path="/projects" element={<Projects />} />
           {/* <Route path="/clients" element={<Clients />} /> */}

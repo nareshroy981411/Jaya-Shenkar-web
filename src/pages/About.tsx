@@ -16,7 +16,6 @@ const About = () => {
       experience: '25+ Years Corporate Expertise',
       specialization: 'Infrastructure & Power Projects',
       description: 'A visionary first-generation entrepreneur and Certified Corporate Director with extensive experience in project management, engineering, and strategic development. Led numerous successful infrastructure and power projects across India.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     },
     {
       name: 'Smt. T. L. S. Geetha Kameswari',
@@ -24,7 +23,6 @@ const About = () => {
       experience: '20+ Years PR & International Partnerships',
       specialization: 'International Business Development',
       description: 'A seasoned Public Relations expert with extensive experience in international partnerships, particularly in Singapore and Malaysia townships. Instrumental in building strategic alliances and driving global expansion initiatives.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b830?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
     },
   ];
 
@@ -82,18 +80,18 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Header />
-       <StickyContactButton />
-<HeroSection
-  // title="About Jaya Shankar Group"
-   title={
-    <span className="text-yellow-400 font-serif drop-shadow-lg text-4xl">
-      ABOUT JAYA SHANKAR GROUP
-    </span>
-  }
-  subtitle=" Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment"
-  description="Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability."
-  backgroundImage="/paper&pulp/packing_image.webp"
-/>
+      <StickyContactButton />
+      <HeroSection
+        // title="About Jaya Shankar Group"
+        title={
+          <span className="font-serif text-5xl md:text-6xl font-extrabold text-[#1a2233] drop-shadow-lg tracking-tight">
+            <span className="text-green-700 font-serif font-extrabold">ABOUT</span> JAYA SHANKAR GROUP
+          </span>
+        }
+        // subtitle={<span className="font-serif text-xl md:text-2xl font-bold text-green-900">Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment</span>}
+        description={<span className="font-serif text-lg md:text-xl font-medium text-[#1a2233]">Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability.</span>}
+        backgroundImage="/odishaparma/group.jpg"
+      />
 
 
       <AboutNavigation />
@@ -111,23 +109,23 @@ const About = () => {
             <div className="fade-in">
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Our journey began with a simple yet powerful belief: that industrial development and environmental 
-                  sustainability can coexist harmoniously. Founded by visionary entrepreneurs Shri T. Srinivasa Rao 
-                  and Smt. T. L. S. Geetha Kameswari, our group has grown from a shared vision into a robust 
+                  Our journey began with a simple yet powerful belief: that industrial development and environmental
+                  sustainability can coexist harmoniously. Founded by visionary entrepreneurs Shri T. Srinivasa Rao
+                  and Smt. T. L. S. Geetha Kameswari, our group has grown from a shared vision into a robust
                   conglomerate with operations across multiple states.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  With over 200 man-years of combined expertise and a leadership team with 30+ years of specialized 
-                  experience, we have established ourselves as a trusted partner in Industrial Park & SEZ Development, 
+                  With over 200 man-years of combined expertise and a leadership team with 30+ years of specialized
+                  experience, we have established ourselves as a trusted partner in Industrial Park & SEZ Development,
                   Pulp & Paper Manufacturing, and Power & Infrastructure projects.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Our core philosophy "For Planet & People" guides every decision we make, ensuring that our growth 
+                  Our core philosophy "For Planet & People" guides every decision we make, ensuring that our growth
                   contributes positively to economic development, social progress, and environmental conservation.
                 </p>
               </div>
             </div>
-            
+
             <div className="fade-in animation-delay-200">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -156,8 +154,8 @@ const About = () => {
                   <div className="flex flex-col items-center text-center">
                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
                       <img
-                        src={founder.image}
-                        alt={founder.name}
+                        // src={founder.image}
+                        // alt={founder.name}
                         className="w-full h-full object-cover"
                       />
                     </div>

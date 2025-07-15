@@ -99,7 +99,7 @@ const AssamAgroforestryProject = () => {
       <HeroSection
         title="India’s Green Industrial Revolution"
         subtitle="Assam Agroforestry Project: Where Sustainability Meets Scale"
-        backgroundImage="/carousels/assam1.png"
+        backgroundImage="/paper&pulp/pulp3.jpg"
       />
 
       <section className="section-padding">

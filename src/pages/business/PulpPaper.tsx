@@ -68,7 +68,7 @@ const PulpPaper = () => {
         title="Redefining Sustainable Packaging: West Godavari Mill"
         subtitle="Leading the transformation from single-use plastics to sustainable paper packaging solutions with our state-of-the-art facility in Andhra Pradesh."
         theme="paper"
-        backgroundImage="/paper&pulp/Packaging.jpg"
+        backgroundImage="/images_jayashankar/paper_mill_1.jpg"
         // backgroundImage="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         buttons={[
           { text: 'Our Products', href: '#products' },

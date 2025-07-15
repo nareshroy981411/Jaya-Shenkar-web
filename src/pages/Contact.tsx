@@ -72,9 +72,9 @@ const Contact = () => {
       title: 'Phone Numbers',
       details: [
         '+91 9390849709',
-        '+91 98496 62787',
+        // '+91 98496 62787',
         '+91 7093139770',
-        '+44 7721143790',
+        // '+44 7721143790',
       ],
     },
     {
@@ -82,9 +82,9 @@ const Contact = () => {
       title: 'Email Addresses',
       details: [
         'info@jayashankargroup.com',
-        'TSR@jayashankargroup.com',
+        // 'TSR@jayashankargroup.com',
         'srikalyan@jayashankargroup.com',
-        'sitaram@jayashankargroup.com',
+        // 'sitaram@jayashankargroup.com',
       ],
     },
     {
@@ -101,20 +101,9 @@ const Contact = () => {
   const keyContacts = [
     {
       name: 'Mr. Dontharaju Kalyan Srinivas',
-      title: 'Business Development',
+      title: 'Director',
       phone: '+91 9390849709',
       email: 'srikalyan@jayashankargroup.com',
-    },
-    {
-      name: 'Shri T. Srinivasa Rao',
-      title: 'Chairman',
-      email: 'TSR@jayashankargroup.com',
-    },
-    {
-      name: 'Sitaram',
-      title: 'Operations',
-      phone: '+91 98496 62787',
-      email: 'sitaram@jayashankargroup.com',
     },
   ];
 
@@ -286,7 +275,7 @@ const Contact = () => {
 
       {/* Key Contacts */}
       <section className="section-padding bg-gradient-to-r from-blue-100 via-white to-blue-50">
-        <div className="container-width">
+        <div className="container-width ">
           <SectionHeader
             subtitle="Key Contacts"
             title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Connect with Our Leadership Team</span>}
@@ -295,27 +284,33 @@ const Contact = () => {
             className="text-blue-900"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {keyContacts.map((contact, index) => {
-              const color = contactColors[index % contactColors.length];
-              return (
-                <Card key={index} className={`hover-lift fade-in bg-white/90 border-0 shadow-md`} style={{ animationDelay: `${index * 150}ms` }}>
-                  <CardContent className="p-6 text-center">
-                    <div className={`w-16 h-16 ${color.bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <span className={`${color.text} font-bold text-lg`}>
-                        {contact.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <h3 className={`font-semibold mb-1 ${color.title}`}>{contact.name}</h3>
-                    <p className={`${color.role} text-sm mb-4`}>{contact.title}</p>
-                    {contact.phone && (
-                      <p className={`${color.text} text-sm mb-1`}>{contact.phone}</p>
-                    )}
-                    <p className={`${color.text} text-sm`}>{contact.email}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 ">
+            <div className="flex justify-center items-center w-full">
+              {keyContacts.map((contact, index) => {
+                const color = contactColors[index % contactColors.length];
+                return (
+                  <Card
+                    key={index}
+                    className={`hover-lift fade-in bg-white/90 border-0 shadow-md flex items-center justify-center w-auto h-auto min-w-[220px] min-h-[180px]`}
+                    style={{ animationDelay: `${index * 150}ms` }}
+                  >
+                    <CardContent className="flex flex-col items-center justify-center text-center p-4">
+                      <div className={`w-16 h-16 ${color.bg} rounded-full flex items-center justify-center mb-4`}>
+                        <span className={`${color.text} font-bold text-lg`}>
+                          {contact.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      <h3 className={`font-semibold mb-1 ${color.title}`}>{contact.name}</h3>
+                      <p className={`${color.role} text-sm mb-2`}>{contact.title}</p>
+                      {contact.phone && (
+                        <p className={`${color.text} text-sm mb-1`}>{contact.phone}</p>
+                      )}
+                      <p className={`${color.text} text-sm`}>{contact.email}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
