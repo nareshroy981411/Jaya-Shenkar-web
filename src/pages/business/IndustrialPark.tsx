@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,8 +10,29 @@ import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
 import { Building2, MapPin, Users, Award, Target, Zap, Leaf, Factory } from 'lucide-react';
 import { sub } from 'date-fns';
+import { useKeenSlider } from 'keen-slider/react'
+
+const imageUrls = [
+  '/images/image.png',
+  '/images/image1.png',
+  '/images/image2.png'
+]
+
 
 const IndustrialPark = () => {
+
+  const [sliderRef, slider] = useKeenSlider({
+    loop: true,
+    mode: 'snap',
+    slides: { perView: 1, spacing: 15 }
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slider.current?.next();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slider]);
   const keyFeatures = [
     { title: '200 MW Group Captive Thermal Power Plant', icon: Zap },
     { title: '100 MGD Treated Water Supply', icon: Leaf },
@@ -29,7 +50,7 @@ const IndustrialPark = () => {
       jobs: '35,000+ direct/indirect jobs (10 years)',
       href: '/business/industrial/odisha'
     },
-        {
+    {
       subtitle: 'UPCOMING PROJECT ',
       title: 'Hindupur Integrated Industrial Park',
       location: 'Anantapur District, Andhra Pradesh',
@@ -45,15 +66,14 @@ const IndustrialPark = () => {
       <StickyContactButton />
 
       {/* Hero Section */}
-      
+
       <HeroSection
-        title={<span className="text-blue/90 drop-shadow-lg">JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED</span>}
-        subtitle={<span className="text-white/90 drop-shadow-md">A Private Limited Company incorporated under the Companies Act, 1956, promoted by the Jaya Shankar Group. The company's primary objective is to establish industrial parks across India, with focus on pharmaceutical infrastructure and modern manufacturing facilities.</span>}
-        theme="industrial"
+        title={<span className="text- bg-[#4240a1] font-serif drop-shadow-lg" style={{}}>JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED</span>}
+        // subtitle={<span className="text- font-serif drop-shadow-md"style={{  }}>A Private Limited Company incorporated under the Companies Act, 1956, promoted by the Jaya Shankar Group. The company's primary objective is to establish industrial parks across India, with focus on pharmaceutical infrastructure and modern manufacturing facilities.</span>}
         backgroundImage="/carousels/ind.jpg"
         buttons={[
           { text: 'Explore Projects', href: '#projects' },
-          { text: 'For Businesses', href: '/business/industrial/tenants', variant: 'outline' },
+          { text: 'For Businesses', href: '', variant: 'outline' },
         ]}
       />
 
@@ -62,24 +82,34 @@ const IndustrialPark = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Overview & Opportunities"
-             title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Creating Integrated Industrial Ecosystems</span>}
-            // title="Creating Integrated Industrial Ecosystems"
-            description="Our industrial parks are designed to provide comprehensive infrastructure and support services, enabling businesses to focus on their core operations while we handle the complexities of industrial development."
+            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Creating Integrated Industrial Ecosystems</span>}
             theme="industrial"
             centered
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {keyFeatures.map((feature, index) => (
-              <Card key={index} className="hover-lift">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-[hsl(var(--industrial-accent))] rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="w-6 h-6 text-white" />
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+            {/* Image Left */}
+            <div className="relative order-1 lg:order-none">
+              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden">
+                {imageUrls.map((src, idx) => (
+                  <div className="keen-slider__slide" key={idx}>
+                    <img src={src} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="text-base text-[hsl(var(--industrial-primary))]">{feature.title}</h4>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+              <button onClick={() => slider.current?.prev()} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8592;</button>
+              <button onClick={() => slider.current?.next()} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8594;</button>
+            </div>
+
+            {/* Text Right */}
+            <div className="px-6 order-2 lg:order-none">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+                Integrated Industrial Infrastructure
+              </h2>
+              <div className="border-t border-gray-400 my-6 w-full max-w-md"></div>
+              <p className="text-gray-700 text-base md:text-lg mb-6 max-w-md">
+                Our industrial parks are designed to provide comprehensive infrastructure and support services, enabling businesses to focus on their core operations while we handle the complexities of industrial development.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -110,11 +140,15 @@ const IndustrialPark = () => {
               </div>
             </div>
             <div>
-              <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Industrial Infrastructure"
-                className="rounded-lg shadow-lg"
-              />
+              <div className="flex justify-center items-center w-full p-2 sm:p-4 md:p-6 lg:p-8">
+                <img
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Industrial Infrastructure"
+                  className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
+                  style={{ maxWidth: '500px' }}
+                />
+              </div>
+              
             </div>
           </div>
         </div>

@@ -69,9 +69,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-lg backdrop-blur-md' : 'bg-transparent text-white'
-        }`}
-    // className="bg-white shadow-lg sticky top-0 z-50"
+      // className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-lg backdrop-blur-md' : 'bg-transparent text-white'
+      //   }`}
+    className="bg-[#05133C] shadow-lg fixed top-0 z-50 left-0 right-0"
     >
       <div className="container-width">
         <div className="flex items-center justify-between h-20 px-2 md:px-4">
@@ -81,7 +81,8 @@ const Header = () => {
               <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-10 h-10 object-contain" />
             </div>
             <div>
-              <div className="text-xl font-bold text-[#00008B]">JAYA SHANKAR GROUP</div>
+              <div className="text-xl font-bold text-[gold]">JAYA SHANKAR GROUP</div>
+              {/* text-[#00008B] */}
               <div className="text-xs text-[green] font-semibold">For Planet & People</div>
             </div>
           </Link>
@@ -93,7 +94,7 @@ const Header = () => {
                 {item.children ? (
                   <div className="relative" ref={dropdownRef}>
                     <button
-                      className={`flex items-center space-x-1 px-3 py-2 text-sm font-bold transition-colors ${isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-white/80'
+                      className={`flex items-center space-x-1 px-3 py-2 text-sm font-bold transition-colors ${isScrolled ? 'text-white hover:text-white' : 'text-white hover:text-white/80'
                         }`}
                       aria-haspopup="true"
                       aria-expanded={activeDropdown === item.name}
@@ -124,9 +125,9 @@ const Header = () => {
                   <Link
                     to={item.href}
                     className={`px-3 py-2 text-sm font-bold transition-colors ${isActive(item.href)
-                      ? 'text-primary'
+                      ? 'text-white'
                       : isScrolled
-                        ? 'text-foreground hover:text-primary'
+                        ? 'text-white hover:text-white/80'
                         : 'text-white hover:text-white/80'
                       }`}
                   >

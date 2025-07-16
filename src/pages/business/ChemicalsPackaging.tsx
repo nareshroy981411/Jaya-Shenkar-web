@@ -7,72 +7,104 @@ import Footer from "@/components/layout/Footer";
 import StickyContactButton from "@/components/common/StickyContactButton";
 import { Leaf, Factory, TreePine, Zap, Package, Recycle, Globe, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BarChart2, Share2, PoundSterling } from 'lucide-react'; // or your preferred icon set
 
-// Import images
-// import bambooPlatationHero from "@/assets/bamboo-plantation-hero.jpg";
-// import bioRefineryFacility from "@/assets/bio-refinery-facility.jpg";
-// import bambooPulpProcess from "@/assets/bamboo-pulp-process.jpg";
-// import agroforestryFarmers from "@/assets/agroforestry-farmers.jpg";
-// import greenChemicalsLab from "@/assets/green-chemicals-lab.jpg";
 
 const ChemicalsPackaging = () => {
   const solutions = [
     {
-      icon: <TreePine className="h-8 w-8 text-green-600" />,
-      title: "Bamboo Kraft Pulp & Packaging",
-      description: "300,000 TPA bleached bamboo kraft pulp with 150,000 TPA printing & writing paper and 80,000 TPA specialty packaging paper.",
-      features: ["Bleached bamboo kraft pulp", "Specialty packaging paper", "Integrated chlor-alkali plant", "Co-gen power plant"]
+      icon: <TreePine className="w-6 h-6 text-white" />,
+      title: "Bleached Bamboo Kraft Pulp",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-green-600" />,
-      title: "Sustainable Resource Development",
-      description: "Social agroforestry partnerships with local farmers featuring high-yield bamboo and eucalyptus cultivation.",
-      features: ["Social agroforestry", "High-yield bamboo", "Land regeneration", "Circular farming models"]
+      icon: <Package className="w-6 h-6 text-white" />,
+      title: "Specialty Packaging Paper",
     },
     {
-      icon: <Package className="h-8 w-8 text-green-600" />,
-      title: "Advanced Bio-Based Products",
-      description: "Innovative biofuels, biochemicals, and nanocellulose products for packaging, automotive, and construction industries.",
-      features: ["Biofuels from biomass", "Biochemicals from lignin", "Nanocellulose products", "Biocomposites"]
+      icon: <Factory className="w-6 h-6 text-white" />,
+      title: "Integrated Chlor-Alkali Plant",
     },
     {
-      icon: <Factory className="h-8 w-8 text-green-600" />,
-      title: "Green Chemical Innovation",
-      description: "Advanced green chemicals including solvents, biodegradable polymers, and pharmaceutical extractives.",
-      features: ["Bio-based solvents", "Biodegradable polymers", "Pharmaceutical chemicals", "High-value extractives"]
-    }
-  ];
-
-  const agroforestryPrinciples = [
-    {
-      title: "Intentional",
-      description: "Smart design for multiple outputs",
-      icon: <Globe className="h-6 w-6" />
+      icon: <Leaf className="w-6 h-6 text-white" />,
+      title: "High-Yield Bamboo Cultivation",
     },
     {
-      title: "Integrated",
-      description: "Horizontal + vertical value chain alignment",
-      icon: <Recycle className="h-6 w-6" />
+      icon: <Leaf className="w-6 h-6 text-white" />,
+      title: "Circular Farming Models",
     },
     {
-      title: "Interactive",
-      description: "Managed eco-interactions using tech and IoT",
-      icon: <Zap className="h-6 w-6" />
+      icon: <Factory className="w-6 h-6 text-white" />,
+      title: "Biodegradable Polymers",
     },
     {
-      title: "Intensive",
-      description: "High-yield + low ecological footprint",
-      icon: <TreePine className="h-6 w-6" />
-    }
+      icon: <TreePine className="w-6 h-6 text-white" />,
+      title: "Nanocellulose Products",
+    },
+    {
+      icon: <Factory className="w-6 h-6 text-white" />,
+      title: "Bio-Based Solvents",
+    },
   ];
 
   const specifications = [
-    { label: "Bamboo Kraft Pulp Capacity", value: "300,000 TPA" },
-    { label: "Printing & Writing Paper", value: "150,000 TPA" },
-    { label: "Specialty Packaging Paper", value: "80,000 TPA" },
-    { label: "Manufacturing Area", value: "500-600 acres" },
-    { label: "Market Growth Rate", value: "7% CAGR" },
-    { label: "Target Market Size", value: "36M tons by 2030" }
+    {
+      icon: <BarChart2 className="w-6 h-6 text-teal-700" />,
+      title: "Bamboo Kraft Pulp Capacity",
+      description:
+        "300,000 TPA",
+    },
+    {
+      icon: <Users className="w-6 h-6 text-teal-700" />,
+      title: "Printing & Writing Paper",
+      description:
+        "150,000 TPA",
+    },
+    {
+      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395013468553220146/360_F_222830168_P433a5wkjNgt2yFg2CmuwctGXtGhOkpd.png?ex=6878e709&is=68779589&hm=bc4e859eec94391a5ed9db27d297ff095e9cd1deb3b7d2ae005fe29102003962&",
+      title: "Specialty Packaging Paper",
+      description:
+        "80,000 TPA",
+    },
+    {
+      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395014124395823165/2dab826041563ebcfc472d93f262cab6.png?ex=6878e7a5&is=68779625&hm=0e5041eb292f1fdc148b8638b40d9c1e5bf127345fde1479a7775f6e2fb8c453&",
+      title: "Manufacturing Area",
+      description:
+        "500-600 acres",
+    }, {
+      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395012488961200128/5161269.png?ex=6878e61f&is=6877949f&hm=12503ec57e971b065bfb7e745d643cf68cc6c39c3343db641eecaf458ca83560&",
+      title: "Target Market Size",
+      description:
+        "36M tons by 2030",
+    },
+    {
+      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1394988123787755642/3281306.png?ex=6878cf6e&is=68777dee&hm=8d55d3aa13be3e7fbd3a1f6278acd5881a6602ed4cf51c71655fa6a747ce5a02&",
+      title: "Market Growth Rate",
+      description:
+        "7% CAGR",
+    },
+  ];
+  const cardData = [
+    {
+      title: 'Bamboo Pulp & Paper',
+      subtitle: 'World-class manufacturing',
+      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394978354037260428/bamboo_pulp_and_paper.png?ex=6878c655&is=687774d5&hm=a9bed75af69f0fdedd269c94c0bf531ef2e5908b3c7fe443f1815e162a3d41fd&',
+      bgColor: 'bg-white', // use hover styling if needed
+    }, {
+      title: 'Social Forestry',
+      subtitle: 'Partnerships with farmers',
+      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394980453554847847/social_forestry_with_farmers.png?ex=6878c849&is=687776c9&hm=9ddadf47fe6b331e14d72d38f54809c4270cc2da65d9894289035217e8adb594&',
+      bgColor: 'bg-white', // use hover styling if needed
+    }, {
+      title: 'Green Chemicals',
+      subtitle: 'From biomass innovation',
+      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394979398297456723/green-chemicals.png?ex=6878c74e&is=687775ce&hm=d7020319ce7fbad7212a5b0ad89a3f0624cec189f7c07cc06c628a6a00beca15&',
+      bgColor: 'bg-white', // use hover styling if needed
+    }, {
+      title: 'Eco Packaging',
+      subtitle: 'Recyclable solutions',
+      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394980913510744114/sustainable-packaging-paper-eco-friendly-disposable-tableware-plates-cups-bowls-recycling-signs.png?ex=6878c8b7&is=68777737&hm=8f799f7a663b09a132b00d806ec003b4f1741d3e3a5df41dcbaba8e76e3cc1dc&',
+      bgColor: 'bg-white', // use hover styling if needed
+    },
   ];
 
   return (
@@ -80,53 +112,45 @@ const ChemicalsPackaging = () => {
       <Header />
       <StickyContactButton />
       {/* Hero Section */}
-      <section className="relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(/paper&pulp/paper_2.webp)`
+            backgroundImage: `url(https://cdn.discordapp.com/attachments/1390617522109288519/1394981686118187110/Agroforestry.webp?ex=6878c96f&is=687777ef&hm=397323aecc1b79219c001ab872a81a661a504938ed8486837eb0239a95e7033d&)`
           }}
         />
         <div className="relative container mx-auto px-6 py-24 text-center">
-          <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20 text-xs sm:text-sm">
+          {/* <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20 text-xs sm:text-sm">
             JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED
-          </Badge>
+          </Badge> */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
             Building India's Bio-Based Future from Assam
           </h1>
           <p className="text-base sm:text-lg md:text-xl mb-8 text-green-100 max-w-4xl mx-auto leading-relaxed">
             Pioneering sustainable pulp, packaging, and green chemicals through bamboo and agroforestry-based innovation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-green-800 hover:bg-green-50">
-              Explore Our Vision
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-20 bg-white ">
+        <div className="container mx-auto px-6 bg-white ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white ">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">About the Company</h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                A visionary initiative of the Jayashankar Group, focused on developing India's most sustainable, 
+                A visionary initiative of the Jayashankar Group, focused on developing India's most sustainable,
                 circular, and inclusive industrial ecosystem using bamboo and agroforestry.
               </p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                This project represents a shift from hydrocarbon-based materials to bio-based alternatives, 
+                This project represents a shift from hydrocarbon-based materials to bio-based alternatives,
                 placing Assam on the global map for sustainable manufacturing and green innovation.
               </p>
             </div>
             <div className="relative">
-              <img 
-                src="/paper&pulp/paper_bamboo.jpg" 
-                alt="Bio-refinery facility" 
+              <img
+                src="https://media.discordapp.net/attachments/1390617522109288519/1394966631381205072/Assam_1.jpg?ex=6878bb6a&is=687769ea&hm=c7a4373f527987492beeb2c47ce2e90c012c8fe462bc98589e389ac8beac706e&=&format=webp&width=1104&height=828"
+                alt="Bio-refinery facility"
                 className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
               />
             </div>
@@ -135,9 +159,9 @@ const ChemicalsPackaging = () => {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+      {/* <section className="py-20 bg-gray-50 bg-white ">
+        <div className="container mx-auto px-6bg-white ">
+          <div className="max-w-4xl mx-auto text-center mb-16 bg-white ">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">From Fossil to Forest</h2>
             <p className="text-base sm:text-lg text-gray-600 mb-12 leading-relaxed">
               We believe cellulose is the industrial material of the 21st century — replacing coal and oil 
@@ -179,48 +203,88 @@ const ChemicalsPackaging = () => {
             </div>
           </div>
         </div>
+      </section> */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              From Fossil to Forest
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-12 leading-relaxed">
+              We believe cellulose is the industrial material of the 21st century — replacing coal and oil
+              with renewable, biodegradable alternatives.
+            </p>
+          </div>
+
+          {/* Dynamic Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {cardData.map((item, index) => (
+              <div key={index} className="group">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-64 object-cover rounded-t-md"
+                />
+                <div
+                  className={`p-6 text-center rounded-b-md transition duration-300 ${item.bgColor} group-hover:bg-blue-300`}
+                >
+                  <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                  <p className="text-gray-900">{item.subtitle}</p>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
+
       {/* Solutions Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="py-20 ">
+        <div className="container mx-auto px-6 ">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">What We Do</h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive bio-based manufacturing solutions from sustainable resource development to advanced green chemicals.
             </p>
           </div>
-          <div className="mb-12">
-            <img 
-              src="/paper&pulp/pulp.jpg" 
-              alt="Bamboo pulp manufacturing process" 
-              className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 object-cover"
-            />
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {solutions.map((solution, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    {solution.icon}
-                    <CardTitle className="text-lg sm:text-xl break-words">{solution.title}</CardTitle>
+
+          <section className="py-16 bg-white bg-[url('https://media.discordapp.net/attachments/1392436416709132388/1395017420459999354/Biodegrade.jpg?ex=6878eab7&is=68779937&hm=4340acf673e6af43fbbc91718b0d1c057e842cd43645b705f0955f7d8ddea41e&=&format=webp&width=1323&height=744')] bg-cover bg-center bg-no-repeat p-6 rounded-md opacity-">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+              {/* LEFT: Text Block with Background Image */}
+              <div className="">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">
+                  Sustainable Innovation Across Fiber, Chemicals & Bio-Based Solutions
+                </h2>
+                <p className="mb-4 font-semibold">
+                  We focus on sustainable innovations including bamboo pulp, agroforestry, bio-based products, and green chemicals. These solutions aim to reduce environmental impact while enabling industrial progress through:
+                </p>
+                <ul className="list-disc list-inside space-y-2 font-semibold">
+                  <li>Eco-friendly manufacturing and packaging</li>
+                  <li>Land regeneration and social agroforestry</li>
+                  <li>Biochemicals and biodegradable alternatives</li>
+                  <li>Waste-to-energy circular models</li>
+                </ul>
+              </div>
+
+              {/* RIGHT: Feature Grid with Background Image */}
+              <div className=" relative grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 ">
+                {solutions.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 bg-teal-800 text-white p-4 rounded-md shadow-sm"
+                  >
+                    {/* <div className="bg-white/10 p-2 rounded-md">{item.icon}</div> */}
+                    <span className="text-sm font-medium">{item.title}</span>
                   </div>
-                  <CardDescription className="text-sm sm:text-base leading-relaxed">{solution.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {solution.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0 mt-2" />
-                        <span className="text-xs sm:text-sm leading-relaxed">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+
         </div>
       </section>
 
@@ -235,28 +299,13 @@ const ChemicalsPackaging = () => {
               </p>
             </div>
             <div className="relative">
-              <img 
-                src="/paper&pulp/packing_image.webp" 
-                alt="Agroforestry farmers working" 
+              <img
+                src="https://cdn.discordapp.com/attachments/1392436416709132388/1395006076126101585/image.png?ex=6878e026&is=68778ea6&hm=0c6fcc220c4760f8af6dddebc9a3ce363fa8c367cf0a1e4951f39c61b944a6c8&"
+                alt="Agroforestry farmers working"
                 className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
               />
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {agroforestryPrinciples.map((principle, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="flex justify-center mb-4">
-                    {principle.icon}
-                  </div>
-                  <CardTitle className="text-base sm:text-lg break-words">{principle.title}</CardTitle>
-                  <CardDescription className="text-xs sm:text-sm leading-relaxed">{principle.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
               <CardHeader>
@@ -294,152 +343,56 @@ const ChemicalsPackaging = () => {
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">Advanced manufacturing capabilities and market positioning</p>
           </div>
           <div className="mb-12">
-            <img 
-              src="/paper&pulp/paper_pulp.jpg" 
-              alt="Green chemicals laboratory" 
+            <img
+              src="/paper&pulp/paper_pulp.jpg"
+              alt="Green chemicals laboratory"
               className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 object-cover"
             />
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {specifications.map((spec, index) => (
-              <Card key={index}>
-                <CardContent className="pt-6 text-center">
-                  <h3 className="font-semibold text-sm sm:text-base lg:text-lg mb-2 break-words leading-tight">{spec.label}</h3>
-                  <p className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600">{spec.value}</p>
-                </CardContent>
-              </Card>
+            {specifications.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-start bg-gray-200 p-4 rounded-md shadow-sm"
+              >
+                {/* Image Icon Container */}
+                <div className="flex-shrink-0 mr-4 border-teal-700 p-3">
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    className="w-6 h-6 text-teal-700"
+                  />
+                </div>
+
+                {/* Text Content */}
+                <div>
+                  <h3 className="text-base font-semibold text-blue-900 mb-1">
+                    {item.title.toLowerCase()}
+                  </h3>
+                  <p className="text-sm text-gray-700">{item.description}</p>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Strategic Advantage */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">Strategic Location: Assam Advantage</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <TreePine className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2 text-sm sm:text-base break-words">Bamboo-Rich Zone</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Ideal agroclimatic conditions</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Factory className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2 text-sm sm:text-base break-words">Manufacturing Space</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">500-600 acres core facility</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Globe className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2 text-sm sm:text-base break-words">Government Support</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Industrial development backing</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Recycle className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2 text-sm sm:text-base break-words">Integrated Model</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Plantation + processing</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Zap className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2 text-sm sm:text-base break-words">Trade Access</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Northeast & Southeast Asia</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">Why Choose Us</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">Legacy & Experience</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">From the house of Jayashankar Group with proven track record</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">End-to-End Integration</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">Complete value chain from forestry to finished products</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">Environmental Leadership</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">Low emissions, high circularity, sustainable practices</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">Inclusive Development</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">Farmer income, green jobs, sustainable land use</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">Future-Ready Technology</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">Bio-refinery ecosystem with advanced capabilities</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg sm:text-xl text-green-600 break-words">Market Opportunity</CardTitle>
-                <CardDescription className="text-sm sm:text-base leading-relaxed">7% CAGR growth, 36M tons demand by 2030</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Build the Bio-Based Future?</h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 text-green-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
             Join us in pioneering sustainable manufacturing solutions that benefit businesses, communities, and the environment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-green-800 hover:bg-green-50">
+            <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
               <Link to="/contact">Get In Touch</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
+            <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
               Download Brochure
             </Button>
-          </div>
-          
-          <Separator className="my-12 bg-white/20" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="font-semibold mb-2">Contact Person</h3>
-              <p className="text-green-100">Mr. Dontharaju Kalyan Srinivas</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-green-100">srikalyan@jayashankargroup.com</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Website</h3>
-              <p className="text-green-100">www.jayashankargroup.com</p>
-            </div>
           </div>
         </div>
       </section>

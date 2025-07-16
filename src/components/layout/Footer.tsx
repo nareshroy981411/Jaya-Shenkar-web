@@ -6,10 +6,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const companies = [
-    { name: 'Jaya Shankar Multi Product Industrial Park & SEZ Pvt Ltd', href: '/business/industrial' },
-    { name: 'Jaya Shankar Multi Product Industrial Park & SEZ Pvt Ltd', href: '/business/paper' },
-    { name: 'Jaya Shankar Power & Infrastructure', href: '/business/power' },
-    { name: 'Jaya Shankar Chemicals & Packings Pvt Ltd', href: '/business/pulp/assam-agroforestry' }
+    { name: 'JayaShankar Multi Product Industrial Park & SEZ Pvt Ltd', href: '/business/industrial' },
+    { name: 'JayaShankar Pulp & Paper Mills Pvt Ltd', href: '/business/paper' },
+    { name: 'JayaShankar Power & Infrastructure Pvt Ltd', href: '/business/power' },
+    { name: 'JayaShankar Chemicals & Packings Pvt Ltd', href: '/business/pulp/assam-agroforestry' }
 
   ];
 
@@ -25,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-[#05133C] text-primary-foreground">
       {/* Main Footer */}
       <div className="section-padding">
         <div className="container-width">
@@ -51,20 +51,20 @@ const Footer = () => {
                   href="#"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
-                  <Linkedin className="w-5 h-5 text-[gold]" />
+                  <Linkedin className="w-5 h-5 text-[white]" />
                 </a>
                 <a
                   href="#"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
-                  <Twitter className="w-5 h-5 text-[gold]" />
+                  <Twitter className="w-5 h-5 text-[white]" />
                 </a>
               </div>
             </div>
 
             {/* Companies */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-[gold]">Our Companies</h3>
+              <h3 className="text-lg font-semibold mb-6 text-[white]">Our Companies</h3>
               <ul className="space-y-3">
                 {companies.map((item, index) => (
                   <li key={index}>
@@ -81,7 +81,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-[gold]">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-6 text-[white]">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((item) => (
                   <li key={item.name}>
@@ -98,10 +98,10 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-[gold]">Contact Us</h3>
+              <h3 className="text-lg font-semibold mb-6 text-[white]">Contact Us</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 mt-0.5 opacity-80 text-[gold]" />
+                  <MapPin className="w-5 h-5 mt-0.5 opacity-80 text-[white]" />
                   <div className="text-sm opacity-80 leading-relaxed">
                     1209, Aparna Westside,<br />
                     Behind DPS School Road,<br />
@@ -109,11 +109,11 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 opacity-80 text-[gold]" />
+                  <Phone className="w-5 h-5 opacity-80 text-[white]" />
                   <div className="text-sm opacity-80">+91 9390849709</div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 opacity-80 text-[gold]" />
+                  <Mail className="w-5 h-5 opacity-80 text-[white]" />
                   <div className="text-sm opacity-80">info@jayashankargroup.com</div>
                 </div>
               </div>

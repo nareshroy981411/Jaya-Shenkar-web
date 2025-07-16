@@ -46,8 +46,8 @@ const CompanyMap = () => (
       {/* Map with markers */}
       <div className="flex-1 flex items-center justify-center min-w-[300px] relative">
         <img
-          // src="/India-Map_Option_01_01_LOOP.gif"
-          src='https://www.nicepng.com/png/detail/365-3655555_mintel-in-india-india-map-outline-png.png'
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcQzkker2UzkB2h3zGo_82nZA_YAtogp2Dw&s"
+          // src='https://www.nicepng.com/png/detail/365-3655555_mintel-in-india-india-map-outline-png.png'
           alt="India Map"
           className="w-full h-auto max-w-[480px] md:max-w-[420px] lg:max-w-[500px] object-contain"
           style={{ margin: 0, boxShadow: 'none', border: 'none', background: 'none' }}
@@ -57,7 +57,7 @@ const CompanyMap = () => (
         <div className="absolute top-[53%] left-[55.5%]">
           <div className="w-3 h-3  rounded-full animate-ping" ><MapPin className="w-3 h-3 text-green" /></div>
           <div className="w-3 h-3  rounded-full absolute top-0 left-0" />
-          <span className="absolute left-0 top-[-14px] text-sm text-[white] font-semibold whitespace-nowrap">Odisha</span>
+          <span className="absolute left-0 top-[-14px] text-sm text-[blue] font-semibold whitespace-nowrap">Odisha</span>
         </div>
 
         {/* Andhra Pradesh - southeast coast */}
@@ -71,21 +71,21 @@ const CompanyMap = () => (
         <div className="absolute top-[38.5%] left-[80%]">
           <div className="w-3 h-3  rounded-full animate-ping"><MapPin className="w-3 h-3 text-blue-800" /></div>
           <div className="w-3 h-3  rounded-full absolute top-0 left-0" />
-          <span className="absolute left-1 top-[-24px] text-sm text-[white] font-semibold whitespace-nowrap">Assam</span>
+          <span className="absolute left-1 top-[-24px] text-sm text-[blue] font-semibold whitespace-nowrap">Assam</span>
         </div>
 
          {/* bangalore  */}
         <div className="absolute top-[78.5%] left-[34%]">
           <div className="w-3 h-3  rounded-full animate-ping"><MapPin className="w-3 h-3 text-blue-800" /></div>
           <div className="w-3 h-3  rounded-full absolute top-0 left-0" />
-          <span className="absolute left-[-30px] top-[-20px] text-sm text-[white] font-semibold whitespace-nowrap">Bangalore</span>
+          <span className="absolute left-[-30px] top-[-20px] text-sm text-[blue] font-semibold whitespace-nowrap">Bangalore</span>
         </div>
 
          {/* Telangana - northeast */}
         <div className="absolute top-[58.5%] left-[40%]">
           <div className="w-3 h-3  rounded-full animate-ping"><MapPin className="w-3 h-3 text-blue-800" /></div>
           <div className="w-3 h-3  rounded-full absolute top-0 left-0" />
-          <span className="absolute left-[-15px] top-[-20px] text-sm text-[white] font-semibold whitespace-nowrap">Telangana</span>
+          <span className="absolute left-[-15px] top-[-20px] text-sm text-[blue] font-semibold whitespace-nowrap">Telangana</span>
         </div>
       </div>
 

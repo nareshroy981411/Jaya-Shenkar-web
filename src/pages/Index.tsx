@@ -15,7 +15,7 @@ const Index = () => {
   const heroSlides = [
     {
       title: 'Jaya Shankar Group: Pioneering Sustainable Industrial Growth Across India',
-      subtitle: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
+      // subtitle: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
       // backgroundImage: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/banner2.png',
       buttons: [
@@ -25,7 +25,7 @@ const Index = () => {
     },
     {
       title: 'Enabling a Sustainable Tomorrow',
-      subtitle: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
+      // subtitle: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
       // backgroundImage: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/paper.png',
       buttons: [
@@ -35,7 +35,7 @@ const Index = () => {
     },
     {
       title: 'World-Class Industrial Parks & Special Economic Zones',
-      subtitle: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
+      // subtitle: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
       // backgroundImage: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/odishaparma/pharma6.png',
       buttons: [
@@ -45,7 +45,7 @@ const Index = () => {
     },
     {
       title: 'Powering Progress: Robust Infrastructure Solutions',
-      subtitle: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
+      // subtitle: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
       // backgroundImage: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/power/solar_power.png',
 
@@ -63,7 +63,7 @@ const Index = () => {
       short: "Ultra-modern pharma infrastructure and SEZs in Andhra Pradhesh & Odisha.",
       link: "/business/industrial",
       // image: "https://images.unsplash.com/photo-1474674556023-efef886fa147?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    image: '/SEZ/sez_4.jpg'
+      image: '/SEZ/sez_4.jpg'
     },
     {
       icon: <Factory className="w-8 h-8" />,
@@ -125,7 +125,7 @@ const Index = () => {
   //     area: '1,800 acres',
   //     description: 'Strategic gateway to South India\'s industrial growth with excellent connectivity and multi-sector ecosystem.',
   //     image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-       
+
   //   },
   //   {
   //     title: 'Odisha Pharma City Project',
@@ -188,8 +188,8 @@ const Index = () => {
       img: '/bluoak.png',
     },
     // {
-      // name: 'JVS Consultants India LLP',
-      // img: '',
+    // name: 'JVS Consultants India LLP',
+    // img: '',
     // },
     {
       // name: 'PAPCEL Czech Republic',
@@ -297,8 +297,7 @@ const Index = () => {
                   <div className="mt-auto">
                     <Link
                       to={company.link}
-                      className="inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg pointer-events-none"
-                      tabIndex={-1}
+                      className="inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg"
                     >
                       View More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
@@ -317,7 +316,7 @@ const Index = () => {
           <SectionHeader
             subtitle="About Jaya Shankar Group"
             // title="Visionary Conglomerate Shaping India's Industrial Future"
-                                                title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Visionary Conglomerate Shaping India's Industrial Future</span>}
+            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Visionary Conglomerate Shaping India's Industrial Future</span>}
             description="Founded by first-generation entrepreneurs with a combined 45 years of expertise, Jaya Shankar Group operates with a robust team of 200+ man-years of experience across Industrial Parks, Pulp & Paper, and Power Infrastructure. Our core philosophy 'For Planet & People' drives economic development, social progress, and environmental sustainability."
             centered
           />
@@ -342,7 +341,7 @@ const Index = () => {
           <SectionHeader
             subtitle="Strategic Partners"
             // title="Collaborating with Industry Leaders"
-                                    title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Collaborating with Industry Leaders</span>}
+            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Collaborating with Industry Leaders</span>}
             description="Working together with leading organizations to create innovative solutions and drive sustainable growth"
             centered
           />
@@ -458,7 +457,7 @@ const Index = () => {
           <SectionHeader
             subtitle="Why Choose Us"
             // title="Excellence in Every Endeavor"
-                        title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Excellence in Every Endeavor</span>}
+            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Excellence in Every Endeavor</span>}
             description="Our unique combination of experience, values, and strategic approach makes us the ideal partner for sustainable industrial development."
             centered
           />

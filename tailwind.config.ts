@@ -8,7 +8,6 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}", // update this path based on your project
-
   ],
   prefix: "",
   theme: {
@@ -30,6 +29,13 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        theme: {
+          primary: "hsl(210, 100%, 40%)", // Blue - pharma / industrial
+          secondary: "hsl(220, 10%, 40%)", // Steel gray - industrial
+          accent: "hsla(18, 91%, 48%, 1.00)", // Green - clean/sustainable
+          bgLight: "hsl(210, 40%, 98%)", // Background tint
+          text: "hsl(0, 0%, 100%)",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

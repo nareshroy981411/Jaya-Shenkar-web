@@ -15,22 +15,28 @@ const PulpPaper = () => {
     {
       title: 'Liquid Packaging',
       description: 'Premium solutions from fresh virgin fiber for dairy, fruit juices, and ready-to-drink beverages.',
-      applications: ['Dairy Products', 'Fruit Juices', 'Ready-to-Drink Beverages']
+      applications: ['Dairy Products', 'Fruit Juices', 'Ready-to-Drink Beverages'],
+      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394684231581569084/WhatsApp_Image_2025-07-15_at_14.50.57_3e1bbe2d.jpg?ex=687905e8&is=6877b468&hm=351b80f9d2d0f610f7156fe0b274e2a434a5250eb72303bd041d593211014d8c&=&format=webp&width=1116&height=744'
     },
     {
       title: 'Pharma & Healthcare Packaging',
       description: '100% Virgin Fiber carton board with excellent printing and embellishing capabilities.',
-      applications: ['Pharmaceutical Products', 'Medical Devices', 'Healthcare Supplies']
+      applications: ['Pharmaceutical Products', 'Medical Devices', 'Healthcare Supplies'],
+      // image: '/images/image.png',
+      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394684676219863152/WhatsApp_Image_2025-07-15_at_14.50.58_a0aabd39.jpg?ex=68790652&is=6877b4d2&hm=6fe2ff93261dcbc952d723673c418433b9c40c1538740e442b2426d0702c93d2&=&format=webp&width=1322&height=744'
+
     },
     {
       title: 'Food Service Solutions',
       description: 'Cup Form Board and Tray Form Board as sustainable alternatives to plastic.',
-      applications: ['Hot/Cold Beverages', 'Ice Creams', 'Frozen Food Packaging']
+      applications: ['Hot/Cold Beverages', 'Ice Creams', 'Frozen Food Packaging'],
+      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394685522374561932/WhatsApp_Image_2025-07-15_at_14.50.59_86febbb6.jpg?ex=6879071c&is=6877b59c&hm=891f27e1dfb7b4ea25fc6b8c95733f6f8e67d1fe914728bfa99deff06cb86feb&=&format=webp&width=1365&height=744'
     },
     {
       title: 'Cosmetics & Personal Care',
       description: 'Premium high graphic carton board with outstanding surface properties.',
-      applications: ['Cosmetic Products', 'Personal Care Items', 'Premium Packaging']
+      applications: ['Cosmetic Products', 'Personal Care Items', 'Premium Packaging'],
+      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1395083153843945512/Untitled_design_2.png?ex=687927ef&is=6877d66f&hm=f8f12447ad739167baa572b62f12f441403b856b513c0a2dac6660a7afd84e81'
     }
   ];
 
@@ -66,14 +72,14 @@ const PulpPaper = () => {
 
       <HeroSection
         title="Redefining Sustainable Packaging: West Godavari Mill"
-        subtitle="Leading the transformation from single-use plastics to sustainable paper packaging solutions with our state-of-the-art facility in Andhra Pradesh."
+        // subtitle="Leading the transformation from single-use plastics to sustainable paper packaging solutions with our state-of-the-art facility in Andhra Pradesh."
         theme="paper"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
-        // backgroundImage="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        buttons={[
-          { text: 'Our Products', href: '#products' },
-          { text: 'Sustainability', href: '#sustainability', variant: 'outline' },
-        ]}
+      // backgroundImage="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      // buttons={[
+      //   { text: 'Our Products', href: '#products' },
+      //   { text: 'Sustainability', href: '#sustainability', variant: 'outline' },
+      // ]}
       />
 
       {/* Mill Overview */}
@@ -172,28 +178,42 @@ const PulpPaper = () => {
             theme="paper"
             centered
           />
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {productCategories.map((category, index) => (
               <Card key={index} className="hover-lift">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-[hsl(var(--paper-primary))] mb-3">{category.title}</h3>
-                  <p className="text-muted-foreground mb-4">{category.description}</p>
-                  <div className="space-y-2">
-                    <h5 className="font-medium text-[hsl(var(--paper-primary))]">Applications:</h5>
-                    <ul className="space-y-1">
-                      {category.applications.map((app, appIndex) => (
-                        <li key={appIndex} className="flex items-center space-x-2 text-sm">
-                          <Package className="w-3 h-3 text-[hsl(var(--paper-accent))]" />
-                          <span>{app}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <CardContent className="p-6 flex flex-col md:flex-row items-start gap-6">
+                  {/* Left Side: Text Content */}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-[hsl(var(--paper-primary))] mb-3">
+                      {category.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">{category.description}</p>
+                    <div className="space-y-2">
+                      <h5 className="font-medium text-[hsl(var(--paper-primary))]">Applications:</h5>
+                      <ul className="space-y-1">
+                        {category.applications.map((app, appIndex) => (
+                          <li key={appIndex} className="flex items-center space-x-2 text-sm">
+                            <Package className="w-3 h-3 text-[hsl(var(--paper-accent))]" />
+                            <span>{app}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Right Side: Image */}
+                  <div className="w-full md:w-40 lg:w-48 xl:w-56">
+                    <img
+                      src={category.image} // Make sure each `category` item has an `image` property
+                      alt={category.title}
+                      className="rounded-md shadow-md object-cover w-full h-full"
+                    />
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
         </div>
       </section>
 

@@ -237,8 +237,8 @@ const projects = [
     location: "Titilagarh, Balangir District, Odisha",
     area: "1,800 acres",
     jobs: "35,000+ direct/indirect jobs",
-    sector: "Industrial Park & SEZ",
-    theme: "industrial",
+    sector: "Pharma Park",
+    theme: "pharma",
     href: "/business/industrial/odisha",
     images: [
       "/SEZ/pharma_1.png",
@@ -279,7 +279,7 @@ const projects = [
     area: '271 acres in SEZ',
     capacity: '1,200 t/day Carton Board',
     sector: 'Pulp',
-    theme: 'paper',
+    theme: 'pulp',
     href: '/business/pulp/assam-agroforestry',
     images: [
       "/paper&pulp/pulp.jpg",
@@ -377,77 +377,27 @@ const Projects = () => {
               )
 
               return (
-                <div
+                <Link
                   key={index}
-                  // className="flex flex-col md:flex-row gap-8 border-b pb-10"
-                  className={`flex flex-col md:flex-row gap-8 border-b pb-10 rounded-xl p-6 text-white ${gradientBackgrounds[index % gradientBackgrounds.length]}`}
-
+                  to={project.href}
+                  className={`group flex flex-col md:flex-row gap-8 border-b pb-10 rounded-xl p-6 text-white transition-shadow duration-200 hover:shadow-2xl cursor-pointer ${gradientBackgrounds[index % gradientBackgrounds.length]}`}
+                  // className="bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
+                  style={{ textDecoration: "none" }}
                 >
-                  {/* Left: Project Info */}
-                  {/* <div className="md:w-1/2 space-y-4 ">
+                  <div className="md:w-1/2 space-y-4">
                     <div className="flex items-center justify-between">
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-medium ${project.theme === "industrial"
                             ? "bg-[hsl(var(--industrial-light))] text-[hsl(var(--industrial-primary))]"
                             : project.theme === "paper"
                               ? "bg-[hsl(var(--paper-light))] text-[hsl(var(--paper-primary))]"
-                              : "bg-[hsl(var(--power-light))] text-[hsl(var(--power-primary))]"
-                          }`}
-                      >
-                        {project.sector}
-                      </span>
-                      {project.theme === "industrial" && (
-                        <Building2 className="w-5 h-5 text-[hsl(var(--industrial-accent))]" />
-                      )}
-                      {project.theme === "paper" && (
-                        <Factory className="w-5 h-5 text-[hsl(var(--paper-accent))]" />
-                      )}
-                      {project.theme === "power" && (
-                        <Zap className="w-5 h-5 text-[hsl(var(--power-accent))]" />
-                      )}
-                    </div>
-
-                    <h3 className="text-2xl font-semibold">{project.title}</h3>
-
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      {project.location && (
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="w-4 h-4" />
-                          <span>{project.location}</span>
-                        </div>
-                      )}
-                      {project.area && (
-                        <div className="flex items-center space-x-2">
-                          <Building2 className="w-4 h-4" />
-                          <span>{project.area}</span>
-                        </div>
-                      )}
-                      {project.distance && (
-                        <div className="flex items-center space-x-2">
-                          <Target className="w-4 h-4" />
-                          <span>{project.distance}</span>
-                        </div>
-                      )}
-                      {project.jobs && (
-                        <div className="flex items-center space-x-2">
-                          <Users className="w-4 h-4" />
-                          <span>{project.jobs}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <Button asChild variant="outline" className="mt-4 text-black">
-                      <Link to={project.href}>Learn More</Link>
-                    </Button>
-                  </div> */}
-                  <div className="md:w-1/2 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${project.theme === "industrial"
-                          ? "bg-[hsl(var(--industrial-light))] text-[hsl(var(--industrial-primary))]"
-                          : project.theme === "paper"
-                            ? "bg-[hsl(var(--paper-light))] text-[hsl(var(--paper-primary))]"
-                            : "bg-[hsl(var(--power-light))] text-[hsl(var(--power-primary))]"
+                              : project.theme === "power"
+                                ? "bg-[hsl(var(--power-light))] text-[hsl(var(--power-primary))]"
+                                : project.theme === "pulp"
+                                  ? "bg-[hsl(var(--industrial-light))] text-[hsl(var(--industrial-primary))]"
+                                  : project.theme === "pharma"
+                                    ? "bg-[hsl(var(--industrial-light))] text-[hsl(var(--industrial-primary))]"
+                                    : "bg-gray-200 text-gray-600"
                           }`}
                       >
                         {project.sector}
@@ -503,12 +453,10 @@ const Projects = () => {
                       )}
                     </div>
 
-                    <Button asChild variant="outline" className="mt-4 text-black">
-                      <Link to={project.href}>Learn More</Link>
+                    <Button asChild variant="outline" className="mt-4 text-black pointer-events-none opacity-70">
+                      <span>Learn More</span>
                     </Button>
                   </div>
-
-
                   {/* Right: Carousel */}
                   <div className="md:w-1/2">
                     <div
@@ -529,7 +477,7 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                </div>
+                </Link>
               )
             })}
           </div>
