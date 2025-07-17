@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -12,6 +13,7 @@ import { ArrowRight, Building2, Factory, Zap, Users, Award, Globe, Leaf } from '
 import CompanyMap from './CompanyMap';
 
 const Index = () => {
+  const navigate = useNavigate()
   const heroSlides = [
     {
       title: 'Jaya Shankar Group: Pioneering Sustainable Industrial Growth Across India',
@@ -85,7 +87,7 @@ const Index = () => {
       icon: <Zap className="w-8 h-8" />,
       title: "JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED",
       short: "Assam’s next-gen hub for green pulp, chemicals, and biocomposites",
-      link: "/business/pulp/assam-agroforestry",
+      link: "/business/ChemicalsPackaging",
       // image: "https://plus.unsplash.com/premium_photo-1695559212636-422fcdb4bf3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       image: '/paper&pulp/pulp1.jpg'
     },
@@ -267,7 +269,7 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {companies.map((company, index) => (
               <div
                 key={index}
@@ -283,9 +285,6 @@ const Index = () => {
                     alt={company.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  {/* <div className="absolute top-4 left-4 text-[gold] group-hover:scale-110 transition-transform duration-300 bg-white/80 rounded-full p-2 shadow-md border border-[gold]">
-                    {company.icon}
-                  </div> */}
                 </div>
                 <div className="flex-1 flex flex-col p-8">
                   <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
@@ -306,7 +305,40 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div> */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {companies.map((company, index) => (
+        <div
+          key={index}
+          className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
+          onClick={() => navigate(company.link)}
+          tabIndex={0}
+          role="button"
+          aria-label={`View details for ${company.title}`}
+        >
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src={company.image}
+              alt={company.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
           </div>
+
+          <div className="flex-1 flex flex-col p-8">
+            <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
+              {company.title}
+            </h3>
+            <p className="text-gray-600 mb-6 leading-relaxed text-base min-h-[48px]">
+              {company.short}
+            </p>
+            <div className="mt-auto inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg w-fit">
+              View More
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
         </div>
       </section>
 
@@ -345,30 +377,6 @@ const Index = () => {
             description="Working together with leading organizations to create innovative solutions and drive sustainable growth"
             centered
           />
-
-          {/* Floating carousel for partner cards */}
-          {/* <div className="overflow-x-auto scrollbar-hide py-2">
-            <div className="flex space-x-6 animate-partner-marquee min-w-[700px]">
-              {partnerData.concat(partnerData).map((partner, index) => (
-                <Card
-                  key={index}
-                  className="w-30 h-38 min-w-[160px] max-w-[180px] flex-shrink-0 flex items-center justify-center hover:scale-105 hover:shadow-2xl hover:border-[gold] hover:z-10 fade-in group border-2 border-transparent transition-all duration-300 p-0"
-                  style={{ animationDelay: `${(index % partnerData.length) * 100}ms` }}
-                >
-                  <CardContent className="flex flex-col items-center justify-center h-full w-full p-0">
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-2 border-2 border-transparent overflow-hidden group-hover:border-[green] transition-all duration-200 bg-white">
-                      {partner.img ? (
-                        <img src={partner.img} alt={partner.name + ' logo'} className="w-10 h-10 object-contain" />
-                      ) : (
-                        <span className="text-xs text-gray-400">No Image</span>
-                      )}
-                    </div>
-                    <h4 className="font-medium text-xs leading-tight text-black font-[Poppins,sans-serif] mt-1 text-center px-2 break-words">{partner.name}</h4>
-                  </CardContent> 
-                </Card>
-              ))}
-            </div>
-          </div> */}
           <div className="overflow-x-auto scrollbar-hide py-2">
             <div className="flex space-x-6 animate-partner-marquee min-w-[700px]">
               {partnerData.concat(partnerData).map((partner, index) => (
@@ -408,49 +416,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      {/* <section className="section-padding bg-red-50">
-        <div className="container-width">
-          <SectionHeader
-            subtitle="Featured Projects"
-            title="Transforming Landscapes, Creating Opportunities"
-            description="Flagship projects that showcase our commitment to excellence, sustainability, and economic development across multiple states."
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:scale-105 hover:shadow-2xl hover:border-[gold] hover:z-10 fade-in group border-2 border-transparent transition-all duration-300" style={{ animationDelay: `${index * 200}ms` }}>
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-primary group-hover:text-yellow-800 transition-colors duration-300">{project.location}</span>
-                    <span className="text-sm text-muted-foreground group-hover:text-yellow-900 transition-colors duration-300">{project.area}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-yellow-800 transition-colors duration-300 font-[Poppins,sans-serif]">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-yellow-900 transition-colors duration-300 font-[Poppins,sans-serif]">{project.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button asChild size="lg" className="border-2 border-transparent text-white hover:border-[gold] hover:bg-yellow-600 hover:text-black transition-all duration-200">
-              <Link to="/projects">
-                View All Projects
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
-
       {/* Why Choose Us */}
       <section className="section-padding">
         <div className="container-width">
@@ -476,66 +441,6 @@ const Index = () => {
         </div>
       </section>
       <CompanyMap />
-      {/* Sustainability Carousel */}
-      {/* <section className="section-padding bg-muted/30">
-        <div className="container-width">
-          <SectionHeader
-            subtitle="Our Commitment"
-            title="Enabling a Sustainable Tomorrow"
-            description="Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain"
-            centered
-          />
-
-          <div className="max-w-5xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {sustainabilityImages.map((item, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden hover:scale-105 hover:shadow-2xl hover:border-[gold] hover:z-10 transition-all duration-300">
-                      <div className="relative">
-                        <div className="aspect-video overflow-hidden">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
-                        <div className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-80 flex items-end`}>
-                          <div className="p-6 text-white">
-                            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                            <p className="text-sm opacity-90">{item.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
-        </div>
-      </section> */}
-      {/* CTA Section */}
-      {/* <section className="section-padding bg-secondary text-black">
-        <div className="container-width">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-black mb-6 font-bold text-3xl font-[Poppins,sans-serif]">Ready to Partner with Us?</h2>
-            <p className="text-xl text-black mb-8 leading-relaxed font-[Poppins,sans-serif]">
-              Join us in creating sustainable industrial ecosystems that drive economic growth while protecting our planet for future generations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary" className="bg-green-600 text-white hover:bg-green-700 border-2 border-transparent hover:border-[gold] hover:scale-105 hover:shadow-2xl transition-all duration-200">
-                <Link to="/contact">Get In Touch</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-transparent text-black hover:border-[gold] hover:bg-white hover:text-black hover:scale-105 hover:shadow-2xl transition-all duration-200">
-                <Link to="/investors">Investment Opportunities</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <Footer />
     </div>

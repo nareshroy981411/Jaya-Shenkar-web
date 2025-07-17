@@ -292,10 +292,8 @@ const gradientBackgrounds = [
 
   "bg-gradient-to-r from-[#43cea2] to-[#185a9d]", // Teal-blue
   "bg-gradient-to-r from-[#a4d4e3] to-[#a4d4e3]", // Light blue
-  // "bg-gradient-to-r from-[#00c6ff] to-[#0072ff]", // Light blue
   "bg-gradient-to-r from-[#99f2c8] to-[#1f4037] ", // Forest green
   "bg-gradient-to-r from-[#ffb62f] to-[#ed0000]", // Forest green
-  // "bg-gradient-to-r from-[#f7971e] to-[#ffd200]", // Orange-yellow
   "bg-gradient-to-r from-[#bbb7a3] to-[#89ff89]", // Orange-green
 ]
 
