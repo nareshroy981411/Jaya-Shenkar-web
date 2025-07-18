@@ -141,7 +141,7 @@ const Projects = () => {
 
       <HeroSection
         title="Our Projects: Building India's Industrial Future"
-        // subtitle="Discover our portfolio of world-class industrial parks, sustainable paper mills, and robust power infrastructure projects across India."
+        subtitle="Explore our industrial parks, paper mills, and power projects across India"
         // backgroundImage="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         backgroundImage="/power/thermal-power-1.jpg"
         // buttons={[

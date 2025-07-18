@@ -75,7 +75,7 @@ const PulpPaper = () => {
       title: 'Cosmetics & Personal Care',
       description: 'Premium high graphic carton board with outstanding surface properties.',
       applications: ['Cosmetic Products', 'Personal Care Items', 'Premium Packaging'],
-      image: '/images/cosmotics.png'
+      image: '/images/cosmo.png'
     }
   ];
 

@@ -57,14 +57,14 @@ const PowerInfrastructure = () => {
       description: 'Daily operations and maintenance for optimal performance',
       icon: Users,
       color: 'bg-gradient-to-br from-purple-500 to-purple-600',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: '/images/corporate.jpg'
     },
     {
       phase: 'Transfer',
       description: 'Ownership transfer after 15-30 years concession period',
       icon: FileText,
       color: 'bg-gradient-to-br from-orange-500 to-orange-600',
-      image: 'https://images.unsplash.com/photo-1467579424161-6bbc141569d7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      image: '/images/public.jpg'
     }
   ];
 
@@ -158,7 +158,7 @@ const PowerInfrastructure = () => {
   const heroSlides = [
     {
       title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
+      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
       backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       badgeBg: "bg-blue-500",
       badgeText: "text-white",
@@ -166,7 +166,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Clean Solar Power for a Greener Tomorrow",
-      subtitle: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
+      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
       backgroundImage: "/power/solar_power.png",
       badgeBg: "bg-green-600",
       badgeText: "text-white",
@@ -174,7 +174,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Seamless Connectivity: Modern Tunnel Infrastructure",
-      subtitle: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
+      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
       backgroundImage: "/power/tunnel-1.png",
       badgeBg: "bg-yellow-500",
       badgeText: "text-black",
@@ -182,7 +182,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Innovative Power Distribution",
-      subtitle: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
+      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
       backgroundImage: "/power/tunnel.png",
       badgeBg: "bg-purple-600",
       badgeText: "text-white",

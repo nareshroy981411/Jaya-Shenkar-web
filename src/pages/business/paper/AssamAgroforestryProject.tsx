@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: 'The Next Industrial Revolution is Bio-Based',
-    image: '/images/assam3.png',
+    image: '/images/biobased.jpg',
     content: [
       'From: Coal (19th century), Oil (20th century)',
       'To: Cellulose & Biofibres (21st century)',
@@ -34,7 +34,7 @@ const sections = [
   },
   {
     title: 'Why Agroforestry?',
-    image: '/images/assam4.png',
+    image: '/images/whyagro.jpg',
     content: [
       'Protection against topsoil loss and soil fertility regeneration.',
       'Livestock protection, fodder security, and product diversification.',
@@ -118,9 +118,9 @@ const AssamAgroforestryProject = () => {
               style={{ backgroundImage: `url(${section.image})` }}
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/30 z-0" />
+              <div className="absolute inset-0 bg-black/30 z-[1]" />
               <div className="relative z-10 text-white text-center px-4 max-w-3xl space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-wide font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-wide font-serif text-[gold]">
                   {section.title}
                 </h3>
                 <div className="space-y-3 text-base md:text-lg leading-relaxed">
