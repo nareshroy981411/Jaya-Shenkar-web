@@ -50,7 +50,7 @@ const Sustainability = () => {
   const heroSlides = [
     {
       title:"Sustainability & ESG: For Planet & People",
-      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      // subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
       backgroundImage:"/paper&pulp/pulp2.jpg",
       buttons:[
         { text: 'Our Commitment', href: '#commitment' },
@@ -59,7 +59,7 @@ const Sustainability = () => {
     },
     {
       title:"Sustainability & ESG: For Planet & People",
-      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      // subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
       backgroundImage:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       buttons:[
         { text: 'Our Commitment', href: '#commitment' },
@@ -68,7 +68,7 @@ const Sustainability = () => {
     },
     {
       title:"Sustainability & ESG: For Planet & People",
-      subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
+      // subtitle:"Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
       backgroundImage:"/paper&pulp/pulp3.jpg",
       buttons:[
         { text: 'Our Commitment', href: '#commitment' },

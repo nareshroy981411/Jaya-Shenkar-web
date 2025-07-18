@@ -11,6 +11,7 @@ import StickyContactButton from '@/components/common/StickyContactButton';
 import { Leaf, Recycle, Factory, Droplets, Shield, Package } from 'lucide-react';
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import { Badge } from "@/components/ui/badge";
 
 const imageUrls = [
   "/images/image3.jpg",
@@ -108,17 +109,28 @@ const PulpPaper = () => {
 
       {/* Hero Section */}
 
-      <HeroSection
+      {/* <HeroSection
         title="Redefining Sustainable Packaging: West Godavari Mill"
-        // subtitle="Leading the transformation from single-use plastics to sustainable paper packaging solutions with our state-of-the-art facility in Andhra Pradesh."
         theme="paper"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
-      // backgroundImage="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-      // buttons={[
-      //   { text: 'Our Products', href: '#products' },
-      //   { text: 'Sustainability', href: '#sustainability', variant: 'outline' },
-      // ]}
-      />
+      /> */}
+
+      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/images_jayashankar/paper_mill_1.jpg)`,
+          }}
+        />
+        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
+          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
+            JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED
+          </Badge>
+          <h1 className="font-serif drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-[#02facd] via-[white] to-[#02facd] bg-clip-text text-transparent">
+            Redefining Sustainable Packaging: West Godavari Mill
+          </h1>
+        </div>
+      </section>
 
       {/* Mill Overview */}
       <section className="section-padding">
@@ -381,9 +393,9 @@ const PulpPaper = () => {
               <Button asChild size="lg" variant="secondary">
                 <Link to="/contact">Request a Quote</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-[hsl(var(--paper-primary))]">
+              {/* <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-[hsl(var(--paper-primary))]">
                 <Link to="">View Product Range</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

@@ -120,7 +120,7 @@ const ChemicalsPackaging = () => {
           }}
         />
         <div className="relative container mx-auto px-6 py-24 text-center mt-20">
-          <Badge variant="secondary" className="mb-6 bg-blue-800 text-white border-white/20 hover:bg-blue-500 sm:text-sm">
+          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-blue-800 text-white border-white/20 hover:bg-blue-500 sm:text-sm">
             JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED
           </Badge>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
@@ -345,9 +345,9 @@ const ChemicalsPackaging = () => {
             <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
               <Link to="/contact">Get In Touch</Link>
             </Button>
-            <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
+            {/* <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
               Download Brochure
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

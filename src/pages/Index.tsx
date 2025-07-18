@@ -20,30 +20,30 @@ const Index = () => {
       // subtitle: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
       // backgroundImage: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/banner2.png',
-      buttons: [
-        { text: 'Explore Our Companies', href: '#verticals' },
-        { text: 'Our Projects', href: '/projects', variant: 'outline' as const },
-      ],
+      // buttons: [
+      //   { text: 'Explore Our Companies', href: '#verticals' },
+      //   { text: 'Our Projects', href: '/projects', variant: 'outline' as const },
+      // ],
     },
     {
       title: 'Enabling a Sustainable Tomorrow',
       // subtitle: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
       // backgroundImage: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/paper.png',
-      buttons: [
-        { text: 'Learn About Sustainability', href: '/sustainability' },
-        { text: 'Our Impact', href: '/sustainability', variant: 'outline' as const },
-      ],
+      // buttons: [
+      //   { text: 'Learn About Sustainability', href: '/sustainability' },
+      //   { text: 'Our Impact', href: '/sustainability', variant: 'outline' as const },
+      // ],
     },
     {
       title: 'World-Class Industrial Parks & Special Economic Zones',
       // subtitle: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
       // backgroundImage: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/odishaparma/pharma6.png',
-      buttons: [
-        { text: 'Industrial Solutions', href: '/business/industrial' },
-        { text: 'View Projects', href: '/projects', variant: 'outline' as const },
-      ],
+      // buttons: [
+      //   { text: 'Industrial Solutions', href: '/business/industrial' },
+      //   { text: 'View Projects', href: '/projects', variant: 'outline' as const },
+      // ],
     },
     {
       title: 'Powering Progress: Robust Infrastructure Solutions',
@@ -51,10 +51,10 @@ const Index = () => {
       // backgroundImage: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       backgroundImage: '/power/solar_power.png',
 
-      buttons: [
-        { text: 'Power Solutions', href: '/business/power' },
-        { text: 'Our Services', href: '/business/power', variant: 'outline' as const },
-      ],
+      // buttons: [
+      //   { text: 'Power Solutions', href: '/business/power' },
+      //   { text: 'Our Services', href: '/business/power', variant: 'outline' as const },
+      // ],
     },
   ];
 
@@ -92,58 +92,6 @@ const Index = () => {
       image: '/paper&pulp/pulp1.jpg'
     },
   ];
-
-  // const sustainabilityImages = [
-  //   {
-  //     title: 'Green Forest Conservation',
-  //     description: 'Protecting natural ecosystems through sustainable practices',
-  //     image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //     color: 'from-green-500 to-green-700',
-  //   },
-  //   {
-  //     title: 'Renewable Energy Solutions',
-  //     description: 'Harnessing clean energy for a sustainable future',
-  //     image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //     color: 'from-orange-500 to-orange-700',
-  //   },
-  //   {
-  //     title: 'Water Conservation',
-  //     description: 'Preserving our most precious resource',
-  //     image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //     color: 'from-blue-500 to-blue-700',
-  //   },
-  //   {
-  //     title: 'Sustainable Innovation',
-  //     description: 'Building tomorrow with responsible technology',
-  //     image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //     color: 'from-yellow-500 to-yellow-700',
-  //   },
-  // ];
-
-  // const projects = [
-  //   {
-  //     title: 'Hindupur Integrated Industrial Park',
-  //     location: 'Andhra Pradesh',
-  //     area: '1,800 acres',
-  //     description: 'Strategic gateway to South India\'s industrial growth with excellent connectivity and multi-sector ecosystem.',
-  //     image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-
-  //   },
-  //   {
-  //     title: 'Odisha Pharma City Project',
-  //     location: 'Odisha',
-  //     area: '1,800 acres',
-  //     description: 'State-of-the-art pharmaceutical and allied industrial park, creating 35,000+ jobs and attracting Rs 10,000 Crores investment.',
-  //     image: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //   },
-  //   {
-  //     title: 'West Godavari Pulp & Paper Mill',
-  //     location: 'Andhra Pradesh',
-  //     area: '271 acres',
-  //     description: 'Sustainable packaging solutions with advanced technology and 360° approach to environmental stewardship.',
-  //     image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //   },
-  // ];
 
   const stats = [
     { label: 'Years of Experience', value: '25+', icon: Award },

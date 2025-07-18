@@ -35,14 +35,6 @@ const OurTeam = () => {
       description: 'An ardent banker who served through all management cadres at State Bank of India, with extensive experience in Banking Operations, Inspection, Gold Banking, and Administration.',
     },
     {
-      name: 'Mr. Kankipati Vijaya Bhasker',
-      title: 'Project & Contract Management Expert',
-      education: 'B.Tech (Civil), M.Tech (Structures), MBA (Finance), LLB',
-      experience: '33 years in Project & Contract Management',
-      specialization: 'Construction Projects across Power, Infrastructure, Marine works, Telecommunications',
-      description: 'Extensive experience in both Public and Private Sectors, handling Construction Projects across Thermal/Hydro Power, Solar Power, Urban Infrastructure, Tunnels & Underground works.',
-    },
-    {
       name: 'Mr. L. Meher Kumar',
       title: 'Business Development & Marketing Leader',
       education: 'M.Com, MBA (Marketing & Finance)',
@@ -180,7 +172,7 @@ const OurTeam = () => {
             description="Our team culture is built on collaboration, innovation, and a shared commitment to sustainable development and excellence in execution."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200">
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
                 <Award className="w-7 h-7 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
@@ -202,7 +194,66 @@ const OurTeam = () => {
               <h3 className="text-lg font-semibold mb-3 text-yellow-700 group-hover:text-[gold] transition-all duration-200">Collaboration</h3>
               <p className="text-gray-600">Working together across disciplines to achieve exceptional results.</p>
             </div>
-          </div>
+          </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {/* Excellence Card */}
+  <div className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200">
+    <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 transition-all duration-200">
+      <img
+        src="/images/excel.png"  // ✅ Replace with your actual path or URL
+        alt="Excellence Icon"
+        className="w-10 h-10 object-cover rounded-md"
+      />
+    </div>
+    <h3 className="text-lg font-semibold mb-3 text-blue-900 transition-all duration-200">
+      Excellence
+    </h3>
+    <p className="text-gray-600">
+      Commitment to delivering the highest quality in every project and partnership.
+    </p>
+  </div>
+
+  {/* Innovation Card */}
+  <div
+    className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200"
+    style={{ animationDelay: '150ms' }}
+  >
+    <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4 transition-all duration-200">
+      <img
+        src="/images/inno.png"  // ✅ Replace with your actual path or URL
+        alt="Innovation Icon"
+        className="w-10 h-10 object-cover rounded-md"
+      />
+    </div>
+    <h3 className="text-lg font-semibold mb-3 text-green-900 transition-all duration-200">
+      Innovation
+    </h3>
+    <p className="text-gray-600">
+      Embracing new technologies and methodologies to stay ahead of industry trends.
+    </p>
+  </div>
+
+  {/* Collaboration Card */}
+  <div
+    className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200"
+    style={{ animationDelay: '300ms' }}
+  >
+    <div className="w-14 h-14 bg-blue-300 rounded-lg flex items-center justify-center mx-auto mb-4">
+      <img
+        src="/images/collab.png"  // ✅ Replace with your actual path or URL
+        alt="Collaboration Icon"
+        className="w-10 h-10 object-cover rounded-md"
+      />
+    </div>
+    <h3 className="text-lg font-semibold mb-3 text-yellow-700 transition-all duration-200">
+      Collaboration
+    </h3>
+    <p className="text-gray-600">
+      Working together across disciplines to achieve exceptional results.
+    </p>
+  </div>
+</div>
+
         </div>
       </section>
 

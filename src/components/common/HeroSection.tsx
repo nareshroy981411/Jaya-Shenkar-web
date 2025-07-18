@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface HeroSlide {
+  slides?: HeroSlide[];
   title: string;
   subtitle: string;
   description?: string;
@@ -12,6 +13,8 @@ interface HeroSlide {
     href: string;
     variant?: 'default' | 'outline';
   }>;
+  badgeBg?: string;
+  badgeText?: string;
 }
 
 interface HeroSectionProps {
@@ -28,6 +31,7 @@ interface HeroSectionProps {
   theme?: 'default' | 'industrial' | 'paper' | 'power';
   autoSlide?: boolean;
   slideInterval?: number;
+  badge?: React.ReactNode;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -99,9 +103,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
             style={{ backgroundImage: `url(${slide.backgroundImage})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-black/0" />
@@ -134,55 +137,56 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </>
       )}
 
-      {/* Content */}
-      <div className="relative z-10 section-padding w-full">
-        <div className="container-width">
-          <div className="max-w-4xl">
-            <div className="fade-in">
-              <h1 className="text-white mb-6 leading-tight">
-                {currentSlideData.title}
-              </h1>
-            </div>
-            
-            <div className="fade-in animation-delay-200">
-              <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-                {currentSlideData.subtitle}
+      {/* Content - Centered Badge and Title */}
+      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-[60vh]">
+        <div className="flex flex-col items-center justify-center w-full">
+          {/* Badge (subtitle) */}
+          {currentSlideData.subtitle && (
+            <span
+              className={`mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg ${currentSlideData.badgeBg || 'bg-blue-500'} ${currentSlideData.badgeText || 'text-white'}`}
+              style={{ letterSpacing: 1 }}
+            >
+              {currentSlideData.subtitle}
+            </span>
+          )}
+          {/* Title */}
+          {currentSlideData.title && (
+            <h1 className="text-white text-4xl md:text-5xl font-bold text-center mb-6 leading-tight drop-shadow-lg">
+              {currentSlideData.title}
+            </h1>
+          )}
+          {/* Description */}
+          {currentSlideData.description && (
+            <div className="fade-in animation-delay-400">
+              <p className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl text-center">
+                {currentSlideData.description}
               </p>
             </div>
-
-            {currentSlideData.description && (
-              <div className="fade-in animation-delay-400">
-                <p className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl">
-                  {currentSlideData.description}
-                </p>
-              </div>
-            )}
-
-            {currentSlideData.buttons && currentSlideData.buttons.length > 0 && (
-              <div className="fade-in animation-delay-600">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  {currentSlideData.buttons.map((button, index) => (
-                    <Button
-                      key={index}
-                      asChild
-                      size="lg"
-                      variant={button.variant || 'default'}
-                      className={`${
-                        button.variant === 'outline'
-                          ? 'border-white text-black hover:bg-white hover:text-primary'
-                          : 'bg-white text-primary hover:bg-white/90'
+          )}
+          {/* Buttons */}
+          {currentSlideData.buttons && currentSlideData.buttons.length > 0 && (
+            <div className="fade-in animation-delay-600">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {currentSlideData.buttons.map((button, index) => (
+                  <Button
+                    key={index}
+                    asChild
+                    size="lg"
+                    variant={button.variant || 'default'}
+                    className={`${button.variant === 'outline'
+                        ? 'border-white text-black hover:bg-white hover:text-primary'
+                        : 'bg-white text-primary hover:bg-white/90'
                       } px-8 py-6 text-lg font-semibold`}
-                    >
-                      <a href={button.href} className="flex items-center space-x-2">
-                        <span>{button.text}</span>
-                        <ArrowRight className="w-5 h-5" />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
+                  >
+                    <a href={button.href} className="flex items-center space-x-2">
+                      <span>{button.text}</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </Button>
+                ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -193,9 +197,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-white' : 'bg-white/50'
+                }`}
             />
           ))}
         </div>

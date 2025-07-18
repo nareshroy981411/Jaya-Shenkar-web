@@ -88,11 +88,11 @@ const Investors = () => {
       {/* Hero Section */}
       <HeroSection
         title="Investment Opportunities with Jaya Shankar Group"
-        subtitle="Partner with us in building India's sustainable industrial future through diversified, high-growth opportunities"
-        buttons={[
-          { text: 'Download Investor Deck', href: '#contact' },
-          { text: 'Schedule Meeting', href: '/contact', variant: 'outline' },
-        ]}
+        // subtitle="Partner with us in building India's sustainable industrial future through diversified, high-growth opportunities"
+        // buttons={[
+        //   { text: 'Download Investor Deck', href: '#contact' },
+        //   { text: 'Schedule Meeting', href: '/contact', variant: 'outline' },
+        // ]}
 
         backgroundImage= '/images2_jayashankar/image_17.webp'
         // backgroundImage="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
@@ -269,9 +269,9 @@ const Investors = () => {
               <Button asChild size="lg" variant="secondary">
                 <Link to="/contact">Schedule a Meeting</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary">
+              {/* <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary">
                 <Link to="#download">Download Investor Deck</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

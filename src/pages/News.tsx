@@ -34,10 +34,10 @@ const News = () => {
   ];
 
   const categories = [
-    { name: 'Press Releases', icon: FileText, count: 12 },
-    { name: 'Announcements', icon: Newspaper, count: 8 },
-    { name: 'In the News', icon: Newspaper, count: 15 },
-    { name: 'Blog/Articles', icon: PenTool, count: 6 }
+    { name: 'Press Releases', icon: FileText, count: 1 },
+    { name: 'Announcements', icon: Newspaper, count: 1 },
+    { name: 'In the News', icon: Newspaper, count: 1 },
+    { name: 'Blog/Articles', icon: PenTool, count: 1 }
   ];
 
   return (
@@ -48,11 +48,10 @@ const News = () => {
       {/* Hero Section */}
       <HeroSection
         title="News & Media: Stay Connected with Our Journey"
-        subtitle="Get the latest updates on our projects, achievements, and industry insights as we continue to shape India's industrial landscape."
+        // subtitle="Get the latest updates on our projects, achievements, and industry insights as we continue to shape India's industrial landscape."
         backgroundImage="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         buttons={[
           { text: 'Latest News', href: '#news' },
-          { text: 'Press Releases', href: '#press-releases', variant: 'outline' }
         ]}
       />
 
@@ -140,7 +139,7 @@ const News = () => {
                   <p className="text-muted-foreground text-sm mb-4">{news.summary}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{news.category}</span>
-                    <Button variant="ghost" size="sm">Read More</Button>
+                    {/* <Button variant="ghost" size="sm">Read More</Button> */}
                   </div>
                 </CardContent>
               </Card>

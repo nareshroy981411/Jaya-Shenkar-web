@@ -17,13 +17,6 @@ const About = () => {
       specialization: 'Infrastructure & Power Projects',
       description: 'A visionary first-generation entrepreneur and Certified Corporate Director with extensive experience in project management, engineering, and strategic development. Led numerous successful infrastructure and power projects across India.',
     },
-    {
-      name: 'Smt. T. L. S. Geetha Kameswari',
-      title: 'Co-Founder & Managing Director',
-      experience: '20+ Years PR & International Partnerships',
-      specialization: 'International Business Development',
-      description: 'A seasoned Public Relations expert with extensive experience in international partnerships, particularly in Singapore and Malaysia townships. Instrumental in building strategic alliances and driving global expansion initiatives.',
-    },
   ];
 
   const values = [
@@ -84,12 +77,12 @@ const About = () => {
       <HeroSection
         // title="About Jaya Shankar Group"
         title={
-          <span className="font-serif text-5xl md:text-6xl font-extrabold text-[#1a2233] drop-shadow-lg tracking-tight">
-            <span className="text-green-700 font-serif font-extrabold">ABOUT</span> JAYA SHANKAR GROUP
+          <span className="bg-[#0f215c] font-serif text-5xl md:text-6xl font-extrabold text-[gold] drop-shadow-lg tracking-tight">
+            <span className="text-[#fa8202] font-serif font-extrabold">ABOUT</span> JAYA SHANKAR GROUP
           </span>
         }
         // subtitle={<span className="font-serif text-xl md:text-2xl font-bold text-green-900">Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment</span>}
-        description={<span className="font-serif text-lg md:text-xl font-medium text-[#1a2233]">Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability.</span>}
+        // description={<span className="font-serif text-lg md:text-xl font-medium text-[#1a2233]">Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability.</span>}
         backgroundImage="/odishaparma/group.jpg"
       />
 
@@ -147,28 +140,29 @@ const About = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {founders.map((founder, index) => (
-              <Card key={index} className="group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl" style={{ animationDelay: `${index * 200}ms` }}>
-                <CardContent className="p-8">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
-                      <img
-                        // src={founder.image}
-                        // alt={founder.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-blue-900 group-hover:text-[] transition-all duration-200">{founder.name}</h3>
-                    <p className="text-green-700 font-medium mb-2">{founder.title}</p>
-                    <p className="text-sm text-gray-500 mb-4">{founder.experience}</p>
-                    <p className="text-sm font-medium text-blue-700 mb-4">{founder.specialization}</p>
-                    <p className="text-gray-600 leading-relaxed">{founder.description}</p>
+          <div className="flex justify-center">
+            <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
+              <CardContent className="p-8">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
+                    <img
+                      src={founders[0].image}
+                      // alt={founders[0].name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
+                    {founders[0].name}
+                  </h3>
+                  <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
+                  <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
+                  <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p>
+                  <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
         </div>
       </section>
 
@@ -208,7 +202,7 @@ const About = () => {
       </section>
 
       {/* Corporate Philosophy */}
-      <section className="section-padding bg-white text-primary-foreground">
+      <section className="section-padding bg-white text-primary-foreground ">
         <div className="container-width">
           <SectionHeader
             // title="Corporate Philosophy: For Planet & People"

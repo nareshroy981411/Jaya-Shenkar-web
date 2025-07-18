@@ -11,6 +11,7 @@ import StickyContactButton from '@/components/common/StickyContactButton';
 import { Building2, MapPin, Users, Award, Target, Zap, Leaf, Factory } from 'lucide-react';
 import { sub } from 'date-fns';
 import { useKeenSlider } from 'keen-slider/react'
+import { Badge } from "@/components/ui/badge";
 
 const imageUrls = [
   '/images/image.png',
@@ -67,15 +68,28 @@ const IndustrialPark = () => {
 
       {/* Hero Section */}
 
-      <HeroSection
+      {/* <HeroSection
         title={<span className="text- bg-[#4240a1] font-serif drop-shadow-lg" style={{}}>JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED</span>}
-        // subtitle={<span className="text- font-serif drop-shadow-md"style={{  }}>A Private Limited Company incorporated under the Companies Act, 1956, promoted by the Jaya Shankar Group. The company's primary objective is to establish industrial parks across India, with focus on pharmaceutical infrastructure and modern manufacturing facilities.</span>}
         backgroundImage="/carousels/ind.jpg"
-        buttons={[
-          { text: 'Explore Projects', href: '#projects' },
-          { text: 'For Businesses', href: '', variant: 'outline' },
-        ]}
-      />
+        
+      /> */}
+      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/carousels/ind.jpg)`,
+          }}
+        />
+        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
+          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
+            JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
+          </Badge>
+          <h1 className="font-serif drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-[orange] via-[orange] to-[orange] bg-clip-text text-transparent">
+            JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
+          </h1>
+        </div>
+      </section>
+
 
       {/* Overview Section */}
       <section className="section-padding">
@@ -148,7 +162,7 @@ const IndustrialPark = () => {
                   style={{ maxWidth: '500px' }}
                 />
               </div>
-              
+
             </div>
           </div>
         </div>
