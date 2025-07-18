@@ -87,22 +87,22 @@ const ChemicalsPackaging = () => {
     {
       title: 'Bamboo Pulp & Paper',
       subtitle: 'World-class manufacturing',
-      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394978354037260428/bamboo_pulp_and_paper.png?ex=6878c655&is=687774d5&hm=a9bed75af69f0fdedd269c94c0bf531ef2e5908b3c7fe443f1815e162a3d41fd&',
+      image: '/images/bamboo_pulp_and_paper.png',
       bgColor: 'bg-white', // use hover styling if needed
     }, {
       title: 'Social Forestry',
       subtitle: 'Partnerships with farmers',
-      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394980453554847847/social_forestry_with_farmers.png?ex=6878c849&is=687776c9&hm=9ddadf47fe6b331e14d72d38f54809c4270cc2da65d9894289035217e8adb594&',
+      image: '/images/social_forestry_with_farmers.png',
       bgColor: 'bg-white', // use hover styling if needed
     }, {
       title: 'Green Chemicals',
       subtitle: 'From biomass innovation',
-      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394979398297456723/green-chemicals.png?ex=6878c74e&is=687775ce&hm=d7020319ce7fbad7212a5b0ad89a3f0624cec189f7c07cc06c628a6a00beca15&',
+      image: '/images/green-chemicals.png',
       bgColor: 'bg-white', // use hover styling if needed
     }, {
       title: 'Eco Packaging',
       subtitle: 'Recyclable solutions',
-      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1394980913510744114/sustainable-packaging-paper-eco-friendly-disposable-tableware-plates-cups-bowls-recycling-signs.png?ex=6878c8b7&is=68777737&hm=8f799f7a663b09a132b00d806ec003b4f1741d3e3a5df41dcbaba8e76e3cc1dc&',
+      image: '/images/packaging-paper.png',
       bgColor: 'bg-white', // use hover styling if needed
     },
   ];
@@ -116,7 +116,7 @@ const ChemicalsPackaging = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(https://cdn.discordapp.com/attachments/1390617522109288519/1394981686118187110/Agroforestry.webp?ex=6878c96f&is=687777ef&hm=397323aecc1b79219c001ab872a81a661a504938ed8486837eb0239a95e7033d&)`
+            backgroundImage: `url(/images/Agroforestry.webp)`,
           }}
         />
         <div className="relative container mx-auto px-6 py-24 text-center mt-20">
@@ -159,51 +159,6 @@ const ChemicalsPackaging = () => {
       </section>
 
       {/* Vision Section */}
-      {/* <section className="py-20 bg-gray-50 bg-white ">
-        <div className="container mx-auto px-6bg-white ">
-          <div className="max-w-4xl mx-auto text-center mb-16 bg-white ">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">From Fossil to Forest</h2>
-            <p className="text-base sm:text-lg text-gray-600 mb-12 leading-relaxed">
-              We believe cellulose is the industrial material of the 21st century — replacing coal and oil 
-              with renewable, biodegradable alternatives.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <TreePine className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2 text-sm sm:text-base">Bamboo Pulp & Paper</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">World-class manufacturing</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2 text-sm sm:text-base">Social Forestry</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">Partnerships with farmers</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Factory className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2 text-sm sm:text-base">Green Chemicals</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">From biomass innovation</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Package className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2 text-sm sm:text-base">Eco Packaging</h3>
-                  <p className="text-xs sm:text-sm text-gray-600">Recyclable solutions</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -249,7 +204,7 @@ const ChemicalsPackaging = () => {
             </p>
           </div>
 
-          <section className="py-16 bg-white bg-[url('https://media.discordapp.net/attachments/1392436416709132388/1395017420459999354/Biodegrade.jpg?ex=6878eab7&is=68779937&hm=4340acf673e6af43fbbc91718b0d1c057e842cd43645b705f0955f7d8ddea41e&=&format=webp&width=1323&height=744')] bg-cover bg-center bg-no-repeat p-6 rounded-md opacity-">
+          <section className="py-16 bg-white bg-[url('/images/whatwe.jpg')] bg-cover bg-center bg-no-repeat">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
               {/* LEFT: Text Block with Background Image */}
@@ -300,7 +255,7 @@ const ChemicalsPackaging = () => {
             </div>
             <div className="relative">
               <img
-                src="https://cdn.discordapp.com/attachments/1392436416709132388/1395006076126101585/image.png?ex=6878e026&is=68778ea6&hm=0c6fcc220c4760f8af6dddebc9a3ce363fa8c367cf0a1e4951f39c61b944a6c8&"
+                src="/images/agro.png"
                 alt="Agroforestry farmers working"
                 className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
               />
