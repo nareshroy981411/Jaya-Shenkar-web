@@ -50,7 +50,7 @@ const Investors = () => {
       title: 'Hindupur Industrial Park',
       location: 'Andhra Pradesh',
       investment: '₹2,500 Crores',
-      description: 'Strategic gateway to South India with 1,800 acres development potential',
+      description: 'Strategic with 1,800 acres development potential',
       status: 'Phase 1 Development',
       theme: 'default' as const,
     },

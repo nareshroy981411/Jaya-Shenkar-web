@@ -17,13 +17,6 @@ const FoundersLeadership = () => {
       description: 'With decades of strategic project execution experience and a vision for nation-building, Shri Rao drives the group\'s strategic direction and growth. His leadership has attracted both domestic and global investments, positioning the company as a leader in infrastructure and energy.',
       icon: Crown,
     },
-    {
-      name: 'Smt. T. L. S. Geetha Kameswari',
-      title: 'Director – International Relations',
-      // image: 'https://images.unsplash.com/photo-1494790108755-2616b612b830?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      description: 'A Public Relations expert with 20 years of global collaboration experience, Smt. Geetha has played a vital role in opening cross-border channels, particularly with Singapore and Malaysia. Her efforts have brought international townships and strategic partnerships to fruition under initiatives like "Gateway to India."',
-      icon: Globe,
-    },
   ];
 
   return (
@@ -51,30 +44,28 @@ const FoundersLeadership = () => {
             description="Two visionary leaders whose combined expertise and shared commitment to excellence have shaped the group's success story."
             centered
           />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {founders.map((founder, index) => (
-              <Card key={index} className="group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl" style={{ animationDelay: `${index * 200}ms` }}>
-                <CardContent className="p-8">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
-                      <img
-                        src={founder.image}
-                        // alt={founder.name}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="flex justify-center">
+                      <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
+                        <CardContent className="p-8">
+                          <div className="flex flex-col items-center text-center">
+                            <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
+                              <img
+                                src={founders[0].image}
+                                // alt={founders[0].name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
+                              {founders[0].name}
+                            </h3>
+                            <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
+                            <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
+                            <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p>
+                            <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
-                      <founder.icon className="w-6 h-6 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-blue-900 group-hover:text-blue-600 transition-all duration-200">{founder.name}</h3>
-                    <p className="text-green-700 font-medium mb-6">{founder.title}</p>
-                    <p className="text-gray-600 leading-relaxed">{founder.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
