@@ -13,14 +13,14 @@ const FoundersLeadership = () => {
     {
       name: 'Shri T. Srinivasa Rao',
       title: 'Founder & Chairman',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      // image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
       description: 'With decades of strategic project execution experience and a vision for nation-building, Shri Rao drives the group\'s strategic direction and growth. His leadership has attracted both domestic and global investments, positioning the company as a leader in infrastructure and energy.',
       icon: Crown,
     },
     {
       name: 'Smt. T. L. S. Geetha Kameswari',
       title: 'Director – International Relations',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b830?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      // image: 'https://images.unsplash.com/photo-1494790108755-2616b612b830?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
       description: 'A Public Relations expert with 20 years of global collaboration experience, Smt. Geetha has played a vital role in opening cross-border channels, particularly with Singapore and Malaysia. Her efforts have brought international townships and strategic partnerships to fruition under initiatives like "Gateway to India."',
       icon: Globe,
     },
@@ -32,7 +32,7 @@ const FoundersLeadership = () => {
       <StickyContactButton />
 
       {/* Hero Section */}
-      
+
       <HeroSection
         title="Founders & Leadership"
         subtitle="Visionary Leaders Driving Excellence"
@@ -60,14 +60,14 @@ const FoundersLeadership = () => {
                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
                       <img
                         src={founder.image}
-                        alt={founder.name}
+                        // alt={founder.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
                       <founder.icon className="w-6 h-6 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2 text-blue-900 group-hover:text-[gold] transition-all duration-200">{founder.name}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-blue-900 group-hover:text-blue-600 transition-all duration-200">{founder.name}</h3>
                     <p className="text-green-700 font-medium mb-6">{founder.title}</p>
                     <p className="text-gray-600 leading-relaxed">{founder.description}</p>
                   </div>
@@ -79,7 +79,7 @@ const FoundersLeadership = () => {
       </section>
 
       {/* Senior Advisory Team */}
-      <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
+      {/* <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container-width">
           <SectionHeader
             subtitle="Senior Advisory Team"
@@ -89,8 +89,8 @@ const FoundersLeadership = () => {
           />
 
           <div className="max-w-4xl mx-auto">
-            <Card className="fade-in group border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
-              <CardContent className="p-8">
+            <div className="fade-in group border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
+              <div className="p-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[gold]/20 transition-all duration-200">
                     <Users className="w-8 h-8 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
@@ -121,11 +121,52 @@ const FoundersLeadership = () => {
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div className="container-width">
+          <SectionHeader
+            subtitle="Senior Advisory Team"
+            title="Collective Expertise"
+            description="The leadership is supported by a team of veteran professionals from pharma, bulk drugs, infrastructure, and energy."
+            centered={false}
+          />
+
+          <div className="flex flex-col md:flex-row items-center gap-10 mt-10">
+            {/* Left Side: Static Image Carousel */}
+            <div className="w-full md:w-1/2">
+              <div className="relative w-full h-80 overflow-hidden rounded-lg border border-gray-300 flex">
+                <img
+                  src='/images/leader.png'
+                  alt=''
+                  className="w-full h-full object-cover flex-shrink-0"
+                />
+              </div>
+            </div>
+
+            {/* Right Side: Simple Text Content */}
+            <div className="w-full md:w-1/2">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Veteran Leadership Team</h3>
+                <p className=" text-bold leading-relaxed">
+                  Our senior advisory team brings over 30 years of experience in pharmaceuticals,
+                  bulk drugs, infrastructure, and energy—delivering excellence and strategic insight
+                  across diverse sectors.
+                </p>
+
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• Project Development</li>
+                  <li>• Regulatory Compliance</li>
+                  <li>• Global Investment Alignment</li>
+                  <li>• Strategic Planning</li>
+                </ul>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Leadership Philosophy */}
       <section className="section-padding bg-gradient-to-br from-blue-50 via-white to-green-50">
@@ -139,23 +180,23 @@ const FoundersLeadership = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200">
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
-                <Crown className="w-7 h-7 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
+                <Crown className="w-7 h-7 text-blue-700 group-hover:text-[] transition-all duration-200" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-blue-900 group-hover:text-[gold] transition-all duration-200">Strategic Vision</h3>
+              <h3 className="text-lg font-semibold mb-3 text-blue-900 group-hover:text-[] transition-all duration-200">Strategic Vision</h3>
               <p className="text-gray-600">Long-term thinking that balances growth with sustainability and social responsibility.</p>
             </div>
             <div className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200" style={{ animationDelay: '150ms' }}>
               <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
-                <Globe className="w-7 h-7 text-green-700 group-hover:text-[gold] transition-all duration-200" />
+                <Globe className="w-7 h-7 text-green-700 group-hover:text-[] transition-all duration-200" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-green-900 group-hover:text-[gold] transition-all duration-200">Global Perspective</h3>
+              <h3 className="text-lg font-semibold mb-3 text-green-900 group-hover:text-[] transition-all duration-200">Global Perspective</h3>
               <p className="text-gray-600">International partnerships and collaborations that bring world-class standards to India.</p>
             </div>
             <div className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200" style={{ animationDelay: '300ms' }}>
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-[gold]/20 transition-all duration-200">
-                <Users className="w-7 h-7 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
+                <Users className="w-7 h-7 text-blue-700 group-hover:text-[] transition-all duration-200" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-blue-900 group-hover:text-[gold] transition-all duration-200">Collective Strength</h3>
+              <h3 className="text-lg font-semibold mb-3 text-blue-900 group-hover:text-[] transition-all duration-200">Collective Strength</h3>
               <p className="text-gray-600">Leveraging diverse expertise to maintain our competitive edge in complex projects.</p>
             </div>
           </div>

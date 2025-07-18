@@ -9,7 +9,7 @@ import StickyContactButton from '@/components/common/StickyContactButton';
 const sections = [
   {
     title: 'Our Vision',
-    image: '/carousels/assam1.jpg',
+    image: '/images/assam1.png',
     content: [
       'Transition the world from hydrocarbon-based materials to sustainable, bio-based solutions.',
       'Agroforestry and bamboo are the cornerstones of a circular, regenerative, and inclusive bio-economy.',
@@ -17,7 +17,7 @@ const sections = [
   },
   {
     title: 'Our Mission',
-    image: '/carousels/assam2.jpg',
+    image: '/images/assam2.png',
     content: [
       'Build India’s most advanced and eco-friendly pulp & paper production ecosystem.',
       'Uplift rural economies, enhance soil health, and mitigate climate change.',
@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: 'The Next Industrial Revolution is Bio-Based',
-    image: '/carousels/assam3.jpg',
+    image: '/images/assam3.png',
     content: [
       'From: Coal (19th century), Oil (20th century)',
       'To: Cellulose & Biofibres (21st century)',
@@ -34,7 +34,7 @@ const sections = [
   },
   {
     title: 'Why Agroforestry?',
-    image: '/carousels/assam4.jpg',
+    image: '/images/assam4.png',
     content: [
       'Protection against topsoil loss and soil fertility regeneration.',
       'Livestock protection, fodder security, and product diversification.',
@@ -43,7 +43,7 @@ const sections = [
   },
   {
     title: 'Our Agroforestry Model',
-    image: '/carousels/assam5.jpg',
+    image: '/images/assam5.png',
     content: [
       'Intentional: Trees, crops, and livestock combined for optimal yields.',
       'Integrated: Managed horizontally and vertically for sustainability.',
@@ -51,9 +51,9 @@ const sections = [
       'Intensive: Tech-enabled resource optimization.',
     ],
   },
-  {
+  { 
     title: 'The Assam Advantage',
-    image: '/carousels/assam6.jpg',
+    image: '/images/assam6.png',
     content: [
       'Ideal climate and soil for bamboo and pulpwood.',
       'Connectivity to markets across India and Southeast Asia.',
@@ -62,7 +62,7 @@ const sections = [
   },
   {
     title: 'Investment Blueprint',
-    image: '/carousels/assam7.jpg',
+    image: '/images/assam7.png',
     content: [
       'Phase 1: ₹3,000 Cr — Pulp & Paper (300K T/year pulp, 150K T/year paper, 80K T/year packaging).',
       'Phase 2: ₹500 Cr — Agroforestry and bamboo cultivation.',
@@ -72,7 +72,7 @@ const sections = [
   },
   {
     title: 'India’s Growing Paper Demand',
-    image: '/carousels/assam8.jpg',
+    image: '/images/assam8.png',
     content: [
       '7% annual growth expected.',
       '36M tons by 2030 — driven by e-commerce and hygiene sectors.',
@@ -81,7 +81,7 @@ const sections = [
   },
   {
     title: 'Circular. Sustainable. Inclusive.',
-    image: '/carousels/assam9.jpg',
+    image: '/images/assam9.png',
     content: [
       'Beyond greenwashing: social forestry with smallholder farmers.',
       'Traceable systems ensure justice, ecological balance, and shared profits.',
@@ -118,7 +118,7 @@ const AssamAgroforestryProject = () => {
               style={{ backgroundImage: `url(${section.image})` }}
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60 z-0" />
+              <div className="absolute inset-0 bg-black/30 z-0" />
               <div className="relative z-10 text-white text-center px-4 max-w-3xl space-y-4">
                 <h3 className="text-2xl md:text-3xl font-bold tracking-wide font-serif">
                   {section.title}

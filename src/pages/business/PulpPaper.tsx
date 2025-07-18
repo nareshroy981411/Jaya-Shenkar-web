@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,34 +9,72 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
 import { Leaf, Recycle, Factory, Droplets, Shield, Package } from 'lucide-react';
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
 
+const imageUrls = [
+  "/images/image3.jpg",
+  "/images/image4.webp",
+  "/images/image3.jpg",
+]
+
+const imageData = [
+  {
+    image: "/images/image5.png",
+    subtitle: "Paper Machines",
+    description: "Two 4.26m trim, 1,200 m/min. 1,200 t/day Carton Board"
+  },
+  {
+    image: "/images/pulping.png",
+    subtitle: "Pulping Technology",
+    description: " PRC-APMP Pulping 600 t/day eucalyptus pulping"
+  },
+  {
+    image: "/images/image6.png",
+    subtitle: "Power Generation ",
+    description: "Two 50 MWe Steam Turbines 100% process thermal energy"
+  }
+];
 const PulpPaper = () => {
-  const productCategories = [
+  const [sliderRef, slider] = useKeenSlider({
+    loop: true,
+    mode: 'snap',
+    slides: { perView: 1, spacing: 15 }
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slider.current?.next();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slider]);
+
+  const productCategories = [ 
     {
       title: 'Liquid Packaging',
       description: 'Premium solutions from fresh virgin fiber for dairy, fruit juices, and ready-to-drink beverages.',
       applications: ['Dairy Products', 'Fruit Juices', 'Ready-to-Drink Beverages'],
-      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394684231581569084/WhatsApp_Image_2025-07-15_at_14.50.57_3e1bbe2d.jpg?ex=687905e8&is=6877b468&hm=351b80f9d2d0f610f7156fe0b274e2a434a5250eb72303bd041d593211014d8c&=&format=webp&width=1116&height=744'
+      image: '/images/liquid.jpg'
     },
     {
       title: 'Pharma & Healthcare Packaging',
       description: '100% Virgin Fiber carton board with excellent printing and embellishing capabilities.',
       applications: ['Pharmaceutical Products', 'Medical Devices', 'Healthcare Supplies'],
       // image: '/images/image.png',
-      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394684676219863152/WhatsApp_Image_2025-07-15_at_14.50.58_a0aabd39.jpg?ex=68790652&is=6877b4d2&hm=6fe2ff93261dcbc952d723673c418433b9c40c1538740e442b2426d0702c93d2&=&format=webp&width=1322&height=744'
+      image: '/images/health.jpg'
 
     },
     {
       title: 'Food Service Solutions',
       description: 'Cup Form Board and Tray Form Board as sustainable alternatives to plastic.',
       applications: ['Hot/Cold Beverages', 'Ice Creams', 'Frozen Food Packaging'],
-      image: 'https://media.discordapp.net/attachments/1390617522109288519/1394685522374561932/WhatsApp_Image_2025-07-15_at_14.50.59_86febbb6.jpg?ex=6879071c&is=6877b59c&hm=891f27e1dfb7b4ea25fc6b8c95733f6f8e67d1fe914728bfa99deff06cb86feb&=&format=webp&width=1365&height=744'
+      image: '/images/food.jpg'
     },
     {
       title: 'Cosmetics & Personal Care',
       description: 'Premium high graphic carton board with outstanding surface properties.',
       applications: ['Cosmetic Products', 'Personal Care Items', 'Premium Packaging'],
-      image: 'https://cdn.discordapp.com/attachments/1390617522109288519/1395083153843945512/Untitled_design_2.png?ex=687927ef&is=6877d66f&hm=f8f12447ad739167baa572b62f12f441403b856b513c0a2dac6660a7afd84e81'
+      image: '/images/cosmotics.png'
     }
   ];
 
@@ -44,22 +82,22 @@ const PulpPaper = () => {
     {
       title: 'Zero Liquid Discharge',
       description: 'Advanced ZLD system ensuring no water contamination',
-      icon: Droplets
+      icon: '/images/zeroliquid.png'
     },
     {
       title: 'Circular Economy',
       description: 'Reduce, reuse, recycle principles in all operations',
-      icon: Recycle
+      icon: '/images/cirrcular.png'
     },
     {
       title: 'Virgin Fiber Focus',
       description: '100% virgin fiber for premium quality products',
-      icon: Leaf
+      icon: '/images/fiber.png'
     },
     {
       title: 'Water Stewardship',
       description: '10 m³/t fresh water consumption with advanced treatment',
-      icon: Shield
+      icon: '/images/water.png'
     }
   ];
 
@@ -132,37 +170,40 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Market Transformation"
-            // title="From Graphic Papers to Sustainable Packaging"
             title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">From Graphic Papers to Sustainable Packaging</span>}
-            description="The global shift from single-use plastics to sustainable paper packaging presents unprecedented opportunities for growth and environmental impact."
-            theme="paper"
+            theme="industrial"
             centered
           />
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+            {/* Image Left */}
+            <div className="relative order-1 lg:order-none">
+              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden">
+                {imageUrls.map((src, idx) => (
+                  <div className="keen-slider__slide" key={idx}>
+                    <img src={src} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <button onClick={() => slider.current?.prev()} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8592;</button>
+              <button onClick={() => slider.current?.next()} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8594;</button>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <Card className="border-green-200 bg-blue-50">
-              <CardContent className="p-6">
-                <h4 className="text-lg font-semibold text-[hsl(var(--paper-primary))] mb-3">Declining Demand</h4>
-                <p className="text-black-600 mb-4">Graphic Papers facing reduced market demand</p>
-                <ul className="space-y-2 text-sm text-black-600">
-                  <li>• Digital transformation impact</li>
-                  <li>• Reduced print media consumption</li>
-                  <li>• Shift to digital alternatives</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Text Right */}
+            <div className="px-6 order-2 lg:order-none">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+                From Paper Decline to Packaging Growth
 
-            <Card className="border-green-200 bg-blue-50">
-              <CardContent className="p-6">
-                <h4 className="text-lg font-semibold text-[hsl(var(--paper-primary))] mb-3">Strong Growth</h4>
-                <p className="text-black mb-4">Packaging sector experiencing robust expansion</p>
-                <ul className="space-y-2 text-sm text-black">
-                  <li>• Plastic ban regulations</li>
-                  <li>• Consumer preference for sustainability</li>
-                  <li>• E-commerce packaging demand</li>
-                </ul>
-              </CardContent>
-            </Card>
+              </h2>
+              <div className="border-t border-gray-400 my-6 w-full max-w-md"></div>
+              <ul className="space-y-2 text-sm text-black-600">
+                <li>Digital transformation is reducing demand for graphic papers</li>
+                <li>Print media consumption continues to decline</li>
+                <li>Digital alternatives are replacing traditional paper use</li>
+                <li>Plastic ban regulations are fueling demand for paper packaging</li>
+                <li>Consumers prefer sustainable packaging over single-use plastics</li>
+                <li>E-commerce growth is driving increased need for eco-friendly packaging solutions</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -222,43 +263,40 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Manufacturing Excellence"
-            // title="State-of-the-Art Technology"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">State-of-the-Art Technology</span>}
+            title={
+              <span className="text-lg md:text-xl lg:text-2xl font-bold block">
+                State-of-the-Art Technology
+              </span>
+            }
             description="Our advanced manufacturing setup ensures optimal efficiency, quality, and environmental compliance."
             theme="paper"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Factory className="w-12 h-12 text-[hsl(var(--paper-accent))] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-[hsl(var(--paper-primary))] mb-2">Paper Machines</h4>
-                <p className="text-sm text-muted-foreground mb-2">Two 4.26m trim, 1,200 m/min</p>
-                <p className="text-sm text-muted-foreground">1,200 t/day Carton Board</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Recycle className="w-12 h-12 text-[hsl(var(--paper-accent))] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-[hsl(var(--paper-primary))] mb-2">Pulping Technology</h4>
-                <p className="text-sm text-muted-foreground mb-2">PRC-APMP Pulping</p>
-                <p className="text-sm text-muted-foreground">600 t/day eucalyptus pulping</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Shield className="w-12 h-12 text-[hsl(var(--paper-accent))] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-[hsl(var(--paper-primary))] mb-2">Power Generation</h4>
-                <p className="text-sm text-muted-foreground mb-2">Two 50 MWe Steam Turbines</p>
-                <p className="text-sm text-muted-foreground">100% process thermal energy</p>
-              </CardContent>
-            </Card>
+          {/* Cards Grid - Full Width of container */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+            {imageData.map((item, index) => (
+              <div
+                key={index}
+                className="group relative w-full h-80 rounded-2xl shadow-card hover:shadow-2xl overflow-hidden bg-white transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[gold]"
+              >
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover rounded-sm"
+                    alt={item.subtitle}
+                  />
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-48 w-64 h-28 bg-sky-300 border-2 border-black rounded-md flex flex-col items-center justify-center text-center px-2 text-sm font-medium transition-colors duration-300 group-hover:bg-yellow-300">
+                  <p className="text-black text-lg group-hover:text-gray-800 font-bold">
+                    {item.subtitle}
+                  </p>
+                  <p className="text-md text-gray-700 mt-1">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Sustainability */}
       <section id="sustainability" className="section-padding">
@@ -274,42 +312,60 @@ const PulpPaper = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sustainabilityFeatures.map((feature, index) => (
-              <Card key={index} className="text-center hover-lift">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-[hsl(var(--paper-accent))] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">{feature.title}</h4>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                key={index}
+                className="text-center bg-gradient-to-br from-blue-100 via-blue-50 to-green-100 rounded-lg shadow-md p-6 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                  <img
+                    src={feature.icon}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h4 className="font-semibold mb-2">{feature.title}</h4>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <Card className="bg-[hsl(var(--paper-light))] border-[hsl(var(--paper-accent))]">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-[hsl(var(--paper-primary))] mb-4">New Barrier Solutions</h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Developing advanced dispersion technology and enhanced recyclability solutions to replace single-use plastics
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                  <div>
-                    <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">Dispersion Technology</h5>
-                    <p className="text-muted-foreground">Liquid/grease-resistant Aqua coatings</p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">Enhanced Recyclability</h5>
-                    <p className="text-muted-foreground">Fibers recovered, increased recycling value</p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">R&D Innovation</h5>
-                    <p className="text-muted-foreground">Newer dispersion coated barriers</p>
-                  </div>
+            <div className="p-8">
+              <h3 className="text-2xl font-semibold text-[hsl(var(--paper-primary))] mb-4">
+                New Barrier Solutions
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Developing advanced dispersion technology and enhanced recyclability solutions to replace single-use plastics
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div>
+                  <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">
+                    Dispersion Technology
+                  </h5>
+                  <p className="text-muted-foreground">
+                    Liquid/grease-resistant Aqua coatings
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">
+                    Enhanced Recyclability
+                  </h5>
+                  <p className="text-muted-foreground">
+                    Fibers recovered, increased recycling value
+                  </p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-[hsl(var(--paper-primary))] mb-2">
+                    R&D Innovation
+                  </h5>
+                  <p className="text-muted-foreground">
+                    Newer dispersion coated barriers
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 

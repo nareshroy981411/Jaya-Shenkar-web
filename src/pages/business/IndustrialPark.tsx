@@ -168,7 +168,7 @@ const IndustrialPark = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="hover-lift ">
+              <Card key={index} className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-bold text-blue-800 mb-3">{project.subtitle}</h2>
                   <h3 className="text-xl font-semibold text-[hsl(var(--industrial-primary))] mb-3">{project.title}</h3>

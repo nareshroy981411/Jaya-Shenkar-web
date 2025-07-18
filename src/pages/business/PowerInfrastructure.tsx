@@ -337,7 +337,7 @@ const PowerInfrastructure = () => {
       title: 'Solar Power Solutions',
       description: 'Cutting-edge solar photovoltaic systems providing clean, renewable energy with maximum efficiency and minimal environmental impact.',
       icon: Lightbulb,
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/power/solar_power.png',
       features: ['High-Efficiency Panels', 'Smart Grid Integration', 'Battery Storage Systems', 'Remote Monitoring'],
       stats: { capacity: '100 MW', efficiency: '22%', lifespan: '25 Years' }
     }
@@ -428,7 +428,7 @@ const PowerInfrastructure = () => {
       description: 'Average uptime across all power generation facilities',
       icon: Award,
       color: 'text-purple-600',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: '/images/excellence.png'
     },
     {
       title: 'Environmental Impact',
@@ -436,7 +436,7 @@ const PowerInfrastructure = () => {
       description: 'Reduction in carbon footprint through renewable integration',
       icon: Globe,
       color: 'text-orange-600',
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0A7k9lnv8ucyrdY3GcWuK8fDlu2CuyC50oFQbWkr4uJMlUsqsr6qz79d9iWld7ot73o&usqp=CAU'
     }
   ];
 
@@ -464,7 +464,7 @@ const PowerInfrastructure = () => {
   const heroSlides = [
     {
       title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      // subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
       backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       theme: "power",
       buttons: [
@@ -474,7 +474,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      // subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
       backgroundImage: "/power/solar_power.png",
       theme: "power",
       buttons: [
@@ -484,7 +484,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      // subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
       backgroundImage: "/power/tunnel-1.png",
       theme: "power",
       buttons: [
@@ -494,8 +494,8 @@ const PowerInfrastructure = () => {
     },
     {
       title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
-      backgroundImage: "https://images.unsplash.com/photo-1668133619536-3edb00f3a9fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      // subtitle: "Developing, operating, and maintaining large-scale thermal and solar power facilities, roads, underground tunnels, and critical industrial infrastructure.",
+      backgroundImage: "/power/tunnel.png",
       theme: "power",
       buttons: [
         { text: 'Our Solutions', href: '#solutions' },
@@ -536,12 +536,6 @@ const PowerInfrastructure = () => {
                       alt={solution.title}
                       className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                        <solution.icon className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -577,9 +571,9 @@ const PowerInfrastructure = () => {
       <section id="boot-model" className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <div className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
               BOOT Model Excellence
-            </h2>
+            </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our BOOT model ensures efficient project delivery, optimal operations, and seamless knowledge transfer while maintaining the highest standards of compliance and performance.
             </p>
@@ -595,11 +589,6 @@ const PowerInfrastructure = () => {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className={`w-12 h-12 ${phase.color} rounded-xl flex items-center justify-center`}>
-                      <phase.icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
                 </div>
                 <CardContent className="p-6 text-center">
                   <h4 className="text-2xl font-bold text-gray-900 mb-3">{phase.phase}</h4>
@@ -608,35 +597,43 @@ const PowerInfrastructure = () => {
               </Card>
             ))}
           </div>
-
-          <Card className="bg-gradient-to-br from-gray-50 to-white border-2 border-blue-200">
-            <CardContent className="p-12">
+            <div className="">
               <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Financial & Legal Framework</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+                <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-blue-600" />
+                    <img
+                      src="/images/legal.png"
+                      alt="Legal Compliance Icon"
+                      className="object-cover "
+                    />
                   </div>
                   <h5 className="text-xl font-semibold text-gray-900 mb-3">Legal Compliance</h5>
                   <p className="text-gray-600">Operations under Indian Companies Act, 2013 with full statutory compliance</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="w-8 h-8 text-green-600" />
+                    <img
+                      src="/images/revenue.png"
+                      alt="Legal Compliance Icon"
+                      className="object-cover "
+                    />
                   </div>
                   <h5 className="text-xl font-semibold text-gray-900 mb-3">Revenue Model</h5>
                   <p className="text-gray-600">Revenue generation through Power Purchase Agreements (PPAs)</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-purple-600" />
-                  </div>
+                    <img
+                      src="/images/period.png"
+                      alt="Legal Compliance Icon"
+                      className="object-cover"
+                    />                  </div>
                   <h5 className="text-xl font-semibold text-gray-900 mb-3">Concession Period</h5>
                   <p className="text-gray-600">15-30 years operational period before ownership transfer</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
         </div>
       </section>
 
@@ -654,8 +651,8 @@ const PowerInfrastructure = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                <div className="relative h-32 overflow-hidden">
+              <div key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={achievement.image}
                     alt={achievement.title}
@@ -663,42 +660,41 @@ const PowerInfrastructure = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <CardContent className="p-6 text-center">
-                  <div className={`w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <achievement.icon className={`w-8 h-8 ${achievement.color}`} />
-                  </div>
+                <div className="p-6 text-center">
                   <div className="text-4xl font-bold text-gray-900 mb-2">{achievement.value}</div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3">{achievement.title}</h4>
                   <p className="text-gray-600">{achievement.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
+              
+              
             ))}
           </div>
         </div>
       </section>
 
       {/* Technical Specifications */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white bg-[url('/images/tech2.jpg')] bg-cover bg-center bg-no-repeat">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
               State-of-the-Art Technology & Specifications
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-900 max-w-3xl mx-auto">
               Our power plants utilize the latest technology to ensure maximum efficiency, environmental compliance, and operational safety.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {technicalSpecs.map((spec, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <Card key={index} className="text-center bg-gray hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 ${spec.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                     <spec.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{spec.value}</div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">{spec.title}</h4>
-                  <p className="text-gray-600">{spec.description}</p>
+                  <div className="text-3xl font-bold text-[#F3EC1F] mb-2">{spec.value}</div>
+                  <h4 className="text-xl font-semibold text-white mb-3">{spec.title}</h4>
+                  <p className="text-gray-900 font-semibold">{spec.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -803,7 +799,7 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* Services CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-300 to-blue-400 text-white">
+      <section className="py-20 bg-[#f0b429] text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Power Your Future?

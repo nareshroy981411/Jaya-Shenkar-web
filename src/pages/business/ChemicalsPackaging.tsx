@@ -48,36 +48,36 @@ const ChemicalsPackaging = () => {
 
   const specifications = [
     {
-      icon: <BarChart2 className="w-6 h-6 text-teal-700" />,
-      title: "Bamboo Kraft Pulp Capacity",
+      icon: '/images/craft.png',
+      title: "Bamboo Craft Pulp Capacity",
       description:
         "300,000 TPA",
     },
     {
-      icon: <Users className="w-6 h-6 text-teal-700" />,
+      icon: '/images/printing.png',
       title: "Printing & Writing Paper",
       description:
         "150,000 TPA",
     },
     {
-      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395013468553220146/360_F_222830168_P433a5wkjNgt2yFg2CmuwctGXtGhOkpd.png?ex=6878e709&is=68779589&hm=bc4e859eec94391a5ed9db27d297ff095e9cd1deb3b7d2ae005fe29102003962&",
+      icon: "/images/packaging.png",
       title: "Specialty Packaging Paper",
       description:
         "80,000 TPA",
     },
     {
-      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395014124395823165/2dab826041563ebcfc472d93f262cab6.png?ex=6878e7a5&is=68779625&hm=0e5041eb292f1fdc148b8638b40d9c1e5bf127345fde1479a7775f6e2fb8c453&",
+      icon: "/images/Manufacturing.png",
       title: "Manufacturing Area",
       description:
         "500-600 acres",
     }, {
-      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1395012488961200128/5161269.png?ex=6878e61f&is=6877949f&hm=12503ec57e971b065bfb7e745d643cf68cc6c39c3343db641eecaf458ca83560&",
+      icon: "/images/marketsize.png",
       title: "Target Market Size",
       description:
         "36M tons by 2030",
     },
     {
-      icon: "https://cdn.discordapp.com/attachments/1390617522109288519/1394988123787755642/3281306.png?ex=6878cf6e&is=68777dee&hm=8d55d3aa13be3e7fbd3a1f6278acd5881a6602ed4cf51c71655fa6a747ce5a02&",
+      icon: "/images/growth.png",
       title: "Market Growth Rate",
       description:
         "7% CAGR",
@@ -119,10 +119,10 @@ const ChemicalsPackaging = () => {
             backgroundImage: `url(https://cdn.discordapp.com/attachments/1390617522109288519/1394981686118187110/Agroforestry.webp?ex=6878c96f&is=687777ef&hm=397323aecc1b79219c001ab872a81a661a504938ed8486837eb0239a95e7033d&)`
           }}
         />
-        <div className="relative container mx-auto px-6 py-24 text-center">
-          {/* <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20 text-xs sm:text-sm">
+        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
+          <Badge variant="secondary" className="mb-6 bg-blue-800 text-white border-white/20 hover:bg-blue-500 sm:text-sm">
             JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED
-          </Badge> */}
+          </Badge>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
             Building India's Bio-Based Future from Assam
           </h1>
@@ -149,7 +149,7 @@ const ChemicalsPackaging = () => {
             </div>
             <div className="relative">
               <img
-                src="https://media.discordapp.net/attachments/1390617522109288519/1394966631381205072/Assam_1.jpg?ex=6878bb6a&is=687769ea&hm=c7a4373f527987492beeb2c47ce2e90c012c8fe462bc98589e389ac8beac706e&=&format=webp&width=1104&height=828"
+                src="/images/aboutCP.png"
                 alt="Bio-refinery facility"
                 className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
               />
@@ -361,14 +361,14 @@ const ChemicalsPackaging = () => {
                   <img
                     src={item.icon}
                     alt={item.title}
-                    className="w-6 h-6 text-teal-700"
+                    className="w-10 h-10 text-teal-700"
                   />
                 </div>
 
                 {/* Text Content */}
                 <div>
                   <h3 className="text-base font-semibold text-blue-900 mb-1">
-                    {item.title.toLowerCase()}
+                    {item.title}
                   </h3>
                   <p className="text-sm text-gray-700">{item.description}</p>
                 </div>

@@ -268,13 +268,12 @@ const Index = () => {
             description="Three core companies working in synergy to create comprehensive industrial ecosystems that benefit businesses, communities, and the environment."
             centered
           />
-
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {companies.map((company, index) => (
               <div
                 key={index}
                 className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
-                onClick={() => window.location.assign(company.link)}
+                onClick={() => navigate(company.link)}
                 tabIndex={0}
                 role="button"
                 aria-label={`View details for ${company.title}`}
@@ -286,6 +285,7 @@ const Index = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
+
                 <div className="flex-1 flex flex-col p-8">
                   <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
                     {company.title}
@@ -293,52 +293,14 @@ const Index = () => {
                   <p className="text-gray-600 mb-6 leading-relaxed text-base min-h-[48px]">
                     {company.short}
                   </p>
-                  <div className="mt-auto">
-                    <Link
-                      to={company.link}
-                      className="inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg"
-                    >
-                      View More
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
-                    </Link>
+                  <div className="mt-auto inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg w-fit">
+                    View More
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
                   </div>
                 </div>
               </div>
             ))}
-          </div> */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      {companies.map((company, index) => (
-        <div
-          key={index}
-          className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
-          onClick={() => navigate(company.link)}
-          tabIndex={0}
-          role="button"
-          aria-label={`View details for ${company.title}`}
-        >
-          <div className="relative h-48 overflow-hidden">
-            <img
-              src={company.image}
-              alt={company.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
           </div>
-
-          <div className="flex-1 flex flex-col p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
-              {company.title}
-            </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed text-base min-h-[48px]">
-              {company.short}
-            </p>
-            <div className="mt-auto inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg w-fit">
-              View More
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
         </div>
       </section>
 

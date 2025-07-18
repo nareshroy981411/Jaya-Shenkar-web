@@ -9,7 +9,8 @@ import { Target, Globe, Users, Leaf, Award, Building } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
 
 const VisionMission = () => {
-  const missionPoints = [
+
+  const solutions = [
     {
       icon: Building,
       title: 'World-Class Infrastructure',
@@ -42,12 +43,12 @@ const VisionMission = () => {
       <Header />
       <StickyContactButton />
 
-      
+
       <HeroSection
         title="Vision & Mission"
         subtitle="Guiding Principles for Sustainable Growth"
         description="Our vision and mission statements define our commitment to transformative industrial development and environmental stewardship."
-        backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="/images/vision.jpg"
       />
 
       <AboutNavigation />
@@ -62,7 +63,7 @@ const VisionMission = () => {
               </div>
               <h2 className="text-3xl font-bold mb-6 text-blue-900">Our Vision</h2>
               <p className="text-xl text-gray-700 leading-relaxed">
-                To be a transformative force in industrial development and sustainability, building 
+                To be a transformative force in industrial development and sustainability, building
                 ecosystems that empower industries, communities, and the environment alike.
               </p>
             </div>
@@ -71,7 +72,8 @@ const VisionMission = () => {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
+
+      <section className="section-padding bg-white ">
         <div className="container-width">
           <SectionHeader
             subtitle="Our Mission"
@@ -80,19 +82,40 @@ const VisionMission = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {missionPoints.map((point, index) => (
-              <Card key={index} className="group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl" style={{ animationDelay: `${index * 150}ms` }}>
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[gold]/20 transition-all duration-200">
-                    <point.icon className="w-7 h-7 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
+          <section className="py-16 bg-white bg-[url('/images/assam2.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md opacity-">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+              {/* LEFT: Text Block with Background Image */}
+              <div className="">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-blue-900">
+                  Driving Sustainable, Inclusive, and Innovative Growth</h2>
+                <p className="mb-4 font-semibold">
+                  Empowering communities, protecting the environment, and building world-class infrastructure through collaboration and innovation.                </p>
+                <ul className="list-disc list-inside space-y-2 font-semibold">
+                  <li>Building SEZs, power plants, and factories</li>
+                  <li>Partnering for new ideas and technology.</li>
+                  <li>Caring for the environment through sustainable methods.</li>
+                  <li>Creating jobs and supporting communities.</li>
+                </ul>
+              </div>
+
+              {/* RIGHT: Feature Grid with Background Image */}
+              <div className=" relative grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 ">
+                {solutions.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 bg-teal-800 text-white p-4 rounded-md shadow-sm"
+                  >
+                    {/* <div className="bg-white/10 p-2 rounded-md">{item.icon}</div> */}
+                    <span className="text-sm font-medium">{item.title}</span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-4 text-blue-900 group-hover:text-[gold] transition-all duration-200">{point.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{point.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+
         </div>
       </section>
 
@@ -102,7 +125,7 @@ const VisionMission = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-green-900">Transforming Vision into Reality</h2>
             <p className="text-xl text-green-800 mb-8 leading-relaxed">
-              Our vision and mission drive every project, partnership, and innovation we pursue. 
+              Our vision and mission drive every project, partnership, and innovation we pursue.
               Together, we're building a sustainable future for industries and communities across India.
             </p>
           </div>
