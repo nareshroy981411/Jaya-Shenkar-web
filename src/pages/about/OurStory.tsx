@@ -10,57 +10,33 @@ import StickyContactButton from '@/components/common/StickyContactButton';
 import { useNavigate } from "react-router-dom"
 
 const OurStory = () => {
+    const navigate = useNavigate();
     const companies = [
       {
         icon: <Building2 className="w-8 h-8" />,
-        title: "JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED",
-        short: "Ultra-modern pharma infrastructure and SEZs in Andhra Pradhesh & Odisha.",
-        link: "/business/industrial",
-        // image: "https://images.unsplash.com/photo-1474674556023-efef886fa147?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title: "Jayashankar Multi Product Industrial Park & SEZ Pvt Ltd",
+        href: "/business/industrial",
         image: '/SEZ/sez_4.jpg'
       },
       {
         icon: <Factory className="w-8 h-8" />,
-        title: "JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED",
-        short: "Sustainable paper and pulp manufacturing with global standards.",
-        link: "/business/paper",
-        // image: "https://images.unsplash.com/photo-1595798896730-9fdf2e709649?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title: "Jayashankar Pulp & Paper Mills Pvt Ltd", 
+        href: "/business/paper",
         image: '/images_jayashankar/paper_mill_1.jpg'
       },
       {
         icon: <Zap className="w-8 h-8" />,
-        title: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
-        short: "Power, infrastructure, and BOOT model projects across India.",
-        link: "/business/power",
-        // image: "https://plus.unsplash.com/premium_photo-1695559212636-422fcdb4bf3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title: "Jayashankar Power and Infrastructure Pvt Ltd",
+        href: "/business/power",
         image: '/power/tunnel.png'
       },
       {
         icon: <Zap className="w-8 h-8" />,
-        title: "JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED",
-        short: "Assam’s next-gen hub for green pulp, chemicals, and biocomposites",
-        link: "/business/ChemicalsPackaging",
-        // image: "https://plus.unsplash.com/premium_photo-1695559212636-422fcdb4bf3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title: "Jayashankar Chemicals & Packagings Assam Pvt Ltd",
+        href: "/business/ChemicalsPackaging",
         image: '/paper&pulp/pulp1.jpg'
       },
     ];
-  const entities = [
-    {
-      name: 'JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PVT LTD',
-      description: 'Leading the development of world-class industrial parks and Special Economic Zones',
-      icon: Building2,
-    },
-    {
-      name: 'JAYASHANKAR PULP AND PAPER MILLS PVT LTD',
-      description: 'Sustainable packaging solutions and eco-friendly paper manufacturing',
-      icon: Factory,
-    },
-    {
-      name: 'JAYASHANKAR POWER AND INFRASTRUCTURE PVT LTD',
-      description: 'Robust energy solutions and critical infrastructure development',
-      icon: Zap,
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -71,7 +47,7 @@ const OurStory = () => {
       
       <HeroSection
         title="Our Story"
-        subtitle="A Journey of Vision, Innovation, and Impact"
+        // subtitle="A Journey of Vision, Innovation, and Impact"
         description="From humble beginnings to a multi-sector enterprise, discover the story behind Jaya Shankar Group's rise as a leader in sustainable industrial development."
         backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
@@ -85,6 +61,7 @@ const OurStory = () => {
             subtitle="The Beginning"
             title="Founded on Vision and Excellence"
             description="Jaya Shankar Group was founded by Shri T. Srinivasa Rao, a first-generation entrepreneur with 25+ years of experience in executing large infrastructure and power projects."
+            theme="default"
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -125,38 +102,25 @@ const OurStory = () => {
             title="A Multi-Sector Enterprise"
             description="Three distinct entities working in synergy to create comprehensive industrial ecosystems that drive economic growth and environmental sustainability."
             centered
+            theme="default"
           />
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {entities.map((entity, index) => (
-              <Card key={index} className="group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl" style={{ animationDelay: `${index * 200}ms` }}>
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[gold]/20 transition-all duration-200">
-                    <entity.icon className="w-8 h-8 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-4 text-blue-900 group-hover:text-[gold] transition-all duration-200">{entity.name}</h3>
-                  <p className="text-gray-600 leading-relaxed">{entity.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {companies.map((company, index) => (
               <div
                 key={index}
                 className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
-                onClick={() => navigate(company.link)}
+                onClick={() => navigate(company.href)}
                 tabIndex={0}
                 role="button"
                 aria-label={`View details for ${company.title}`}
               >
-                <div className="relative h-48 overflow-hidden">
+                {/* <div className="relative h-48 overflow-hidden"> */}
                   <img
                     src={company.image}
                     alt={company.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </div>
+                {/* </div> */}
 
                 <div className="flex-1 flex flex-col p-8">
                   <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
@@ -177,6 +141,7 @@ const OurStory = () => {
             title="Setting New Benchmarks"
             description="From industrial corridors in Odisha to sustainable paper mills in Andhra Pradesh, the Jaya Shankar Group continues to set new benchmarks in economic development and environmental responsibility."
             centered
+            theme="default"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -25,7 +25,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -35,13 +34,11 @@ const Contact = () => {
       });
       return;
     }
-
     // Simulate form submission
     toast({
       title: "Message sent successfully!",
       description: "We'll get back to you within 24 hours.",
     });
-
     // Reset form
     setFormData({
       name: '',
@@ -136,17 +133,17 @@ const Contact = () => {
       {/* Contact Form and Info */}
       <section className="section-padding">
         <div className="container-width">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16">
             {/* Contact Form */}
             <div className="fade-in">
               <SectionHeader
-                title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Send Us a Message</span>}
+                title="Send Us a Message"
                 description="Fill out the form below and we'll get back to you within 24 hours."
-                className="text-blue-900"
+                // ...removed className prop for type compatibility
               />
 
               <Card className="bg-white/90 shadow-xl border-blue-100">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -239,9 +236,9 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="fade-in animation-delay-200">
               <SectionHeader
-                title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Contact Information</span>}
+                title="Contact Information"
                 description="Reach out to us through any of the following channels."
-                className="text-blue-900"
+                // ...removed className prop for type compatibility
               />
 
               <div className="space-y-6">
@@ -249,15 +246,15 @@ const Contact = () => {
                   const color = cardColors[index % cardColors.length];
                   return (
                     <Card key={index} className={`hover-lift ${color.bg} border-0 shadow-md`}>
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="flex items-start space-x-3 sm:space-x-4">
                           <div className={`w-12 h-12 ${color.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                             <info.icon className={`w-6 h-6 ${color.icon}`} />
                           </div>
                           <div>
-                            <h3 className={`font-semibold mb-2 ${color.title}`}>{info.title}</h3>
+                            <h3 className={`font-semibold mb-2 text-base md:text-lg ${color.title}`}>{info.title}</h3>
                             {info.details.map((detail, idx) => (
-                              <p key={idx} className={`text-sm ${color.detail}`}>
+                              <p key={idx} className={`text-xs sm:text-sm md:text-base ${color.detail}`}>
                                 {detail}
                               </p>
                             ))}
@@ -278,39 +275,37 @@ const Contact = () => {
         <div className="container-width ">
           <SectionHeader
             subtitle="Key Contacts"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Connect with Our Leadership Team</span>}
+            title="Connect with Our Leadership Team"
             description="Direct access to our key personnel for specific inquiries and partnership discussions."
             centered
-            className="text-blue-900"
+            // ...removed className prop for type compatibility
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 ">
-            <div className="flex justify-center items-center w-full">
-              {keyContacts.map((contact, index) => {
-                const color = contactColors[index % contactColors.length];
-                return (
-                  <Card
-                    key={index}
-                    className={`hover-lift fade-in bg-white/90 border-0 shadow-md flex items-center justify-center w-auto h-auto min-w-[220px] min-h-[180px]`}
-                    style={{ animationDelay: `${index * 150}ms` }}
-                  >
-                    <CardContent className="flex flex-col items-center justify-center text-center p-4">
-                      <div className={`w-16 h-16 ${color.bg} rounded-full flex items-center justify-center mb-4`}>
-                        <span className={`${color.text} font-bold text-lg`}>
-                          {contact.name.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
-                      <h3 className={`font-semibold mb-1 ${color.title}`}>{contact.name}</h3>
-                      <p className={`${color.role} text-sm mb-2`}>{contact.title}</p>
-                      {contact.phone && (
-                        <p className={`${color.text} text-sm mb-1`}>{contact.phone}</p>
-                      )}
-                      <p className={`${color.text} text-sm`}>{contact.email}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
+          <div className="flex flex-col items-center justify-center gap-8">
+            {keyContacts.map((contact, index) => {
+              const color = contactColors[index % contactColors.length];
+              return (
+                <Card
+                  key={index}
+                  className={`hover-lift fade-in bg-white/90 border-0 shadow-md flex items-center justify-center w-full max-w-xs min-w-[180px] min-h-[160px]`}
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <CardContent className="flex flex-col items-center justify-center text-center p-3 sm:p-4">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 ${color.bg} rounded-full flex items-center justify-center mb-3 sm:mb-4`}>
+                      <span className={`${color.text} font-bold text-base sm:text-lg`}>
+                        {contact.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h3 className={`font-semibold mb-1 text-base md:text-lg ${color.title}`}>{contact.name}</h3>
+                    <p className={`${color.role} text-xs sm:text-sm mb-2`}>{contact.title}</p>
+                    {contact.phone && (
+                      <p className={`${color.text} text-xs sm:text-sm mb-1`}>{contact.phone}</p>
+                    )}
+                    <p className={`${color.text} text-xs sm:text-sm`}>{contact.email}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -319,10 +314,10 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container-width">
           <SectionHeader
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Find Us</span>}
+            title="Find Us"
             description="Visit our corporate office in Hyderabad, strategically located for easy access."
             centered
-            className="text-blue-900"
+            // ...removed className prop for type compatibility
           />
 
           <div className="aspect-video bg-blue-100 rounded-lg overflow-hidden shadow-md">
@@ -340,9 +335,10 @@ const Contact = () => {
         </div>
       </section>
 
+
       <Footer />
     </div>
   );
-};
+}
 
 export default Contact;

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import HeroSection from '@/components/common/HeroSection';
 import StickyContactButton from "@/components/common/StickyContactButton";
 import { Leaf, Factory, TreePine, Zap, Package, Recycle, Globe, Users } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -112,37 +113,22 @@ const ChemicalsPackaging = () => {
       <Header />
       <StickyContactButton />
       {/* Hero Section */}
-      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(/images/Agroforestry.webp)`,
-          }}
-        />
-        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
-          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-blue-800 text-white border-white/20 hover:bg-blue-500 sm:text-sm">
-            JAYASHANKAR CHEMICALS & PACKAGINGS ASSAM PRIVATE LIMITED
-          </Badge>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-            Building India's Bio-Based Future from Assam
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl mb-8 text-green-100 max-w-4xl mx-auto leading-relaxed">
-            Pioneering sustainable pulp, packaging, and green chemicals through bamboo and agroforestry-based innovation.
-          </p>
-        </div>
-      </section>
-
+      <HeroSection
+        description="Building India's Bio-Based Future from Assam"
+        title="Jayashankar Chemicals & Packagings Assam Private Limited"
+        backgroundImage="/images/Agroforestry.webp"
+      />
       {/* About Section */}
-      <section className="py-20 bg-white ">
-        <div className="container mx-auto px-6 bg-white ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white ">
+      <section className="py-16 xs:py-20 bg-white ">
+        <div className="container mx-auto px-2 xs:px-6 bg-white ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white ">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">About the Company</h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
+              <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6 text-agro-primary">About the Company</h2>
+              <p className="text-xs xs:text-base sm:text-lg text-agro-dark mb-4 xs:mb-6 leading-relaxed">
                 A visionary initiative of the Jayashankar Group, focused on developing India's most sustainable,
                 circular, and inclusive industrial ecosystem using bamboo and agroforestry.
               </p>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p className="text-xs xs:text-base sm:text-lg text-agro-dark leading-relaxed">
                 This project represents a shift from hydrocarbon-based materials to bio-based alternatives,
                 placing Assam on the global map for sustainable manufacturing and green innovation.
               </p>
@@ -151,7 +137,7 @@ const ChemicalsPackaging = () => {
               <img
                 src="/images/aboutCP.png"
                 alt="Bio-refinery facility"
-                className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
+                className="rounded-lg shadow-lg w-full h-48 xs:h-64 sm:h-72 md:h-80 object-cover"
               />
             </div>
           </div>
@@ -159,33 +145,31 @@ const ChemicalsPackaging = () => {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+      <section className="py-16 xs:py-20 bg-white">
+        <div className="container mx-auto px-2 xs:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6 text-agro-primary">
               From Fossil to Forest
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 mb-12 leading-relaxed">
+            <p className="text-xs xs:text-base sm:text-lg text-agro-dark mb-8 xs:mb-12 leading-relaxed">
               We believe cellulose is the industrial material of the 21st century — replacing coal and oil
               with renewable, biodegradable alternatives.
             </p>
           </div>
-
           {/* Dynamic Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-8">
             {cardData.map((item, index) => (
               <div key={index} className="group">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-64 object-cover rounded-t-md"
+                  className="w-full h-40 xs:h-48 sm:h-64 object-cover rounded-t-md"
                 />
                 <div
-                  className={`p-6 text-center rounded-b-md transition duration-300 ${item.bgColor} group-hover:bg-blue-300`}
+                  className={`p-4 xs:p-6 text-center rounded-b-md transition duration-300 ${item.bgColor} group-hover:bg-agro-accent`}
                 >
-                  <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                  <p className="text-gray-900">{item.subtitle}</p>
-
+                  <h3 className="text-base xs:text-lg font-heading font-semibold text-agro-primary">{item.title}</h3>
+                  <p className="text-xs xs:text-base text-agro-dark">{item.subtitle}</p>
                 </div>
               </div>
             ))}
@@ -195,15 +179,14 @@ const ChemicalsPackaging = () => {
 
 
       {/* Solutions Section */}
-      <section className="py-20 ">
-        <div className="container mx-auto px-6 ">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">What We Do</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <section className="py-16 xs:py-20">
+        <div className="container mx-auto px-2 xs:px-6">
+          <div className="text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6 text-agro-primary">What We Do</h2>
+            <p className="text-xs xs:text-base sm:text-lg text-agro-dark max-w-3xl mx-auto leading-relaxed">
               Comprehensive bio-based manufacturing solutions from sustainable resource development to advanced green chemicals.
             </p>
           </div>
-
           <section className="py-16 bg-white bg-[url('/images/whatwe.jpg')] bg-cover bg-center bg-no-repeat">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -238,18 +221,16 @@ const ChemicalsPackaging = () => {
 
             </div>
           </section>
-
-
         </div>
       </section>
 
       {/* Agroforestry Model Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <section className="py-16 xs:py-20 bg-gray-50">
+        <div className="container mx-auto px-2 xs:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-10 xs:mb-16">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">Agroforestry Model: Sustainability in Action</h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6 text-agro-primary">Agroforestry Model: Sustainability in Action</h2>
+              <p className="text-xs xs:text-base sm:text-lg text-agro-dark leading-relaxed">
                 Combining trees, crops, and communities in a synergistic land-use system with smart design for multiple outputs.
               </p>
             </div>
@@ -257,33 +238,33 @@ const ChemicalsPackaging = () => {
               <img
                 src="/images/agro.png"
                 alt="Agroforestry farmers working"
-                className="rounded-lg shadow-lg w-full h-64 sm:h-72 md:h-80 object-cover"
+                className="rounded-lg shadow-lg w-full h-40 xs:h-48 sm:h-64 md:h-80 object-cover"
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-base sm:text-lg text-green-600 break-words">Soil Protection</CardTitle>
-                <CardDescription className="text-xs sm:text-sm leading-relaxed">Regenerates fertility and prevents erosion</CardDescription>
+                <CardTitle className="text-xs xs:text-base sm:text-lg text-agro-primary break-words">Soil Protection</CardTitle>
+                <CardDescription className="text-xs xs:text-sm leading-relaxed text-agro-dark">Regenerates fertility and prevents erosion</CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-base sm:text-lg text-green-600 break-words">Income Security</CardTitle>
-                <CardDescription className="text-xs sm:text-sm leading-relaxed">Food and income security for farmers</CardDescription>
+                <CardTitle className="text-xs xs:text-base sm:text-lg text-agro-primary break-words">Income Security</CardTitle>
+                <CardDescription className="text-xs xs:text-sm leading-relaxed text-agro-dark">Food and income security for farmers</CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-base sm:text-lg text-green-600 break-words">Carbon Sequestration</CardTitle>
-                <CardDescription className="text-xs sm:text-sm leading-relaxed">Supports biodiversity and climate goals</CardDescription>
+                <CardTitle className="text-xs xs:text-base sm:text-lg text-agro-primary break-words">Carbon Sequestration</CardTitle>
+                <CardDescription className="text-xs xs:text-sm leading-relaxed text-agro-dark">Supports biodiversity and climate goals</CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-base sm:text-lg text-green-600 break-words">Economic Returns</CardTitle>
-                <CardDescription className="text-xs sm:text-sm leading-relaxed">Diversified short, medium, long-term benefits</CardDescription>
+                <CardTitle className="text-xs xs:text-base sm:text-lg text-agro-primary break-words">Economic Returns</CardTitle>
+                <CardDescription className="text-xs xs:text-sm leading-relaxed text-agro-dark">Diversified short, medium, long-term benefits</CardDescription>
               </CardHeader>
             </Card>
           </div>
@@ -291,63 +272,57 @@ const ChemicalsPackaging = () => {
       </section>
 
       {/* Technical Specifications */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-gray-900">Technical Specifications</h2>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">Advanced manufacturing capabilities and market positioning</p>
+      <section className="py-16 xs:py-20">
+        <div className="container mx-auto px-2 xs:px-6">
+          <div className="text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6 text-agro-primary">Technical Specifications</h2>
+            <p className="text-xs xs:text-base sm:text-lg text-agro-dark leading-relaxed">Advanced manufacturing capabilities and market positioning</p>
           </div>
-          <div className="mb-12">
+          <div className="mb-8 xs:mb-12">
             <img
               src="/paper&pulp/paper_pulp.jpg"
               alt="Green chemicals laboratory"
-              className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 object-cover"
+              className="rounded-lg shadow-lg w-full h-32 xs:h-48 sm:h-64 md:h-72 object-cover"
             />
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-6">
             {specifications.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start bg-gray-200 p-4 rounded-md shadow-sm"
+                className="flex items-start bg-agro-light p-3 xs:p-4 rounded-md shadow-sm"
               >
                 {/* Image Icon Container */}
-                <div className="flex-shrink-0 mr-4 border-teal-700 p-3">
+                <div className="flex-shrink-0 mr-2 xs:mr-4 border-agro-primary p-2 xs:p-3">
                   <img
                     src={item.icon}
                     alt={item.title}
-                    className="w-10 h-10 text-teal-700"
+                    className="w-8 xs:w-10 h-8 xs:h-10 text-agro-primary"
                   />
                 </div>
-
                 {/* Text Content */}
                 <div>
-                  <h3 className="text-base font-semibold text-blue-900 mb-1">
+                  <h3 className="text-xs xs:text-base font-heading font-semibold text-agro-primary mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700">{item.description}</p>
+                  <p className="text-xs xs:text-sm text-agro-dark">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Build the Bio-Based Future?</h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+      <section className="py-16 xs:py-20 bg-[#9DD48B] text-white">
+        <div className="container mx-auto px-2 xs:px-6 text-center">
+          <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 xs:mb-6">Ready to Build the Bio-Based Future?</h2>
+          <p className="text-xs xs:text-base sm:text-lg md:text-xl mb-6 xs:mb-8 max-w-3xl mx-auto leading-relaxed">
             Join us in pioneering sustainable manufacturing solutions that benefit businesses, communities, and the environment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
+            <Button size="lg" variant="secondary" className="font-bold text-agro-primary hover:text-agro-dark">
               <Link to="/contact">Get In Touch</Link>
             </Button>
-            {/* <Button size="lg" variant="secondary" className="text-green font-bold hover:text-green-800">
-              Download Brochure
-            </Button> */}
           </div>
         </div>
       </section>

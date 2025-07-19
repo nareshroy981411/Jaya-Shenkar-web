@@ -157,32 +157,35 @@ const PowerInfrastructure = () => {
 
   const heroSlides = [
     {
-      title: "Powering Progress: Robust Infrastructure Solutions",
-      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
+      title: " JayaShankar Power and Infrastructure Private Limited",
+      description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
+
       backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
       badgeBg: "bg-blue-500",
       badgeText: "text-white",
       theme: "power",
     },
     {
-      title: "Clean Solar Power for a Greener Tomorrow",
-      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
+      title: " JayaShankar Power and Infrastructure Private Limited",
+      description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
+
       backgroundImage: "/power/solar_power.png",
       badgeBg: "bg-green-600",
       badgeText: "text-white",
       theme: "power",
     },
     {
-      title: "Seamless Connectivity: Modern Tunnel Infrastructure",
-      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
+      title: " JayaShankar Power and Infrastructure Private Limited",
+      description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
+
       backgroundImage: "/power/tunnel-1.png",
       badgeBg: "bg-yellow-500",
       badgeText: "text-black",
       theme: "power",
     },
     {
-      title: "Innovative Power Distribution",
-      subtitle: "JAYASHANKAR POWER AND INFRASTRUCTURE PRIVATE LIMITED",
+      title: " JayaShankar Power and Infrastructure Private Limited",
+      description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
       backgroundImage: "/power/tunnel.png",
       badgeBg: "bg-purple-600",
       badgeText: "text-white",
@@ -198,48 +201,48 @@ const PowerInfrastructure = () => {
       {/* Hero Section */}
       <HeroSection slides={heroSlides} />
       {/* Solutions Overview */}
-      <section id="solutions" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section id="solutions" className="py-16 xs:py-20 bg-gradient-to-br from-power-light to-white">
+        <div className="container mx-auto px-2 xs:px-4 max-w-7xl">
+          <div className="text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl md:text-4xl font-bold text-power-primary mb-4 xs:mb-6">
               Comprehensive Power & Infrastructure Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs xs:text-base md:text-xl text-power-dark max-w-3xl mx-auto">
               We provide end-to-end solutions for power generation and infrastructure development, supporting industrial growth across multiple sectors.
             </p>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-10 xs:space-y-16 md:space-y-20">
             {solutions.map((solution, index) => (
-              <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12`}>
-                <div className="lg:w-1/2">
+              <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 xs:gap-12`}>
+                <div className="lg:w-1/2 w-full">
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                     <img
                       src={solution.image}
                       alt={solution.title}
-                      className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-48 xs:h-64 md:h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
 
-                <div className="lg:w-1/2 space-y-6">
-                  <h3 className="text-3xl font-bold text-gray-900">{solution.title}</h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">{solution.description}</p>
+                <div className="lg:w-1/2 w-full space-y-4 xs:space-y-6">
+                  <h3 className="font-heading text-lg xs:text-2xl md:text-3xl font-bold text-power-primary">{solution.title}</h3>
+                  <p className="text-xs xs:text-base md:text-lg text-power-dark leading-relaxed">{solution.description}</p>
 
-                  <div className="grid grid-cols-3 gap-4 py-6">
+                  <div className="grid grid-cols-3 gap-2 xs:gap-4 py-4 xs:py-6">
                     {Object.entries(solution.stats).map(([key, value]) => (
                       <div key={key} className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">{value}</div>
-                        <div className="text-sm text-gray-500 capitalize">{key}</div>
+                        <div className="text-lg xs:text-2xl font-bold text-power-accent">{value}</div>
+                        <div className="text-xs xs:text-sm text-power-dark/70 capitalize">{key}</div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 xs:gap-3">
                     {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span className="text-gray-700">{feature}</span>
+                      <div key={featureIndex} className="flex items-center space-x-2 xs:space-x-3">
+                        <div className="w-2 h-2 bg-power-primary rounded-full"></div>
+                        <span className="text-xs xs:text-sm text-power-dark">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -251,18 +254,18 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* BOOT Model */}
-      <section id="boot-model" className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <div className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section id="boot-model" className="py-16 xs:py-20 bg-white">
+        <div className="container mx-auto px-2 xs:px-4 max-w-7xl">
+          <div className="text-center mb-10 xs:mb-16">
+            <div className="font-heading text-lg xs:text-2xl md:text-4xl font-bold text-power-primary mb-4 xs:mb-6">
               BOOT Model Excellence
             </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs xs:text-base md:text-xl text-power-dark max-w-3xl mx-auto">
               Our BOOT model ensures efficient project delivery, optimal operations, and seamless knowledge transfer while maintaining the highest standards of compliance and performance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-8 mb-10 xs:mb-16">
             {bootModel.map((phase, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
@@ -273,16 +276,16 @@ const PowerInfrastructure = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <CardContent className="p-6 text-center">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3">{phase.phase}</h4>
-                  <p className="text-gray-600 leading-relaxed">{phase.description}</p>
+                <CardContent className="p-4 xs:p-6 text-center">
+                  <h4 className="font-heading text-lg xs:text-2xl font-bold text-power-primary mb-2 xs:mb-3">{phase.phase}</h4>
+                  <p className="text-xs xs:text-base text-power-dark leading-relaxed">{phase.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Financial & Legal Framework</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-power-primary mb-6 text-center">Financial & Legal Framework</h3>
+            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-8 ">
               <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <img
@@ -291,8 +294,8 @@ const PowerInfrastructure = () => {
                     className="object-cover "
                   />
                 </div>
-                <h5 className="text-xl font-semibold text-gray-900 mb-3">Legal Compliance</h5>
-                <p className="text-gray-600">Operations under Indian Companies Act, 2013 with full statutory compliance</p>
+                <h5 className="font-heading text-base xs:text-xl font-semibold text-power-primary mb-2 xs:mb-3">Legal Compliance</h5>
+                <p className="text-xs xs:text-base text-power-dark">Operations under Indian Companies Act, 2013 with full statutory compliance</p>
               </div>
               <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -302,8 +305,8 @@ const PowerInfrastructure = () => {
                     className="object-cover "
                   />
                 </div>
-                <h5 className="text-xl font-semibold text-gray-900 mb-3">Revenue Model</h5>
-                <p className="text-gray-600">Revenue generation through Power Purchase Agreements (PPAs)</p>
+                <h5 className="font-heading text-base xs:text-xl font-semibold text-power-primary mb-2 xs:mb-3">Revenue Model</h5>
+                <p className="text-xs xs:text-base text-power-dark">Revenue generation through Power Purchase Agreements (PPAs)</p>
               </div>
               <div className="text-center group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -312,8 +315,8 @@ const PowerInfrastructure = () => {
                     alt="Legal Compliance Icon"
                     className="object-cover"
                   />                  </div>
-                <h5 className="text-xl font-semibold text-gray-900 mb-3">Concession Period</h5>
-                <p className="text-gray-600">15-30 years operational period before ownership transfer</p>
+                <h5 className="font-heading text-base xs:text-xl font-semibold text-power-primary mb-2 xs:mb-3">Concession Period</h5>
+                <p className="text-xs xs:text-base text-power-dark">15-30 years operational period before ownership transfer</p>
               </div>
             </div>
           </div>
@@ -321,18 +324,18 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-16 xs:py-20 bg-gradient-to-br from-power-light to-white">
+        <div className="container mx-auto px-2 xs:px-4 max-w-7xl">
+          <div className="text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl md:text-4xl font-bold text-power-primary mb-4 xs:mb-6">
               Our Achievements
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs xs:text-base md:text-xl text-power-dark max-w-3xl mx-auto">
               Delivering excellence across all aspects of power generation and infrastructure development.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-8">
             {achievements.map((achievement, index) => (
               <div key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 <div className="relative overflow-hidden">
@@ -343,10 +346,10 @@ const PowerInfrastructure = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-6 text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-2">{achievement.value}</div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-3">{achievement.title}</h4>
-                  <p className="text-gray-600">{achievement.description}</p>
+                <div className="p-4 xs:p-6 text-center">
+                  <div className="text-lg xs:text-2xl font-bold text-power-accent mb-1 xs:mb-2">{achievement.value}</div>
+                  <h4 className="font-heading text-base xs:text-xl font-semibold text-power-primary mb-2 xs:mb-3">{achievement.title}</h4>
+                  <p className="text-xs xs:text-base text-power-dark">{achievement.description}</p>
                 </div>
               </div>
 
@@ -357,27 +360,27 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* Technical Specifications */}
-      <section className="py-20 bg-white bg-[url('/images/tech2.jpg')] bg-cover bg-center bg-no-repeat">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-16 xs:py-20 bg-white bg-[url('/images/tech2.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="container mx-auto px-2 xs:px-4 max-w-7xl">
+          <div className="text-center mb-10 xs:mb-16">
+            <h2 className="font-heading text-xl xs:text-2xl md:text-4xl font-bold text-black mb-4 xs:mb-6">
               State-of-the-Art Technology & Specifications
             </h2>
-            <p className="text-xl text-gray-900 max-w-3xl mx-auto">
+            <p className="text-xs xs:text-base md:text-xl text-power-dark max-w-3xl mx-auto">
               Our power plants utilize the latest technology to ensure maximum efficiency, environmental compliance, and operational safety.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-8">
             {technicalSpecs.map((spec, index) => (
-              <Card key={index} className="text-center bg-gray hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 ${spec.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                    <spec.icon className="w-8 h-8 text-white" />
+              <Card key={index} className="text-center bg-power-light hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <CardContent className="p-4 xs:p-8">
+                  <div className={`w-12 xs:w-16 h-12 xs:h-16 ${spec.color} rounded-2xl flex items-center justify-center mx-auto mb-4 xs:mb-6`}>
+                    <spec.icon className="w-6 xs:w-8 h-6 xs:h-8 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-[#F3EC1F] mb-2">{spec.value}</div>
-                  <h4 className="text-xl font-semibold text-white mb-3">{spec.title}</h4>
-                  <p className="text-gray-900 font-semibold">{spec.description}</p>
+                  <div className="text-lg xs:text-2xl font-bold text-power-accent mb-1 xs:mb-2">{spec.value}</div>
+                  <h4 className="font-heading text-base xs:text-xl font-semibold text-power-primary mb-2 xs:mb-3">{spec.title}</h4>
+                  <p className="text-xs xs:text-base text-power-dark font-semibold">{spec.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -386,17 +389,16 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* Strategic Benefits Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section className="py-16 xs:py-20 bg-gradient-to-br from-power-light to-white">
+        <div className="container mx-auto px-2 xs:px-4 max-w-7xl">
+          <div className="text-center mb-8 xs:mb-12">
+            <h2 className="font-heading text-xl xs:text-2xl md:text-4xl font-bold text-power-primary mb-2 xs:mb-4">
               Strategic Benefits
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs xs:text-base md:text-xl text-power-dark max-w-3xl mx-auto">
               Our power and infrastructure projects create lasting value for industries, communities, and the nation.
             </p>
           </div>
-
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Left Column - Text Content */}
             <div className="lg:w-1/2 space-y-6">
@@ -404,7 +406,7 @@ const PowerInfrastructure = () => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">
                   A Sustainable Cycle
                 </h3>
-                <h4 className="text-2xl font-bold text-blue-600 mb-3">
+                <h4 className="text-2xl font-bold text-power-primary mb-3">
                   Rooted in Responsibility
                 </h4>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -475,16 +477,16 @@ const PowerInfrastructure = () => {
       </section>
 
       {/* Services CTA */}
-      <section className="py-20 bg-[#f0b165] text-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-16 xs:py-20 bg-[#f0B165] text-white">
+        <div className="container mx-auto px-2 xs:px-4 max-w-4xl text-center">
+          <h2 className="font-heading text-xl xs:text-2xl md:text-4xl font-bold mb-4 xs:mb-6">
             Ready to Power Your Future?
           </h2>
-          <p className="text-xl mb-8 leading-relaxed opacity-90">
+          <p className="text-xs xs:text-base md:text-xl mb-6 xs:mb-8 leading-relaxed opacity-90">
             Partner with us for customized power solutions and infrastructure development that drives your business forward with reliability, efficiency, and sustainability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+            <Button asChild size="lg" className="bg-white text-power-primary hover:bg-power-light px-6 xs:px-8 py-3 xs:py-4 text-base xs:text-lg font-semibold">
               <Link to="/contact">Get Started Today</Link>
             </Button>
           </div>

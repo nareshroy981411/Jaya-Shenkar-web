@@ -16,45 +16,24 @@ const Index = () => {
   const navigate = useNavigate()
   const heroSlides = [
     {
-      title: 'Jaya Shankar Group: Pioneering Sustainable Industrial Growth Across India',
-      // subtitle: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
-      // backgroundImage: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      title: 'Jaya Shankar Group',
+      description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
       backgroundImage: '/banner2.png',
-      // buttons: [
-      //   { text: 'Explore Our Companies', href: '#verticals' },
-      //   { text: 'Our Projects', href: '/projects', variant: 'outline' as const },
-      // ],
     },
     {
       title: 'Enabling a Sustainable Tomorrow',
-      // subtitle: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
-      // backgroundImage: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      description: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
       backgroundImage: '/paper.png',
-      // buttons: [
-      //   { text: 'Learn About Sustainability', href: '/sustainability' },
-      //   { text: 'Our Impact', href: '/sustainability', variant: 'outline' as const },
-      // ],
     },
     {
       title: 'World-Class Industrial Parks & Special Economic Zones',
-      // subtitle: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
-      // backgroundImage: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      description: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
       backgroundImage: '/odishaparma/pharma6.png',
-      // buttons: [
-      //   { text: 'Industrial Solutions', href: '/business/industrial' },
-      //   { text: 'View Projects', href: '/projects', variant: 'outline' as const },
-      // ],
     },
     {
       title: 'Powering Progress: Robust Infrastructure Solutions',
-      // subtitle: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
-      // backgroundImage: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+      description: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
       backgroundImage: '/power/solar_power.png',
-
-      // buttons: [
-      //   { text: 'Power Solutions', href: '/business/power' },
-      //   { text: 'Our Services', href: '/business/power', variant: 'outline' as const },
-      // ],
     },
   ];
 
@@ -210,23 +189,21 @@ const Index = () => {
       <section id="verticals" className="section-padding bg-white-50">
         <div className="container-width">
           <SectionHeader
-            // subtitle="Our Companies"
             title="Our Companies"
-            // title="Diversified Portfolio Driving Sustainable Growth"
             description="Three core companies working in synergy to create comprehensive industrial ecosystems that benefit businesses, communities, and the environment."
             centered
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-6 md:gap-8 xl:gap-10">
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
+                className="flex flex-col bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden min-h-[340px] xs:min-h-[380px] md:min-h-[420px] border-2 border-transparent hover:border-[gold] cursor-pointer"
                 onClick={() => navigate(company.link)}
                 tabIndex={0}
                 role="button"
                 aria-label={`View details for ${company.title}`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-32 xs:h-40 md:h-48 overflow-hidden">
                   <img
                     src={company.image}
                     alt={company.title}
@@ -234,14 +211,14 @@ const Index = () => {
                   />
                 </div>
 
-                <div className="flex-1 flex flex-col p-8">
-                  <h3 className="text-lg font-bold text-navy-900 mb-2 leading-tight min-h-[56px]">
+                <div className="flex-1 flex flex-col p-4 xs:p-6 md:p-8">
+                  <h3 className="text-base xs:text-lg md:text-xl font-bold text-navy-900 mb-2 leading-tight min-h-[40px] xs:min-h-[56px]">
                     {company.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed text-base min-h-[48px]">
+                  <p className="text-xs xs:text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed min-h-[32px] xs:min-h-[48px]">
                     {company.short}
                   </p>
-                  <div className="mt-auto inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-4 py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg w-fit">
+                  <div className="mt-auto inline-flex items-center text-[gold] hover:text-yellow-700 font-semibold transition-colors duration-300 group border-2 border-[gold] px-3 xs:px-4 py-1.5 xs:py-2 rounded-lg bg-white hover:bg-yellow-50 shadow hover:shadow-lg w-fit text-xs xs:text-sm md:text-base">
                     View More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 text-[gold]" />
                   </div>
@@ -257,23 +234,22 @@ const Index = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="About Jaya Shankar Group"
-            // title="Visionary Conglomerate Shaping India's Industrial Future"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Visionary Conglomerate Shaping India's Industrial Future</span>}
+            title="Visionary Conglomerate Shaping India's Industrial Future"
             description="Founded by first-generation entrepreneurs with a combined 45 years of expertise, Jaya Shankar Group operates with a robust team of 200+ man-years of experience across Industrial Parks, Pulp & Paper, and Power Infrastructure. Our core philosophy 'For Planet & People' drives economic development, social progress, and environmental sustainability."
             centered
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center fade-in group" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:shadow-2xl transition-all duration-300">
-                  <stat.icon className="w-10 h-10 text-blue-700 group-hover:text-green-900 transition-colors duration-300" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-2 group-hover:text-yellow-700 transition-colors duration-300 font-[Poppins,sans-serif]">{stat.value}</div>
-                <div className="text-sm text-muted-foreground group-hover:text-yellow-800 transition-colors duration-300 font-[Poppins,sans-serif]">{stat.label}</div>
-              </div>
-            ))}
+      <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 md:gap-8 mt-8 md:mt-16">
+        {stats.map((stat, index) => (
+          <div key={index} className="text-center fade-in group" style={{ animationDelay: `${index * 100}ms` }}>
+            <div className="w-10 h-10 xs:w-12 xs:h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-2 xs:mb-3 md:mb-4 shadow-lg group-hover:scale-110 group-hover:shadow-2xl transition-all duration-300">
+              <stat.icon className="w-6 h-6 xs:w-8 xs:h-8 md:w-10 md:h-10 text-blue-700 group-hover:text-green-900 transition-colors duration-300" />
+            </div>
+            <div className="text-xl xs:text-2xl md:text-3xl font-bold text-primary mb-1 xs:mb-2 group-hover:text-yellow-700 transition-colors duration-300 font-[Poppins,sans-serif]">{stat.value}</div>
+            <div className="text-xs xs:text-sm md:text-base text-muted-foreground group-hover:text-yellow-800 transition-colors duration-300 font-[Poppins,sans-serif]">{stat.label}</div>
           </div>
+        ))}
+      </div>
         </div>
       </section>
 
@@ -282,8 +258,7 @@ const Index = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Strategic Partners"
-            // title="Collaborating with Industry Leaders"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Collaborating with Industry Leaders</span>}
+            title="Collaborating with Industry Leaders"
             description="Working together with leading organizations to create innovative solutions and drive sustainable growth"
             centered
           />
@@ -298,7 +273,7 @@ const Index = () => {
                   {partner.img ? (
                     <img
                       src={partner.img}
-                      alt={`${partner.name} logo`}
+                      alt="Partner logo"
                       className="w-32 h-28 object-contain rounded-full border-2 border-transparent hover:border-green-500 transition-all duration-200 bg-white"
                     />
                   ) : (
@@ -327,12 +302,34 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding">
+      {/* <section className="section-padding">
+        <div className="container-width">
+          <SectionHeader
+            subtitle="Why Choose Us"
+            title="Excellence in Every Endeavor"
+            description="Our unique combination of experience, values, and strategic approach makes us the ideal partner for sustainable industrial development."
+            centered
+          />
+
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 xs:gap-8">
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className="flex space-x-2 xs:space-x-4 fade-in group hover:bg-yellow-50 hover:shadow-lg rounded-lg p-3 xs:p-4 transition-all duration-300" style={{ animationDelay: `${index * 150}ms` }}>
+                <div className="w-3 h-3 xs:w-4 xs:h-4 bg-gradient-to-tr from-yellow-300 to-yellow-600 rounded-full mt-2 xs:mt-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                <div>
+                  <h4 className="text-base xs:text-lg font-semibold mb-1 xs:mb-2 group-hover:text-yellow-800 transition-colors duration-300 font-[Poppins,sans-serif]">{item.title}</h4>
+                  <p className="text-xs xs:text-sm md:text-base text-muted-foreground leading-relaxed group-hover:text-yellow-900 transition-colors duration-300 font-[Poppins,sans-serif]">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+            <section className="section-padding">
         <div className="container-width">
           <SectionHeader
             subtitle="Why Choose Us"
             // title="Excellence in Every Endeavor"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Excellence in Every Endeavor</span>}
+            title="Excellence in Every Endeavor"
             description="Our unique combination of experience, values, and strategic approach makes us the ideal partner for sustainable industrial development."
             centered
           />

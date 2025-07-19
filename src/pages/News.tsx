@@ -41,14 +41,13 @@ const News = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <StickyContactButton />
 
       {/* Hero Section */}
       <HeroSection
         title="News & Media: Stay Connected with Our Journey"
-        // subtitle="Get the latest updates on our projects, achievements, and industry insights as we continue to shape India's industrial landscape."
         backgroundImage="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         buttons={[
           { text: 'Latest News', href: '#news' },
@@ -60,16 +59,15 @@ const News = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Media Categories"
-            // title="Stay Updated Across All Channels"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Stay Updated Across All Channels</span>}
+            title="Stay Updated Across All Channels"
             description="Access our comprehensive media coverage including press releases, announcements, news features, and thought leadership articles."
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, index) => (
-              <Card key={index} className="hover-lift cursor-pointer">
-                <CardContent className="p-6 text-center">
+                <Card key={index} className="hover-lift cursor-pointer transition-shadow">
+                  <CardContent className="p-4 md:p-6 text-center">
                   <div
                     className={`w-12 h-12 ${[
                       'bg-yellow-100',
@@ -105,17 +103,15 @@ const News = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Latest Updates"
-            // title="Recent News & Announcements"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Recent News & Announcements</span>}
-
+            title="Recent News & Announcements"
             description="Stay informed about our latest developments, project milestones, and industry insights."
             centered
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {placeholderNews.map((news, index) => (
-              <Card key={index} className="hover-lift">
-                <CardContent className="p-6">
+              <Card key={index} className="hover-lift transition-shadow">
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between mb-4">
                     <span
                       className={`px-3 py-1 ${[
@@ -158,30 +154,30 @@ const News = () => {
               industry insights, and thought leadership content. Stay tuned for regular updates.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="hover-lift">
-                <CardContent className="p-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="hover-lift transition-shadow">
+                <CardContent className="p-4 md:p-6 text-center">
                   <FileText className="w-12 h-12 bg-white-100 rounded-lg text-gray-400 mx-auto mb-4 flex items-center justify-center" />
                   <h4 className="font-semibold mb-2">Press Releases</h4>
                   <p className="text-sm text-muted-foreground">Official company announcements and updates</p>
                 </CardContent>
               </Card>
-              <Card className="hover-lift">
-                <CardContent className="p-6 text-center">
+              <Card className="hover-lift transition-shadow">
+                <CardContent className="p-4 md:p-6 text-center">
                   <Newspaper className="w-12 h-12 bg-blue-100 rounded-lg text-blue-400 mx-auto mb-4 flex items-center justify-center" />
                   <h4 className="font-semibold mb-2">Media Coverage</h4>
                   <p className="text-sm text-muted-foreground">Coverage in national and industry publications</p>
                 </CardContent>
               </Card>
-              <Card className="hover-lift">
-                <CardContent className="p-6 text-center">
+              <Card className="hover-lift transition-shadow">
+                <CardContent className="p-4 md:p-6 text-center">
                   <PenTool className="w-12 h-12 bg-brown-100 rounded-lg text-brown-600 mx-auto mb-4 flex items-center justify-center" />
                   <h4 className="font-semibold mb-2">Thought Leadership</h4>
                   <p className="text-sm text-muted-foreground">Industry insights and expert commentary</p>
                 </CardContent>
               </Card>
-              <Card className="hover-lift">
-                <CardContent className="p-6 text-center">
+              <Card className="hover-lift transition-shadow">
+                <CardContent className="p-4 md:p-6 text-center">
                   <Calendar className="w-12 h-12 bg-orange-100 rounded-lg text-orange-400 mx-auto mb-4 flex items-center justify-center" />
                   <h4 className="font-semibold mb-2">Event Updates</h4>
                   <p className="text-sm text-muted-foreground">Conference participation and industry events</p>

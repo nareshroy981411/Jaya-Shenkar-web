@@ -28,7 +28,7 @@ const FoundersLeadership = () => {
 
       <HeroSection
         title="Founders & Leadership"
-        subtitle="Visionary Leaders Driving Excellence"
+        // subtitle="Visionary Leaders Driving Excellence"
         description="Meet the founding team whose vision, expertise, and dedication have built Jaya Shankar Group into a leading force in sustainable industrial development."
         backgroundImage="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
@@ -43,24 +43,25 @@ const FoundersLeadership = () => {
             title="Pioneering Leadership"
             description="Two visionary leaders whose combined expertise and shared commitment to excellence have shaped the group's success story."
             centered
+            theme="default"
           />
                     <div className="flex justify-center">
                       <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
                         <CardContent className="p-8">
                           <div className="flex flex-col items-center text-center">
-                            <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
+                            {/* <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
                               <img
                                 src={founders[0].image}
-                                // alt={founders[0].name}
+                                alt={founders[0].name || 'Founder photo'}
                                 className="w-full h-full object-cover"
                               />
-                            </div>
+                            </div> */}
                             <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
                               {founders[0].name}
                             </h3>
                             <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
-                            <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
-                            <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p>
+                            {/* <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
+                            <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p> */}
                             <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
                           </div>
                         </CardContent>
@@ -124,6 +125,7 @@ const FoundersLeadership = () => {
             title="Collective Expertise"
             description="The leadership is supported by a team of veteran professionals from pharma, bulk drugs, infrastructure, and energy."
             centered={false}
+            theme="default"
           />
 
           <div className="flex flex-col md:flex-row items-center gap-10 mt-10">
@@ -166,6 +168,7 @@ const FoundersLeadership = () => {
             subtitle="Leadership Philosophy"
             title="Building Tomorrow, Today"
             description="Our leadership approach is grounded in transparency, innovation, and sustainable growth, ensuring that every decision creates long-term value for all stakeholders."
+            theme="default"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

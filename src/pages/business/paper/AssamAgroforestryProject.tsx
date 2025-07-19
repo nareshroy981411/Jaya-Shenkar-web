@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: 'The Next Industrial Revolution is Bio-Based',
-    image: '/images/biobased.jpg',
+    image: '/images/bio.png',
     content: [
       'From: Coal (19th century), Oil (20th century)',
       'To: Cellulose & Biofibres (21st century)',
@@ -62,7 +62,7 @@ const sections = [
   },
   {
     title: 'Investment Blueprint',
-    image: '/images/assam7.png',
+    image: '/images/invest.jpg',
     content: [
       'Phase 1: ₹3,000 Cr — Pulp & Paper (300K T/year pulp, 150K T/year paper, 80K T/year packaging).',
       'Phase 2: ₹500 Cr — Agroforestry and bamboo cultivation.',
@@ -72,7 +72,7 @@ const sections = [
   },
   {
     title: 'India’s Growing Paper Demand',
-    image: '/images/assam8.png',
+    image: '/images/demand.png',
     content: [
       '7% annual growth expected.',
       '36M tons by 2030 — driven by e-commerce and hygiene sectors.',
@@ -89,54 +89,59 @@ const sections = [
   },
 ];
 
+
 const AssamAgroforestryProject = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <StickyContactButton />
 
       {/* Hero Section */}
       <HeroSection
         title="India’s Green Industrial Revolution"
-        subtitle="Assam Agroforestry Project: Where Sustainability Meets Scale"
+        description="Assam Agroforestry Project: Where Sustainability Meets Scale"
         backgroundImage="/paper&pulp/pulp3.jpg"
       />
 
-      <section className="section-padding">
+      <section className="py-8 sm:py-10 md:py-14 lg:py-16">
         <div className="container-width">
           <SectionHeader
             subtitle="Agroforestry for a Greener Future"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Assam Agroforestry Project</span>}
+            title="Assam Agroforestry Project"
             description="A transformative mission to build India’s most sustainable and inclusive industrial ecosystem through bamboo-based agroforestry."
             centered
+            theme="paper"
           />
 
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="relative rounded-xl overflow-hidden my-10 min-h-[360px] flex items-center justify-center bg-cover bg-center"
-              style={{ backgroundImage: `url(${section.image})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/30 z-[1]" />
-              <div className="relative z-10 text-white text-center px-4 max-w-3xl space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-wide font-serif text-[gold]">
-                  {section.title}
-                </h3>
-                <div className="space-y-3 text-base md:text-lg leading-relaxed">
-                  {section.content.map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start justify-center gap-2 max-w-3xl mx-auto"
-                    >
-                      <CheckCircle className="text-green-400 mt-1 w-5 h-5 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+          <div className="flex flex-col gap-8 md:gap-12">
+            {sections.map((section, index) => (
+              <div
+                key={index}
+                className="relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col md:flex-row items-center justify-center bg-cover bg-center shadow-lg"
+                style={{ backgroundImage: `url(${section.image})` }}
+                aria-label={section.title}
+              >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 z-[1]" aria-hidden="true" />
+                <div className="relative z-10 text-white text-center px-4 py-8 w-full max-w-3xl mx-auto space-y-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide font-serif text-accent drop-shadow">
+                    {section.title}
+                  </h3>
+                  <div className="space-y-3 text-sm sm:text-base md:text-lg leading-relaxed">
+                    {section.content.map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start justify-center gap-2 max-w-3xl mx-auto text-left"
+                      >
+                        <CheckCircle className="text-green-400 mt-1 w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                        <span className="font-medium drop-shadow-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

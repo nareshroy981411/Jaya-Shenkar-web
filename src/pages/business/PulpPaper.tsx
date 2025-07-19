@@ -110,8 +110,8 @@ const PulpPaper = () => {
       {/* Hero Section */}
 
       {/* <HeroSection
-        title="Redefining Sustainable Packaging: West Godavari Mill"
-        theme="paper"
+        title="Jayashankar Pulp & Paper Mills"
+        subtitle="Redefining Sustainable Packaging: West Godavari Mill"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
       /> */}
 
@@ -122,13 +122,16 @@ const PulpPaper = () => {
             backgroundImage: `url(/images_jayashankar/paper_mill_1.jpg)`,
           }}
         />
-        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
-          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
-            JAYASHANKAR PULP & PAPER MILLS PRIVATE LIMITED
-          </Badge>
-          <h1 className="font-serif drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-[#02facd] via-[white] to-[#02facd] bg-clip-text text-transparent">
-            Redefining Sustainable Packaging: West Godavari Mill
-          </h1>
+        <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-2 sm:pb-4 md:pb-6 lg:pb-8 bottom-0">
+          <div className="flex flex-col items-center justify-center w-full max-w-4xl px-2 xs:px-4 sm:px-6">
+            <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
+              Redefining Sustainable Packaging: West Godavari Mill
+            </Badge>
+            <h1 className=" drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white text-center"
+            style={{ fontFamily: 'articulatecf, sans-serif' }}>
+              Jayashankar Pulp & Paper Mills
+            </h1>
+          </div>
         </div>
       </section>
 
@@ -139,9 +142,7 @@ const PulpPaper = () => {
             <div>
               <SectionHeader
                 subtitle="West Godavari Mill"
-                // title="Strategic Location & Advanced Technology"
-                title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Strategic Location & Advanced Technology</span>}
-
+                title="Strategic Location & Advanced Technology"
                 description="Located in Bayyavaram, Tallapudi Mandal, West Godavari District, Andhra Pradesh, our 271-acre facility is strategically positioned 5 km from River Godavari and 115 km from Kakinada Port."
                 theme="paper"
               />
@@ -182,7 +183,7 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Market Transformation"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">From Graphic Papers to Sustainable Packaging</span>}
+            title="From Graphic Papers to Sustainable Packaging"
             theme="industrial"
             centered
           />
@@ -225,8 +226,7 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Product Portfolio"
-            // title="Comprehensive Packaging Solutions"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Comprehensive Packaging Solutions</span>}
+            title="Comprehensive Packaging Solutions"
             description="Our diverse range of products serves multiple industries with a focus on sustainability, quality, and innovation."
             theme="paper"
             centered
@@ -275,11 +275,7 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Manufacturing Excellence"
-            title={
-              <span className="text-lg md:text-xl lg:text-2xl font-bold block">
-                State-of-the-Art Technology
-              </span>
-            }
+            title="State-of-the-Art Technology"
             description="Our advanced manufacturing setup ensures optimal efficiency, quality, and environmental compliance."
             theme="paper"
             centered
@@ -315,8 +311,7 @@ const PulpPaper = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Environmental Stewardship"
-            // title="We Value Every Single Drop"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">We Value Every Single Drop</span>}
+            title="We Value Every Single Drop"
             description="Our commitment to sustainability drives every aspect of our operations, from water stewardship to circular economy practices."
             theme="paper"
             centered
@@ -382,7 +377,7 @@ const PulpPaper = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[#d5ad6c] text-white">
+      <section className="section-padding bg-[#9DD48B] text-white">
         <div className="container-width">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-white mb-6">Partner with Us for Sustainable Solutions</h2>

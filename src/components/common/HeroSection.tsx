@@ -97,7 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section className={`relative min-h-screen flex items-center overflow-hidden ${getThemeClasses()}`}>
+    <section className={`relative min-h-screen flex items-center overflow-hidden ${getThemeClasses()}`} aria-label={currentSlideData.title || 'Hero section'}>
       {/* Background Images */}
       {isCarousel ? (
         slides.map((slide, index) => (
@@ -137,28 +137,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </>
       )}
 
-      {/* Content - Centered Badge and Title */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center min-h-[60vh]">
-        <div className="flex flex-col items-center justify-center w-full">
+      {/* Content - Centered at Bottom (closer) */}
+      <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-4 sm:pb-6 md:pb-8 lg:pb-10 bottom-0">
+        <div className="flex flex-col items-center justify-center w-full max-w-3xl">
           {/* Badge (subtitle) */}
           {currentSlideData.subtitle && (
             <span
               className={`mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg ${currentSlideData.badgeBg || 'bg-blue-500'} ${currentSlideData.badgeText || 'text-white'}`}
-              style={{ letterSpacing: 1 }}
+              style={{ letterSpacing: 1, fontFamily: 'articulatecf, sans-serif' }}
             >
               {currentSlideData.subtitle}
             </span>
           )}
           {/* Title */}
           {currentSlideData.title && (
-            <h1 className="text-white text-4xl md:text-5xl font-bold text-center mb-6 leading-tight drop-shadow-lg">
+            <h1 className="text-white text-4xl md:text-5xl font-bold text-center mb-6 leading-tight drop-shadow-lg" tabIndex={0} style={{ fontFamily: 'articulatecf, sans-serif' }}>
               {currentSlideData.title}
             </h1>
           )}
           {/* Description */}
           {currentSlideData.description && (
             <div className="fade-in animation-delay-400">
-              <p className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl text-center">
+              <p className="text-lg text-white/90 mb-12 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                 {currentSlideData.description}
               </p>
             </div>
@@ -190,26 +190,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      {isCarousel && (
-        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-white' : 'bg-white/50'
-                }`}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-        </div>
-      </div>
+      {/* Slide Indicators and Scroll Indicator removed as per request */}
     </section>
   );
 };

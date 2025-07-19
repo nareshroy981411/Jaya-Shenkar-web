@@ -46,7 +46,7 @@ const VisionMission = () => {
 
       <HeroSection
         title="Vision & Mission"
-        subtitle="Guiding Principles for Sustainable Growth"
+        // subtitle="Guiding Principles for Sustainable Growth"
         description="Our vision and mission statements define our commitment to transformative industrial development and environmental stewardship."
         backgroundImage="/images/vision.jpg"
       />
@@ -80,6 +80,7 @@ const VisionMission = () => {
             title="Five Pillars of Our Commitment"
             description="Our mission is built on five fundamental pillars that guide every aspect of our business operations and strategic decisions."
             centered
+            theme="default"
           />
 
           <section className="py-16 bg-white bg-[url('/images/assam2.png')] bg-cover bg-center bg-no-repeat p-6 rounded-md opacity-">

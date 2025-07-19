@@ -52,7 +52,7 @@ const HindupurIndustrialPark = () => {
       {/* Hero Section */}
       <HeroSection
         title="Hindupur Integrated Industrial Park"
-        subtitle="SEZ and DTA hub near Bengaluru for growth"
+        description="SEZ and DTA hub near Bengaluru for growth"
         backgroundImage="/carousels/hinduSez_3.webp"
       />
 
@@ -60,34 +60,35 @@ const HindupurIndustrialPark = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Flagship Development"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Hindupur Integrated Industrial Park</span>}
+            title="Hindupur Integrated Industrial Park"
             description="Our premier 1,800-acre industrial development in Anantapur District, Andhra Pradesh, featuring both SEZ and DTA facilities with strategic proximity to Bengaluru."
             centered
+            theme="industrial"
           />
 
-          {/* Loop over each section */}
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="relative rounded-xl overflow-hidden my-10 min-h-[360px] flex items-center justify-center bg-cover bg-center"
-              style={{ backgroundImage: `url(${section.image})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/30 z-[0]" />
-              {/* Content */}
-              <div className="relative z-10 text-white text-center px-4 max-w-2xl space-y-4">
-                <h3 className="text-2xl font-serif text-[gold] font-bold hover:text-[#e05210]">{section.title}</h3>
-                <div className="space-y-2">
-                  {section.content.map((item, i) => (
-                    <div key={i} className="flex items-start justify-center gap-2">
-                      <CheckCircle className="text-green-400 mt-1 w-5 h-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+          <div className="flex flex-col gap-8 md:gap-12">
+            {sections.map((section, index) => (
+              <div
+                key={index}
+                className="relative rounded-2xl overflow-hidden min-h-[220px] flex flex-col md:flex-row items-center justify-center bg-cover bg-center shadow-lg"
+                style={{ backgroundImage: `url(${section.image})` }}
+                aria-label={section.title}
+              >
+                <div className="absolute inset-0 bg-black/40 z-[1]" aria-hidden="true" />
+                <div className="relative z-10 text-white text-center px-4 py-8 w-full max-w-2xl mx-auto space-y-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-accent drop-shadow mb-4">{section.title}</h3>
+                  <div className="space-y-2">
+                    {section.content.map((item, i) => (
+                      <div key={i} className="flex items-start justify-center gap-2">
+                        <CheckCircle className="text-green-400 mt-1 w-5 h-5" aria-hidden="true" />
+                        <span className="font-medium drop-shadow-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

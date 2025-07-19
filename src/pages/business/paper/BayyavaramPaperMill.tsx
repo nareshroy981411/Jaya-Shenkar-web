@@ -54,7 +54,7 @@ const BayyavaramPaperMill = () => {
 
       <HeroSection
         title="Bayyavaram Paper Mill"
-        subtitle="Eco-friendly pulp and paper unit in Andhra Pradesh"
+        description="Eco-friendly pulp and paper unit in Andhra Pradesh"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
       />
 
@@ -63,43 +63,47 @@ const BayyavaramPaperMill = () => {
         <div className="container-width">
         <SectionHeader
             subtitle="Flagship Development"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Bayyavaram Paper Mill Project</span>}
+            title="Bayyavaram Paper Mill Project"
             description="Our 271-acre SEZ development in Bayyavaram, West Godavari District, Andhra Pradesh, offers exceptional connectivity just 5 km from the River Godavari"
             centered
+            theme="paper"
           />
-        {sections.map((sec, idx) => (
-          <div
-            key={idx}
-            className="relative rounded-xl overflow-hidden my-10 min-h-[360px] flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${sec.image})` }}
-          >
-            {/* <div className="absolute inset-0 bg-black/30 z-[-2]" /> */}
-            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-4 text-center text-white ">
-              <h3 className="text-2xl font-serif text-[gold] font-bold mb-4">{sec.title}</h3>
-              <ul className="space-y-2 max-w-3xl">
-                {sec.points.map((point, i) => (
-                  <li key={i} className="text-md md:text-lg">{point}</li>
-                ))}
-              </ul>
+        <div className="flex flex-col gap-8 md:gap-12">
+          {sections.map((sec, idx) => (
+            <div
+              key={idx}
+              className="relative rounded-2xl overflow-hidden min-h-[220px] flex flex-col md:flex-row items-center justify-center bg-cover bg-center shadow-lg"
+              style={{ backgroundImage: `url(${sec.image})` }}
+              aria-label={sec.title}
+            >
+              <div className="absolute inset-0 bg-black/40 z-[1]" aria-hidden="true" />
+              <div className="relative z-10 text-white text-center px-4 py-8 w-full max-w-3xl mx-auto space-y-4">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-accent drop-shadow mb-4">{sec.title}</h3>
+                <ul className="space-y-2 max-w-3xl mx-auto">
+                  {sec.points.map((point, i) => (
+                    <li key={i} className="text-sm sm:text-base md:text-lg font-medium drop-shadow-sm">{point}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         </div>
       </section>
 
       {/* Collaborators Section */}
       <section className="section-padding text-center">
-        <h3 className="text-xl font-semibold text-green-800 mb-6">Advisors & Collaborators</h3>
-        <div className="flex flex-wrap justify-center gap-6">
+        <h3 className="text-lg sm:text-xl font-semibold text-green-800 mb-6">Advisors & Collaborators</h3>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {collaborators.map((company, index) => (
             <div
               key={index}
-              className="w-[120px] h-[120px] bg-white shadow-md rounded-xl p-3 flex flex-col items-center justify-center hover:shadow-lg transition"
+              className="w-[96px] h-[96px] sm:w-[120px] sm:h-[120px] bg-white shadow-md rounded-xl p-2 sm:p-3 flex flex-col items-center justify-center hover:shadow-lg transition"
             >
               <img
                 src={company.image}
                 alt={company.name}
-                className="w-12 h-12 object-contain mb-2"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain mb-2"
               />
               <p className="text-xs text-center text-muted-foreground">{company.name}</p>
             </div>
