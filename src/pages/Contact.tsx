@@ -125,7 +125,7 @@ const Contact = () => {
       
       <HeroSection
         title="Contact Jaya Shankar Group"
-        subtitle="Get in Touch with Our Team"
+        // subtitle="Get in Touch with Our Team"
         description="Ready to explore partnership opportunities or learn more about our projects? We're here to help you succeed."
         backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
