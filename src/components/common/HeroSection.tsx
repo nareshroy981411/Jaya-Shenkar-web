@@ -137,8 +137,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </>
       )}
 
-      {/* Content - Centered at Bottom (closer) */}
-      <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-4 sm:pb-6 md:pb-8 lg:pb-10 bottom-0">
+      {/* Content - Vertically Centered, shifted even further down */}
+      <div className="absolute z-10 w-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-[-20%] flex flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center w-full max-w-3xl">
           {/* Badge (subtitle) */}
           {currentSlideData.subtitle && (

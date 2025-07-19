@@ -69,7 +69,7 @@ const IndustrialPark = () => {
       {/* Hero Section (responsive version only) */}
       <HeroSection
               title="JayaShankar Multi Product Industrial Park & SEZ Private Limited"
-              subtitle="Integrated Industrial Ecosystems"
+              description="Integrated Industrial Ecosystems"
               backgroundImage="/carousels/ind.jpg"
             />
       {/* <section className="bg-white relative min-h-[400px] xs:min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">

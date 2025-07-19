@@ -109,13 +109,13 @@ const PulpPaper = () => {
 
       {/* Hero Section */}
 
-      {/* <HeroSection
-        title="Jayashankar Pulp & Paper Mills"
-        subtitle="Redefining Sustainable Packaging: West Godavari Mill"
+      <HeroSection
+        title="Jayashankar Pulp & Paper Mills Private Limited"
+        description="Redefining Sustainable Packaging: West Godavari Mill"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
-      /> */}
+      />
 
-      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
+      {/* <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -133,7 +133,7 @@ const PulpPaper = () => {
             </h1>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Mill Overview */}
       <section className="section-padding">
