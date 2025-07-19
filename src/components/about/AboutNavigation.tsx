@@ -19,7 +19,7 @@ const AboutNavigation = () => {
   return (
     <div className="bg-muted/30 border-b">
       <div className="container-width">
-        <nav className="flex flex-wrap gap-2 py-4">
+        <nav className="flex flex-wrap gap-2 py-4" aria-label="About navigation" role="navigation">
           {navItems.map((item) => (
             <Button
               key={item.name}
@@ -27,7 +27,13 @@ const AboutNavigation = () => {
               variant={isActive(item.href) ? 'default' : 'ghost'}
               size="sm"
             >
-              <Link to={item.href}>{item.name}</Link>
+              <Link
+                to={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                tabIndex={0}
+              >
+                {item.name}
+              </Link>
             </Button>
           ))}
         </nav>

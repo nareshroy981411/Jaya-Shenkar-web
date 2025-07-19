@@ -18,6 +18,11 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      heading: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"],
+      serif: ["Merriweather", "serif"],
+    },
     extend: {
       height: {
         38: "9.5rem",
@@ -29,12 +34,42 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        theme: {
-          primary: "hsl(210, 100%, 40%)", // Blue - pharma / industrial
-          secondary: "hsl(220, 10%, 40%)", // Steel gray - industrial
-          accent: "hsla(18, 91%, 48%, 1.00)", // Green - clean/sustainable
-          bgLight: "hsl(210, 40%, 98%)", // Background tint
-          text: "hsl(0, 0%, 100%)",
+        // Business vertical themes
+        pharma: {
+          primary: "#1e40af", // blue-800
+          accent: "#38bdf8", // sky-400
+          light: "#e0f2fe", // sky-100
+          dark: "#0c224a", // custom dark
+          text: "#0c224a",
+        },
+        industrial: {
+          primary: "#166534", // green-800
+          accent: "#22d3ee", // cyan-400
+          light: "#f0fdf4", // green-50
+          dark: "#052e16", // green-950
+          text: "#052e16",
+        },
+        power: {
+          primary: "#f59e42", // orange-400
+          accent: "#fbbf24", // amber-400
+          light: "#fff7ed", // orange-50
+          dark: "#78350f", // orange-900
+          text: "#78350f",
+        },
+        agro: {
+          primary: "#65a30d", // lime-700
+          accent: "#bef264", // lime-200
+          light: "#f7fee7", // lime-50
+          dark: "#365314", // lime-900
+          text: "#365314",
+        },
+        // General text themes
+        text: {
+          heading: "#1e293b", // slate-800
+          subheading: "#334155", // slate-700
+          body: "#475569", // slate-600
+          muted: "#64748b", // slate-500
+          white: "#fff",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

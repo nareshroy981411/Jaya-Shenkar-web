@@ -75,14 +75,9 @@ const About = () => {
       <Header />
       <StickyContactButton />
       <HeroSection
-        // title="About Jaya Shankar Group"
-        title={
-          <span className="bg-[#0f215c] font-serif text-5xl md:text-6xl font-extrabold text-[gold] drop-shadow-lg tracking-tight">
-            <span className="text-[#fa8202] font-serif font-extrabold">ABOUT</span> JAYA SHANKAR GROUP
-          </span>
-        }
-        // subtitle={<span className="font-serif text-xl md:text-2xl font-bold text-green-900">Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment</span>}
-        // description={<span className="font-serif text-lg md:text-xl font-medium text-[#1a2233]">Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability.</span>}
+        title="ABOUT JAYA SHANKAR GROUP"
+        // subtitle="Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment"
+        description="Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability."
         backgroundImage="/odishaparma/group.jpg"
       />
 
@@ -98,7 +93,7 @@ const About = () => {
             description="Jaya Shankar Group was founded with a clear mission: to create sustainable industrial ecosystems that drive economic growth while maintaining our commitment to environmental stewardship and social responsibility."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="fade-in">
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -123,7 +118,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Modern industrial facility"
-                className="rounded-lg shadow-xl border-4 border-transparent hover:border-[gold] transition-all duration-200"
+                className="rounded-lg shadow-xl border-4 border-transparent hover:border-[gold] transition-all duration-200 w-full max-w-xs md:max-w-md lg:max-w-lg mx-auto"
               />
             </div>
           </div>
@@ -141,23 +136,19 @@ const About = () => {
           />
 
           <div className="flex justify-center">
-            <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
-              <CardContent className="p-8">
+            <Card className="w-full max-w-xs sm:max-w-md md:max-w-lg group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
+              <CardContent className="p-4 sm:p-6 md:p-8">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
-                    <img
-                      src={founders[0].image}
-                      // alt={founders[0].name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 sm:mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
+                    {/* Founder image can be added here if available */}
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-blue-900 transition-all duration-200">
                     {founders[0].name}
                   </h3>
-                  <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
-                  <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
-                  <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p>
-                  <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
+                  <p className="text-green-700 font-medium mb-1 sm:mb-2">{founders[0].title}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-4">{founders[0].experience}</p>
+                  <p className="text-xs sm:text-sm font-medium text-blue-700 mb-2 sm:mb-4">{founders[0].specialization}</p>
+                  <p className="text-gray-600 leading-relaxed text-xs sm:text-sm">{founders[0].description}</p>
                 </div>
               </CardContent>
             </Card>
@@ -169,16 +160,16 @@ const About = () => {
       {/* Our Team */}
       <section className="section-padding bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="container-width">
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <SectionHeader
               subtitle="Our Team"
-              title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Collective Expertise Driving Success</span>}
+              title="Collective Expertise Driving Success"
               description="A diverse team of professionals with specialized experience across multiple domains, united by our commitment to excellence and sustainability."
               centered
             />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 md:gap-8 mb-8 md:mb-16">
             {teamStats.map((stat, index) => (
               <div key={index} className="text-center fade-in group border-2 border-transparent bg-white rounded-lg p-6 hover:border-[gold] hover:shadow-2xl transition-all duration-200" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="text-4xl font-bold text-blue-900 mb-2 group-hover:text-[gold] transition-all duration-200">{stat.number}</div>
@@ -187,7 +178,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-6">
             {expertise.map((area, index) => (
               <div
                 key={index}
@@ -205,13 +196,12 @@ const About = () => {
       <section className="section-padding bg-white text-primary-foreground ">
         <div className="container-width">
           <SectionHeader
-            // title="Corporate Philosophy: For Planet & People"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Corporate Philosophy</span>}
+            title="Corporate Philosophy"
             description="Our guiding principle shapes every aspect of our business, ensuring that economic growth goes hand in hand with environmental stewardship and social responsibility."
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 md:gap-8 mt-8 md:mt-16">
             {values.map((value, index) => (
               <div
                 key={index}

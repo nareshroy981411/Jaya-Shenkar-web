@@ -12,9 +12,8 @@ import { Factory, Package, Zap, Globe, ArrowRight, Building2, Leaf, Users } from
 
 const Clients = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
-      
       <HeroSection
         title="Clients & Partnerships"
         subtitle="Your Growth Partner in Industrial Innovation, Energy, and Sustainable Manufacturing"
@@ -25,12 +24,12 @@ const Clients = () => {
       <section className="section-padding">
         <div className="container-width">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               At Jayashankar Group, we partner with the future. Our integrated ecosystem of industrial parks, 
               pulp and packaging units, and energy infrastructure is designed to empower a wide spectrum of 
               clients—from pharma giants and packaging leaders to clean energy consumers and global supply chain players.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               We invite industrial tenants, B2B clients, and strategic collaborators to explore scalable 
               opportunities across our Special Economic Zones (SEZs) and manufacturing platforms.
             </p>
@@ -48,56 +47,56 @@ const Clients = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <Card className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">Pharmaceuticals & Medical Devices</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">Pharmaceuticals & Medical Devices</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Leaf className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">Biotechnology & Life Sciences</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">Biotechnology & Life Sciences</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Factory className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">Food Processing & Agri-Tech</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">Food Processing & Agri-Tech</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Package className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">Packaging, Textiles & Logistics</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">Packaging, Textiles & Logistics</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">Automotive & Engineering</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">Automotive & Engineering</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-lg">IT, BPO & Digital Services</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-semibold">IT, BPO & Digital Services</CardTitle>
               </CardHeader>
             </Card>
           </div>
 
-          <Card className="bg-card">
+          <Card className="bg-card shadow-md">
             <CardHeader>
-              <CardTitle>What We Offer:</CardTitle>
+              <CardTitle className="text-lg md:text-xl font-bold">What We Offer:</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
                 <li className="flex items-start space-x-3">
                   <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>Ready-to-occupy industrial plots & built-up units</span>
@@ -115,8 +114,8 @@ const Clients = () => {
                   <span>Layout maps, master plans, project phases & downloadable brochures</span>
                 </li>
               </ul>
-              <div className="mt-6">
-                <Button asChild>
+              <div className="mt-6 flex justify-center">
+                <Button asChild size="lg" className="px-8">
                   <Link to="/business/industrial">
                     Explore SEZ Opportunities
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -138,38 +137,38 @@ const Clients = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">FMCG Brands</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">E-commerce Packaging</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Export Supply Chains</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Circular Economy Packaging</CardTitle>
               </CardHeader>
             </Card>
           </div>
 
-          <Card className="bg-card">
+          <Card className="bg-card shadow-md">
             <CardHeader>
-              <CardTitle>What We Offer:</CardTitle>
+              <CardTitle className="text-lg md:text-xl font-bold">What We Offer:</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
                 <li className="flex items-start space-x-3">
                   <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>High-quality packaging board from agro-residues & bamboo</span>
@@ -183,8 +182,8 @@ const Clients = () => {
                   <span>Strategic supply partnerships across India and overseas</span>
                 </li>
               </ul>
-              <div className="mt-6">
-                <Button asChild>
+              <div className="mt-6 flex justify-center">
+                <Button asChild size="lg" className="px-8">
                   <Link to="/business/paper">
                     Discover Packaging Solutions
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -206,38 +205,38 @@ const Clients = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">SEZ Clusters</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Large-scale Manufacturing</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Agro-industrial Parks</CardTitle>
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Cold-chain & Food Tech</CardTitle>
               </CardHeader>
             </Card>
           </div>
 
-          <Card className="bg-card">
+          <Card className="bg-card shadow-md">
             <CardHeader>
-              <CardTitle>Our Energy Capabilities:</CardTitle>
+              <CardTitle className="text-lg md:text-xl font-bold">Our Energy Capabilities:</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground text-base md:text-lg">
                 <li className="flex items-start space-x-3">
                   <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span>RLNG supply and pipeline integration</span>
@@ -251,8 +250,8 @@ const Clients = () => {
                   <span>Renewable energy integration on request</span>
                 </li>
               </ul>
-              <div className="mt-6">
-                <Button asChild>
+              <div className="mt-6 flex justify-center">
+                <Button asChild size="lg" className="px-8">
                   <Link to="/business/power">
                     Explore Power Solutions
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -274,8 +273,8 @@ const Clients = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <Card className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                 <CardTitle className="text-lg">Elof Hansson, Sweden</CardTitle>
@@ -283,7 +282,7 @@ const Clients = () => {
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Leaf className="w-12 h-12 text-primary mx-auto mb-4" />
                 <CardTitle className="text-lg">Mecoplanet Bamboo</CardTitle>
@@ -291,7 +290,7 @@ const Clients = () => {
               </CardHeader>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center hover-lift transition-shadow">
               <CardHeader>
                 <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
                 <CardTitle className="text-lg">Terravesta, UK</CardTitle>
@@ -300,12 +299,12 @@ const Clients = () => {
             </Card>
           </div>
 
-          <div className="text-center">
+          <div className="text-center max-w-2xl mx-auto">
             <p className="text-muted-foreground mb-8">
               We've also hosted delegations and forged alliances with companies from Singapore and Malaysia, 
               underscoring our global outlook.
             </p>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="px-8">
               <Link to="/contact">
                 Partner With Us
                 <ArrowRight className="w-4 h-4 ml-2" />

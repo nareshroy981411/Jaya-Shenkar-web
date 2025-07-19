@@ -74,27 +74,26 @@ const Header = () => {
     className="bg-[#05133C] shadow-lg fixed top-0 z-50 left-0 right-0"
     >
       <div className="container-width">
-        <div className="flex items-center justify-between h-20 px-2 md:px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20 px-2 md:px-4 lg:px-8">
           {/* Logo - Left side */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
-              <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-10 h-10 object-contain" />
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+              <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>
-            <div>
-              <div className="text-xl font-bold text-[gold]">JAYA SHANKAR GROUP</div>
-              {/* text-[#00008B] */}
-              <div className="text-xs text-[green] font-semibold">For Planet & People</div>
+            <div className="truncate">
+              <div className="text-base sm:text-xl font-bold text-[gold] leading-tight truncate" style={{fontFamily: 'Poppins, Arial, sans-serif'}}>JAYA SHANKAR GROUP</div>
+              <div className="text-[10px] sm:text-xs text-[green] font-semibold leading-tight truncate">For Planet & People</div>
             </div>
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-6 2xl:space-x-8 flex-1 justify-center">
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 {item.children ? (
                   <div className="relative" ref={dropdownRef}>
                     <button
-                      className={`flex items-center space-x-1 px-3 py-2 text-sm font-bold transition-colors ${isScrolled ? 'text-white hover:text-white' : 'text-white hover:text-white/80'
+                      className={`flex items-center space-x-1 px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold transition-colors ${isScrolled ? 'text-white hover:text-white' : 'text-white hover:text-white/80'
                         }`}
                       aria-haspopup="true"
                       aria-expanded={activeDropdown === item.name}
@@ -103,16 +102,16 @@ const Header = () => {
                         if (e.key === 'Escape') setActiveDropdown(null);
                       }}
                     >
-                      <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4" />
+                      <span className="truncate max-w-[120px] xl:max-w-[200px]">{item.name}</span>
+                      <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4" />
                     </button>
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 w-80 bg-white rounded-lg shadow-xl border mt-2 py-2 z-50">
+                      <div className="absolute top-full left-0 w-[420px] xl:w-[640px] bg-white rounded-lg shadow-xl border mt-2 py-2 z-50">
                         {item.children.map((child) => (
                           <Link
                             key={child.name}
                             to={child.href}
-                            className="block px-4 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors border-b border-border/50"
+                            className="block px-3 xl:px-4 py-2 xl:py-3 text-xs xl:text-sm font-semibold text-foreground hover:bg-muted transition-colors border-b border-border/50 truncate"
                             onClick={() => setActiveDropdown(null)}
                           >
                             {child.name}
@@ -124,14 +123,14 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`px-3 py-2 text-sm font-bold transition-colors ${isActive(item.href)
+                    className={`px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold transition-colors ${isActive(item.href)
                       ? 'text-white'
                       : isScrolled
                         ? 'text-white hover:text-white/80'
                         : 'text-white hover:text-white/80'
                       }`}
                   >
-                    {item.name}
+                    <span className="truncate max-w-[120px] xl:max-w-[200px]">{item.name}</span>
                   </Link>
                 )}
               </div>
@@ -141,8 +140,8 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'
-              }`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -150,13 +149,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t">
-            <nav className="py-4">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t animate-slide-down">
+            <nav className="py-2 sm:py-4">
               {navigation.map((item) => (
                 <div key={item.name}>
                   {item.children ? (
                     <div>
-                      <div className="px-4 py-3 text-sm font-bold text-foreground border-b">
+                      <div className="px-4 py-2 sm:py-3 text-xs sm:text-sm font-bold text-foreground border-b">
                         {item.name}
                       </div>
                       {item.children.map((child) => (
@@ -164,24 +163,11 @@ const Header = () => {
                           <Link
                             to={child.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="block px-8 py-3 text-sm font-medium text-foreground hover:text-foreground hover:bg-muted transition-colors border-b border-border/30"
+                            className="block px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm font-medium text-foreground hover:text-foreground hover:bg-muted transition-colors border-b border-border/30 truncate"
                           >
                             {child.name}
                           </Link>
-                          {child.children && (
-                            <div className="ml-4">
-                              {child.children.map((subChild) => (
-                                <Link
-                                  key={subChild.name}
-                                  to={subChild.href}
-                                  onClick={() => setIsMenuOpen(false)}
-                                  className="block px-12 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                                >
-                                  {subChild.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
+                          {/* No sub-children for current navigation structure */}
                         </div>
                       ))}
                     </div>
@@ -189,10 +175,10 @@ const Header = () => {
                     <Link
                       to={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-3 text-sm font-bold transition-colors border-b ${isActive(item.href)
+                      className={`block px-4 py-2 sm:py-3 text-xs sm:text-sm font-bold transition-colors border-b ${isActive(item.href)
                         ? 'text-primary bg-primary/5'
                         : 'text-foreground hover:text-primary hover:bg-muted'
-                        }`}
+                        } truncate`}
                     >
                       {item.name}
                     </Link>

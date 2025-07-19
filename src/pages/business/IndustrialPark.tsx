@@ -52,8 +52,8 @@ const IndustrialPark = () => {
       href: '/business/industrial/odisha'
     },
     {
-      subtitle: 'UPCOMING PROJECT ',
-      title: 'Hindupur Integrated Industrial Park',
+      // subtitle: 'UPCOMING PROJECT ',
+      title: 'Hindupur Integrated Industrial Park (Upcoming Project)',
       location: 'Anantapur District, Andhra Pradesh',
       area: '1,800 acres (1,000 acres SEZ, 800 acres DTA)',
       distance: '110 km from Bengaluru',
@@ -66,29 +66,30 @@ const IndustrialPark = () => {
       <Header />
       <StickyContactButton />
 
-      {/* Hero Section */}
-
-      {/* <HeroSection
-        title={<span className="text- bg-[#4240a1] font-serif drop-shadow-lg" style={{}}>JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED</span>}
-        backgroundImage="/carousels/ind.jpg"
-        
-      /> */}
-      <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
+      {/* Hero Section (responsive version only) */}
+      <HeroSection
+              title="JayaShankar Multi Product Industrial Park & SEZ Private Limited"
+              subtitle="Integrated Industrial Ecosystems"
+              backgroundImage="/carousels/ind.jpg"
+            />
+      {/* <section className="bg-white relative min-h-[400px] xs:min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(/carousels/ind.jpg)`,
           }}
         />
-        <div className="relative container mx-auto px-6 py-24 text-center mt-20">
-          <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg mb-6 bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
-            JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
-          </Badge>
-          <h1 className="font-serif drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-[orange] via-[orange] to-[orange] bg-clip-text text-transparent">
-            JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
-          </h1>
+        <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-6 sm:pb-10 md:pb-14 lg:pb-16 bottom-0">
+          <div className="flex flex-col items-center justify-center w-full max-w-4xl px-2 xs:px-4 sm:px-6">
+            <Badge variant="secondary" className="mb-4 xs:mb-6 px-4 xs:px-6 py-1.5 xs:py-2 rounded-full font-semibold text-base xs:text-lg shadow-lg bg-green-800 text-white border-white/20 hover:bg-green-500">
+              Integrated Industrial Ecosystems
+            </Badge>
+            <h1 className="font-serif drop-shadow-lg text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 xs:mb-6 leading-tight bg-gradient-to-r from-[orange] via-[orange] to-[orange] bg-clip-text text-transparent text-center">
+              JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
+            </h1>
+          </div>
         </div>
-      </section>
+      </section> */}
 
 
       {/* Overview Section */}
@@ -96,16 +97,16 @@ const IndustrialPark = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Overview & Opportunities"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Creating Integrated Industrial Ecosystems</span>}
+            title="Creating Integrated Industrial Ecosystems"
             theme="industrial"
             centered
           />
-          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Image Left */}
-            <div className="relative order-1 lg:order-none">
-              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden">
+            <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
+              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden h-full">
                 {imageUrls.map((src, idx) => (
-                  <div className="keen-slider__slide" key={idx}>
+                  <div className="keen-slider__slide h-full" key={idx}>
                     <img src={src} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -113,14 +114,13 @@ const IndustrialPark = () => {
               <button onClick={() => slider.current?.prev()} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8592;</button>
               <button onClick={() => slider.current?.next()} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8594;</button>
             </div>
-
             {/* Text Right */}
-            <div className="px-6 order-2 lg:order-none">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
+              <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-light text-gray-800 leading-tight">
                 Integrated Industrial Infrastructure
               </h2>
-              <div className="border-t border-gray-400 my-6 w-full max-w-md"></div>
-              <p className="text-gray-700 text-base md:text-lg mb-6 max-w-md">
+              <div className="border-t border-gray-400 my-4 xs:my-6 w-full max-w-xs xs:max-w-sm md:max-w-md"></div>
+              <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
                 Our industrial parks are designed to provide comprehensive infrastructure and support services, enabling businesses to focus on their core operations while we handle the complexities of industrial development.
               </p>
             </div>
@@ -131,7 +131,7 @@ const IndustrialPark = () => {
       {/* Focus Areas */}
       <section className="section-padding bg-muted/50">
         <div className="container-width">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <h3 className="text-3xl font-bold text-[hsl(var(--industrial-primary))] mb-6">Focus Sectors</h3>
               <div className="space-y-4">
@@ -173,13 +173,46 @@ const IndustrialPark = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Our Projects"
-            // title="Strategic Locations Driving Industrial Growth"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Strategic Locations Driving Industrial Growth</span>}
+            title="Strategic Locations Driving Industrial Growth"
             description="Each of our industrial parks is strategically located to provide maximum connectivity, skilled workforce access, and government support."
             theme="industrial"
             centered
           />
-
+          {/* <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-6">
+            {projects.map((project, index) => (
+              <Card key={index} className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100">
+                <CardContent className="p-6">
+                  {project.subtitle && <h2 className="text-xl font-bold text-blue-800 mb-3">{project.subtitle}</h2>}
+                  <h3 className="text-xl font-semibold text-[hsl(var(--industrial-primary))] mb-3">{project.title}</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{project.location}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Building2 className="w-4 h-4" />
+                      <span>{project.area}</span>
+                    </div>
+                    {project.distance && (
+                      <div className="flex items-center space-x-2">
+                        <Target className="w-4 h-4" />
+                        <span>{project.distance}</span>
+                      </div>
+                    )}
+                    {project.jobs && (
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4" />
+                        <span>{project.jobs}</span>
+                      </div>
+                    )}
+                  </div>
+                  <Button asChild variant="outline" className="w-full border-[hsl(var(--industrial-accent))] text-[hsl(var(--industrial-accent))] hover:bg-[hsl(var(--industrial-accent))] hover:text-white">
+                    <Link to={project.href}>Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div> */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100">
@@ -205,12 +238,6 @@ const IndustrialPark = () => {
                       <div className="flex items-center space-x-2">
                         <Users className="w-4 h-4" />
                         <span>{project.jobs}</span>
-                      </div>
-                    )}
-                    {project.focus && (
-                      <div className="flex items-center space-x-2">
-                        <Factory className="w-4 h-4" />
-                        <span>{project.focus}</span>
                       </div>
                     )}
                   </div>

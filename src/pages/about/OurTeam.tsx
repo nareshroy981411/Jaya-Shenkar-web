@@ -69,7 +69,7 @@ const OurTeam = () => {
       
       <HeroSection
         title="Our Team"
-        subtitle="Collective Expertise Driving Success"
+        // subtitle="Collective Expertise Driving Success"
         description="A diverse team of professionals with specialized experience across multiple domains, united by our commitment to excellence and sustainability."
         backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
@@ -84,6 +84,7 @@ const OurTeam = () => {
             title="200+ Man-Years of Combined Expertise"
             description="Our team represents a powerful combination of industry experience, academic excellence, and specialized knowledge across pharma, infrastructure, finance, and engineering domains."
             centered
+            theme="default"
           />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
@@ -127,6 +128,7 @@ const OurTeam = () => {
             title="Professionals Driving Innovation"
             description="Each team member brings unique expertise and experience, contributing to our collective strength in delivering world-class projects."
             centered
+            theme="default"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -170,6 +172,7 @@ const OurTeam = () => {
             subtitle="Our Culture"
             title="United by Purpose"
             description="Our team culture is built on collaboration, innovation, and a shared commitment to sustainable development and excellence in execution."
+            theme="default"
           />
 
           {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

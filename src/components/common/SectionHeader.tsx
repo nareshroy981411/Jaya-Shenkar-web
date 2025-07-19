@@ -40,7 +40,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       )}
       
       <div className="fade-in animation-delay-200">
-        <h2 className="text-foreground mb-6">
+        <h2 className={`mb-6 font-bold text-2xl md:text-3xl lg:text-4xl ${getThemeColor()}`} aria-label={title} tabIndex={0}>
           {title}
         </h2>
       </div>

@@ -81,21 +81,15 @@ const Investors = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <StickyContactButton />
 
       {/* Hero Section */}
       <HeroSection
+        description="Discover high-potential investment opportunities with Jaya Shankar Group, a trusted leader in real estate, infrastructure, and emerging markets."
         title="Investment Opportunities with Jaya Shankar Group"
-        // subtitle="Partner with us in building India's sustainable industrial future through diversified, high-growth opportunities"
-        // buttons={[
-        //   { text: 'Download Investor Deck', href: '#contact' },
-        //   { text: 'Schedule Meeting', href: '/contact', variant: 'outline' },
-        // ]}
-
-        backgroundImage= '/images2_jayashankar/image_17.webp'
-        // backgroundImage="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="/images2_jayashankar/image_17.webp"
       />
 
       {/* Investment Highlights */}
@@ -103,12 +97,12 @@ const Investors = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Investment Highlights"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Why Invest in Jaya Shankar Group</span>}
+            title="Why Invest in Jaya Shankar Group"
             description="Strategic advantages and compelling value propositions that make us an attractive investment partner"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
             {investmentHighlights.map((highlight, index) => {
               // Assign different accent colors for icons and metric text
               const iconBg = [
@@ -124,8 +118,8 @@ const Investors = () => {
                 'text-orange-600',
               ][index % 4];
               return (
-                <Card key={index} className="hover-lift">
-                  <CardContent className="p-6">
+                <Card key={index} className="hover-lift transition-shadow">
+                  <CardContent className="p-4 md:p-6">
                     <div className={`w-16 h-16 ${iconBg} rounded-lg flex items-center justify-center mx-auto mb-4`}>
                       <highlight.icon className={`w-8 h-8 ${iconColor}`} />
                     </div>
@@ -139,7 +133,7 @@ const Investors = () => {
           </div>
 
           {/* Key Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {keyMetrics.map((metric, index) => {
               const iconBg = [
                 'bg-blue-100',
@@ -172,12 +166,12 @@ const Investors = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Investment Opportunities"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Current & Upcoming Projects</span>}
+            title="Current & Upcoming Projects"
             description="Explore our portfolio of high-potential projects across different sectors and development stages"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {investmentOpportunities.map((opportunity, index) => {
               const accentColor = [
                 'text-blue-600',
@@ -186,7 +180,7 @@ const Investors = () => {
                 'text-orange-600',
               ][index % 4];
               return (
-                <Card key={index} className="hover-lift">
+                <Card key={index} className="hover-lift transition-shadow">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <div>
@@ -210,20 +204,20 @@ const Investors = () => {
       </section>
 
       {/* Why Choose JSG */}
-      <section className="section-padding bg-[white]">
+      <section className="section-padding bg-white">
         <div className="container-width">
           <SectionHeader
             subtitle="Investment Rationale"
-            title={<span className="text-lg md:text-xl lg:text-2xl font-bold block">Strategic Value Propositions</span>}
+            title="Strategic Value Propositions"
             description="Key factors that position Jaya Shankar Group as a compelling investment opportunity"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Card 1: Proven Track Record */}
             {/* Card 1: Proven Track Record */}
-            <Card className="hover-lift">
-              <CardContent className="p-6">
+            <Card className="hover-lift transition-shadow">
+              <CardContent className="p-4 md:p-6">
                 <Award className="w-12 h-12 bg-yellow-100 rounded-lg text-yellow-600 mb-4 flex items-center justify-center" />
                 <h3 className="text-lg font-semibold mb-3">Proven Track Record</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -233,8 +227,8 @@ const Investors = () => {
             </Card>
 
             {/* Card 2: Strategic Locations */}
-            <Card className="hover-lift">
-              <CardContent className="p-6">
+            <Card className="hover-lift transition-shadow">
+              <CardContent className="p-4 md:p-6">
                 <Target className="w-12 h-12 bg-blue-100 rounded-lg text-blue-600 mb-4 flex items-center justify-center" />
                 <h3 className="text-lg font-semibold mb-3">Strategic Locations</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -244,8 +238,8 @@ const Investors = () => {
             </Card>
 
             {/* Card 3: Diversified Revenue */}
-            <Card className="hover-lift">
-              <CardContent className="p-6">
+            <Card className="hover-lift transition-shadow">
+              <CardContent className="p-4 md:p-6">
                 <BarChart3 className="w-12 h-12 bg-white-100 rounded-lg text-[#9b6400] mb-4 flex items-center justify-center" />
                 <h3 className="text-lg font-semibold mb-3">Diversified Revenue</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -266,12 +260,9 @@ const Investors = () => {
               Join us in creating sustainable industrial ecosystems that generate strong returns while contributing to India's economic growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" variant="secondary" className="px-8">
                 <Link to="/contact">Schedule a Meeting</Link>
               </Button>
-              {/* <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary">
-                <Link to="#download">Download Investor Deck</Link>
-              </Button> */}
             </div>
           </div>
         </div>
