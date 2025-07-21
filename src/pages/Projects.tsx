@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import HeroSection from "@/components/common/HeroSection"
 import SectionHeader from "@/components/common/SectionHeader"
 import StickyContactButton from "@/components/common/StickyContactButton"
 import ProjectCard from "@/components/projects/ProjectCard"
+import Loader from "@/components/ui/Loader"
 
 const projects = [
   {
@@ -86,6 +87,12 @@ const gradientBackgrounds = [
 ]
 
 const Projects = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) return <Loader />;
   return (
     <div className="min-h-screen bg-white">
       <Header />
