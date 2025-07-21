@@ -71,7 +71,7 @@ const Header = () => {
     <header
       className="bg-[#05133C] shadow-lg fixed top-0 z-50 left-0 right-0"
     >
-      <div className="container-width">
+      <div className="w-full">
         <div className="flex items-center justify-between h-16 sm:h-20 px-2 md:px-4 lg:px-8">
           {/* Logo - Left side */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 min-w-0">
@@ -79,7 +79,7 @@ const Header = () => {
               <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>
             <div className="min-w-0">
-              <div className="text-base sm:text-xl font-bold text-[gold] leading-tight whitespace-nowrap" style={{ fontFamily: 'Poppins, Arial, sans-serif' }}>JAYA SHANKAR GROUP</div>
+              <div className="text-base sm:text-xl font-bold text-[gold] leading-tight whitespace-wrap" style={{ fontFamily: 'Poppins, Arial, sans-serif' }}>JAYA SHANKAR GROUP</div>
               <div className="text-[10px] sm:text-xs text-[green] font-semibold leading-tight truncate">For Planet & People</div>
             </div>
           </Link>
@@ -171,7 +171,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-white' : 'text-white'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

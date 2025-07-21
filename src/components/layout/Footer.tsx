@@ -27,17 +27,17 @@ const Footer = () => {
   return (
     <footer className="bg-[#05133C] text-primary-foreground text-xs sm:text-sm font-sans">
       {/* Main Footer */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12">
+      <div className=" w-full p-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 lg:gap-12">
 
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 min-w-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                 <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
               </div>
               <div className="min-w-0">
-                <div className="text-base sm:text-xl font-bold text-[gold] leading-tight whitespace-nowrap">JAYA SHANKAR GROUP</div>
+                <div className="text-base sm:text-xl font-bold text-[gold] leading-tight whitespace-wrap">JAYA SHANKAR GROUP</div>
                 <div className="text-[10px] sm:text-xs opacity-80 text-[green] font-bold leading-tight truncate">For Planet & People</div>
               </div>
             </Link>
