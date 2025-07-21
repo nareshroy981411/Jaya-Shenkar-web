@@ -40,7 +40,8 @@ const Sustainability = () => {
       {
         title: "Sustainability",
         description: "Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders.",
-        backgroundImage: "/paper&pulp/pulp2.jpg",
+        // backgroundImage: "/paper&pulp/pulp2.jpg",
+        backgroundVideo: "/bg-video/road.mp4",
 
       },
       {
@@ -64,6 +65,24 @@ const Sustainability = () => {
       {/* Hero Section */}
 
       <HeroSection slides={heroSlides} />
+            {/* Hero Section with Background Video */}
+      {/* <div className="relative overflow-hidden min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/bg-video/road.mp4"
+        />
+        <div className="absolute inset-0  z-0 pointer-events-none" />
+        <div className="relative z-10 w-full">
+          <HeroSection
+            description="Our commitment to environmental stewardship, social responsibility, and good governance drives every aspect of our operations, creating value for all stakeholders."
+            title="Sustainability"
+          />
+        </div>
+      </div> */}
 
       {/* Our Commitment */}
       <section id="commitment" className="section-padding">

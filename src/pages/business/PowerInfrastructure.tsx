@@ -114,7 +114,7 @@ const PowerInfrastructure = () => {
       description: 'Completed major infrastructure and transportation projects',
       icon: Target,
       color: 'text-green-600',
-      image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: 'https://econlife.com/wp-content/uploads/2015/08/highway-congestion-complex-highway-system-scaled-1.jpg'
     },
     {
       title: 'Operational Excellence',
@@ -169,7 +169,7 @@ const PowerInfrastructure = () => {
       title: " JayaShankar Power and Infrastructure Private Limited",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
-      backgroundImage: "/power/solar_power.png",
+      backgroundImage: "/carousels/solars.jpg",
       badgeBg: "bg-green-600",
       badgeText: "text-white",
       theme: "power",
@@ -178,7 +178,7 @@ const PowerInfrastructure = () => {
       title: " JayaShankar Power and Infrastructure Private Limited",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
-      backgroundImage: "/power/tunnel-1.png",
+      backgroundImage: "/carousels/road.jpg",
       badgeBg: "bg-yellow-500",
       badgeText: "text-black",
       theme: "power",

@@ -8,6 +8,7 @@ interface HeroSlide {
   subtitle: string;
   description?: string;
   backgroundImage: string;
+  backgroundVideo: string;
   buttons?: Array<{
     text: string;
     href: string;
@@ -22,7 +23,7 @@ interface HeroSectionProps {
   title?: string;
   subtitle?: string;
   description?: string;
-  backgroundImage?: string;
+  backgroundVideo?: string;
   buttons?: Array<{
     text: string;
     href: string;
@@ -39,7 +40,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   description,
-  backgroundImage = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+  backgroundImage,
+  backgroundVideo,
+  // backgroundImage = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
   buttons = [],
   theme = 'default',
   autoSlide = true,
@@ -93,30 +96,55 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     subtitle,
     description,
     backgroundImage,
+    backgroundVideo,
     buttons,
+    badgeBg: 'bg-blue-500',
+    badgeText: 'text-white',
   };
 
   return (
     <section className={`relative min-h-screen flex items-center overflow-hidden ${getThemeClasses()}`} aria-label={currentSlideData.title || 'Hero section'}>
-      {/* Background Images */}
+      {/* Background Video (priority over image) */}
       {isCarousel ? (
         slides.map((slide, index) => (
+          <React.Fragment key={index}>
+            {slide.backgroundVideo ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'} z-0`}
+                src={slide.backgroundVideo}
+              />
+            ) : (
+              <div
+                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'} z-0`}
+                style={{ backgroundImage: `url(${slide.backgroundImage})` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-black/0" />
+              </div>
+            )}
+          </React.Fragment>
+        ))
+      ) : (
+        currentSlideData.backgroundVideo ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src={currentSlideData.backgroundVideo}
+          />
+        ) : (
           <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-            style={{ backgroundImage: `url(${slide.backgroundImage})` }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-black/0" />
           </div>
-        ))
-      ) : (
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-black/0" />
-        </div>
+        )
       )}
 
       {/* Navigation Arrows */}

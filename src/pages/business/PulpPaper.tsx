@@ -110,7 +110,7 @@ const PulpPaper = () => {
       {/* Hero Section */}
 
       <HeroSection
-        title="Jayashankar Pulp & Paper Mills Private Limited"
+        title="JayaShankar Pulp & Paper Mills Private Limited"
         description="Redefining Sustainable Packaging: West Godavari Mill"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
       />
