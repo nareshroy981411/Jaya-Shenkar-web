@@ -11,6 +11,8 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { motion } from "framer-motion";
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -122,7 +124,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
       <Header />
-      
+
       <HeroSection
         title="Contact Jaya Shankar Group"
         // subtitle="Get in Touch with Our Team"
@@ -139,7 +141,7 @@ const Contact = () => {
               <SectionHeader
                 title="Send Us a Message"
                 description="Fill out the form below and we'll get back to you within 24 hours."
-                // ...removed className prop for type compatibility
+              // ...removed className prop for type compatibility
               />
 
               <Card className="bg-white/90 shadow-xl border-blue-100">
@@ -238,7 +240,7 @@ const Contact = () => {
               <SectionHeader
                 title="Contact Information"
                 description="Reach out to us through any of the following channels."
-                // ...removed className prop for type compatibility
+              // ...removed className prop for type compatibility
               />
 
               <div className="space-y-6">
@@ -271,14 +273,25 @@ const Contact = () => {
       </section>
 
       {/* Key Contacts */}
-      <section className="section-padding bg-gradient-to-r from-blue-100 via-white to-blue-50">
-        <div className="container-width ">
+      <section className="section-padding bg-gradient-to-r from-blue-100 via-white to-blue-50 relative overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/bg-video/winds.mp4"
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 z-0 pointer-events-none" />
+        <div className="container-width relative z-10">
           <SectionHeader
             subtitle="Key Contacts"
             title="Connect with Our Leadership Team"
             description="Direct access to our key personnel for specific inquiries and partnership discussions."
             centered
-            // ...removed className prop for type compatibility
+          // ...removed className prop for type compatibility
           />
 
           <div className="flex flex-col items-center justify-center gap-8">
@@ -287,22 +300,77 @@ const Contact = () => {
               return (
                 <Card
                   key={index}
-                  className={`hover-lift fade-in bg-white/90 border-0 shadow-md flex items-center justify-center w-full max-w-xs min-w-[180px] min-h-[160px]`}
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className="w-full max-w-xs min-w-[220px] overflow-hidden rounded-3xl shadow-xl bg-white"
                 >
-                  <CardContent className="flex flex-col items-center justify-center text-center p-3 sm:p-4">
-                    <div className={`w-14 h-14 sm:w-16 sm:h-16 ${color.bg} rounded-full flex items-center justify-center mb-3 sm:mb-4`}>
-                      <span className={`${color.text} font-bold text-base sm:text-lg`}>
-                        {contact.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
+                    whileHover={{ scale: 1.03 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Top Gradient with Avatar */}
+                    <div className="relative bg-gradient-to-br from-pink-600 to-purple-500 h-40 w-full flex items-end justify-center rounded-b-[80px]">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="absolute bottom-[-40px] w-20 h-20 rounded-full border-4 border-white shadow-md overflow-hidden"
+                      >
+                        <div className="w-full h-full flex items-center justify-center bg-blue-100 text-2xl font-bold text-blue-900">
+                          {contact.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                      </motion.div>
                     </div>
-                    <h3 className={`font-semibold mb-1 text-base md:text-lg ${color.title}`}>{contact.name}</h3>
-                    <p className={`${color.role} text-xs sm:text-sm mb-2`}>{contact.title}</p>
-                    {contact.phone && (
-                      <p className={`${color.text} text-xs sm:text-sm mb-1`}>{contact.phone}</p>
-                    )}
-                    <p className={`${color.text} text-xs sm:text-sm`}>{contact.email}</p>
-                  </CardContent>
+
+                    {/* Content Section */}
+                    <div className="pt-12 pb-6 px-4 text-center">
+                      <motion.h3
+                        className="font-semibold text-lg text-gray-900"
+                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {contact.name}
+                      </motion.h3>
+                      <motion.p
+                        className="text-gray-500 text-sm mb-4"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                      >
+                        {contact.title}
+                      </motion.p>
+
+                      {/* Social Icons */}
+                      <motion.div
+                        className="flex justify-center gap-4 mb-4 text-gray-700"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        {contact.linkedin && <a href={contact.linkedin} target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>}
+                        {contact.instagram && <a href={contact.instagram} target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>}
+                        {contact.facebook && <a href={contact.facebook} target="_blank" rel="noreferrer"><i className="fab fa-facebook"></i></a>}
+                      </motion.div>
+
+                      {/* Contact Info */}
+                      <motion.p
+                        className="text-gray-700 text-sm mb-1"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                      >
+                        📞 {contact.phone}
+                      </motion.p>
+                      <motion.p
+                        className="text-gray-700 text-sm"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.7 }}
+                      >
+                        ✉️ {contact.email}
+                      </motion.p>
+                    </div>
+                  </motion.div>
                 </Card>
               );
             })}
@@ -317,7 +385,7 @@ const Contact = () => {
             title="Find Us"
             description="Visit our corporate office in Hyderabad, strategically located for easy access."
             centered
-            // ...removed className prop for type compatibility
+          // ...removed className prop for type compatibility
           />
 
           <div className="aspect-video bg-blue-100 rounded-lg overflow-hidden shadow-md">
@@ -334,7 +402,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
 
       <Footer />
     </div>

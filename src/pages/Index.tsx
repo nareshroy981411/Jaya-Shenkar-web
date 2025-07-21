@@ -15,6 +15,11 @@ import CompanyMap from './CompanyMap';
 const Index = () => {
   const navigate = useNavigate()
   const heroSlides = [
+        {
+      title: 'Jaya Shankar Group',
+      description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
+      backgroundVideo: '/bg-video/forest.mp4',
+    },
     {
       title: 'Jaya Shankar Group',
       description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',

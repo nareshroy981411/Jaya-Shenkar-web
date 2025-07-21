@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -85,12 +84,25 @@ const Investors = () => {
       <Header />
       <StickyContactButton />
 
-      {/* Hero Section */}
-      <HeroSection
-        description="Discover high-potential investment opportunities with Jaya Shankar Group, a trusted leader in real estate, infrastructure, and emerging markets."
-        title="Investment Opportunities with Jaya Shankar Group"
-        backgroundImage="/images2_jayashankar/image_17.webp"
-      />
+      {/* Hero Section with Background Video */}
+      <div className="relative overflow-hidden min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/bg-video/ringroad.mp4"
+        />
+        {/* Optional overlay for readability */}
+        <div className="absolute inset-0  z-0 pointer-events-none" />
+        <div className="relative z-10 w-full">
+          <HeroSection
+            description="Discover high-potential investment opportunities with Jaya Shankar Group, a trusted leader in real estate, infrastructure, and emerging markets."
+            title="Investment Opportunities with Jaya Shankar Group"
+          />
+        </div>
+      </div>
 
       {/* Investment Highlights */}
       <section className="section-padding bg-gradient-to-br from-blue-50 via-yellow-50 to-green-50">

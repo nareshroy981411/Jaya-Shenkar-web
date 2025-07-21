@@ -115,7 +115,7 @@ const ChemicalsPackaging = () => {
       {/* Hero Section */}
       <HeroSection
         description="Building India's Bio-Based Future from Assam"
-        title="Jayashankar Chemicals & Packagings Assam Private Limited"
+        title="JayaShankar Chemicals & Packagings Assam Private Limited"
         backgroundImage="/images/Agroforestry.webp"
       />
       {/* About Section */}
