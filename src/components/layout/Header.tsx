@@ -69,8 +69,6 @@ const Header = () => {
 
   return (
     <header
-      // className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-lg backdrop-blur-md' : 'bg-transparent text-white'
-      //   }`}
       className="bg-[#05133C] shadow-lg fixed top-0 z-50 left-0 right-0"
     >
       <div className="container-width">
@@ -80,8 +78,8 @@ const Header = () => {
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
               <img src="/JAYASHANKAR-GROUP.png" alt="Jaya Shankar Group Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
             </div>
-            <div className="truncate">
-              <div className="text-base sm:text-xl font-bold text-[gold] leading-tight truncate" style={{ fontFamily: 'Poppins, Arial, sans-serif' }}>JAYA SHANKAR GROUP</div>
+            <div className="min-w-0">
+              <div className="text-base sm:text-xl font-bold text-[gold] leading-tight whitespace-nowrap" style={{ fontFamily: 'Poppins, Arial, sans-serif' }}>JAYA SHANKAR GROUP</div>
               <div className="text-[10px] sm:text-xs text-[green] font-semibold leading-tight truncate">For Planet & People</div>
             </div>
           </Link>
@@ -183,12 +181,12 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t animate-slide-down">
-            <nav className="py-2 sm:py-4">
+            <nav>
               {navigation.map((item) => (
                 <div key={item.name}>
                   {item.children ? (
                     <div>
-                      <div className="px-4 py-2 sm:py-3 text-xs sm:text-sm font-bold text-foreground border-b">
+                      <div className="px-4 text-xs sm:text-sm font-bold text-foreground border-b">
                         {item.name}
                       </div>
                       {item.children.map((child) => (
@@ -196,11 +194,10 @@ const Header = () => {
                           <Link
                             to={child.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="block px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm font-medium text-foreground hover:text-foreground hover:bg-muted transition-colors border-b border-border/30 truncate"
+                            className="block px-6 sm:px-8 text-xs sm:text-sm font-medium text-foreground hover:text-foreground hover:bg-muted transition-colors border-b border-border/30 truncate"
                           >
                             {child.name}
                           </Link>
-                          {/* No sub-children for current navigation structure */}
                         </div>
                       ))}
                     </div>
@@ -208,7 +205,7 @@ const Header = () => {
                     <Link
                       to={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-2 sm:py-3 text-xs sm:text-sm font-bold transition-colors border-b ${isActive(item.href)
+                      className={`block px-4 text-xs sm:text-sm font-bold transition-colors border-b ${isActive(item.href)
                         ? 'text-primary bg-primary/5'
                         : 'text-foreground hover:text-primary hover:bg-muted'
                         } truncate`}

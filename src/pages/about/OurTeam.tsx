@@ -1,4 +1,7 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/common/HeroSection';
@@ -7,6 +10,103 @@ import AboutNavigation from '@/components/about/AboutNavigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Briefcase, TrendingUp, Award } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
+
+function SwipeableTeamCards({ teamMembers }) {
+  const [current, setCurrent] = React.useState(0);
+  const total = teamMembers.length;
+
+  // Handle swipe
+  function handleSwipe(direction) {
+    if (direction === 'left' && current < total - 1) setCurrent(current + 1);
+    if (direction === 'right' && current > 0) setCurrent(current - 1);
+  }
+
+  return (
+    <div className="relative w-full flex items-center justify-center" style={{ height: 480 }}>
+      <AnimatePresence initial={false} custom={current}>
+        {teamMembers.map((member, idx) => {
+          if (Math.abs(idx - current) > 1) return null;
+          const isActive = idx === current;
+          const isPrev = idx < current;
+          const isNext = idx > current;
+          return (
+            <motion.div
+              key={idx}
+              drag={isActive ? "x" : false}
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={(e, info) => {
+                if (info.offset.x < -120) handleSwipe('left');
+                if (info.offset.x > 120) handleSwipe('right');
+              }}
+              initial={{
+                scale: isActive ? 1 : 0.92,
+                x: isPrev ? -60 : isNext ? 60 : 0,
+                zIndex: isActive ? 2 : 1,
+                opacity: isActive ? 1 : 0.7,
+              }}
+              animate={{
+                scale: isActive ? 1 : 0.92,
+                x: isPrev ? -60 : isNext ? 60 : 0,
+                zIndex: isActive ? 2 : 1,
+                opacity: isActive ? 1 : 0.7,
+              }}
+              exit={{ opacity: 0, scale: 0.7, x: isPrev ? -120 : 120 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+              style={{ position: 'absolute', width: '90%', maxWidth: 520, cursor: isActive ? 'grab' : 'default', zIndex: isActive ? 2 : 1 }}
+            >
+              <Card className={`group border-2 border-transparent bg-white transition-all duration-200 ${isActive ? 'shadow-2xl shadow-black/60 hover:border-[gold] hover:shadow-[0_8px_32px_rgba(0,0,0,0.7)]' : 'shadow-md shadow-black/30'}`}> 
+                <CardContent className="p-8">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-blue-900 group-hover:text-[gold] transition-all duration-200">{member.name}</h3>
+                      <p className="text-green-700 font-medium">{member.title}</p>
+                    </div>
+                    <div className="space-y-3">
+                      <div>
+                        <h4 className="text-sm font-medium text-gray-500 mb-1">Education:</h4>
+                        <p className="text-sm text-gray-700">{member.education}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-gray-500 mb-1">Experience:</h4>
+                        <p className="text-sm text-gray-700">{member.experience}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-gray-500 mb-1">Specialization:</h4>
+                        <p className="text-sm text-gray-700">{member.specialization}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+      {/* Navigation Arrows - closer to card edges */}
+      <div className="absolute left-[6%] top-1/2 -translate-y-1/2 z-20">
+        <button
+          onClick={() => handleSwipe('right')}
+          disabled={current === 0}
+          className={`w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-blue-700 hover:bg-blue-100 transition-all ${current === 0 ? 'opacity-40 cursor-not-allowed' : ''}`}
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+      </div>
+      <div className="absolute right-[6%] top-1/2 -translate-y-1/2 z-20">
+        <button
+          onClick={() => handleSwipe('left')}
+          disabled={current === total - 1}
+          className={`w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-blue-700 hover:bg-blue-100 transition-all ${current === total - 1 ? 'opacity-40 cursor-not-allowed' : ''}`}
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 const OurTeam = () => {
   const teamMembers = [
@@ -131,36 +231,9 @@ const OurTeam = () => {
             theme="default"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl" style={{ animationDelay: `${index * 100}ms` }}>
-                <CardContent className="p-8">
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2 text-blue-900 group-hover:text-[gold] transition-all duration-200">{member.name}</h3>
-                      <p className="text-green-700 font-medium">{member.title}</p>
-                    </div>
-                    <div className="space-y-3">
-                      <div>
-                        <h4 className="text-sm font-medium text-gray-500 mb-1">Education:</h4>
-                        <p className="text-sm text-gray-700">{member.education}</p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-medium text-gray-500 mb-1">Experience:</h4>
-                        <p className="text-sm text-gray-700">{member.experience}</p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-medium text-gray-500 mb-1">Specialization:</h4>
-                        <p className="text-sm text-gray-700">{member.specialization}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {member.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Swipeable Card Stack for Team Members */}
+          <div className="relative flex items-center justify-center min-h-[480px] md:min-h-[520px]">
+            <SwipeableTeamCards teamMembers={teamMembers} />
           </div>
         </div>
       </section>
