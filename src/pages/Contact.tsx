@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/common/HeroSection';
@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from "framer-motion";
+import Loader from '@/components/ui/Loader';
 
 
 const Contact = () => {
@@ -24,6 +25,12 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,6 +127,8 @@ const Contact = () => {
     { bg: 'bg-gray-100', text: 'text-black-700', title: 'text-black-800', role: 'text-blue-600' },
     { bg: 'bg-gray-100', text: 'text-black-700', title: 'text-black-800', role: 'text-blue-600' },
   ];
+
+  if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,9 +8,20 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import { Leaf, Users, Shield, Award, Droplets, Recycle } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
+import Loader from '@/components/ui/Loader';
+
 // import { heroSlides } from './Index';
 
 const Sustainability = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
+
   const commitments = [
     {
       title: 'Environmental Stewardship',

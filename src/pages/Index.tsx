@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
 import { Button } from '@/components/ui/button';
@@ -11,8 +11,10 @@ import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
 import { ArrowRight, Building2, Factory, Zap, Users, Award, Globe, Leaf } from 'lucide-react';
 import CompanyMap from './CompanyMap';
+import Loader from '@/components/ui/Loader';
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
   const heroSlides = [
         {
@@ -181,6 +183,13 @@ const Index = () => {
       img: './assets/torrent_pharma.png',
     },
   ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen font-[Poppins,sans-serif] bg-white text-[#1a2233]">

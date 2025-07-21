@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,8 +8,16 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import { TrendingUp, Users, DollarSign, Building2, Award, Globe, Target, BarChart3 } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
+import Loader from '@/components/ui/Loader';
 
 const Investors = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const investmentHighlights = [
     {
       title: 'Multi-Sector Portfolio',
@@ -78,6 +86,8 @@ const Investors = () => {
       theme: 'power' as const,
     },
   ];
+
+  if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-white">

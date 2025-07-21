@@ -6,6 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const location = useLocation();
 
@@ -103,20 +104,7 @@ const Header = () => {
                       <span className="truncate max-w-[120px] xl:max-w-[200px]">{item.name}</span>
                       <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4" />
                     </button>
-                    {/* {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 w-[420px] xl:w-[640px] bg-white rounded-lg shadow-xl border mt-2 py-2 z-50">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            to={child.href}
-                            className="block px-3 xl:px-4 py-2 xl:py-3 text-xs xl:text-sm font-semibold text-foreground hover:bg-muted transition-colors border-b border-border/50 truncate"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )} */}
+                   
                     {activeDropdown === item.name && (
                       <div className="absolute top-full left-0 w-[700px] bg-white rounded-lg shadow-xl border mt-2 py-4 z-50 animate-slide-down">
                         <div className="grid grid-cols-2 gap-4 px-4">
@@ -181,34 +169,51 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t animate-slide-down">
-            <nav>
+            <nav className="space-y-4 py-3">
               {navigation.map((item) => (
                 <div key={item.name}>
                   {item.children ? (
                     <div>
-                      <div className="px-4 text-xs sm:text-sm font-bold text-foreground border-b">
-                        {item.name}
-                      </div>
-                      {item.children.map((child) => (
-                        <div key={child.name}>
-                          <Link
-                            to={child.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="block px-6 sm:px-8 text-xs sm:text-sm font-medium text-foreground hover:text-foreground hover:bg-muted transition-colors border-b border-border/30 truncate"
+                      <div className="flex items-center px-4 text-xs sm:text-sm font-bold text-foreground border-b">
+                        <span className="flex items-center gap-1">
+                          {item.name}
+                          <button
+                            type="button"
+                            className="p-1 focus:outline-none"
+                            onClick={() => setMobileDropdownOpen(mobileDropdownOpen === item.name ? null : item.name)}
+                            aria-label={mobileDropdownOpen === item.name ? 'Close dropdown' : 'Open dropdown'}
                           >
-                            {child.name}
-                          </Link>
+                            <ChevronDown className={`w-4 h-4 bg-gray-400 transition-transform ${mobileDropdownOpen === item.name ? 'rotate-180' : ''}`} />
+                          </button>
+                        </span>
+                      </div>
+                      {mobileDropdownOpen === item.name && (
+                        <div className="space-y-2 py-2">
+                          {item.children.map((child) => (
+                            <div key={child.name}>
+                              <Link
+                                to={child.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`block px-6 sm:px-8 text-xs sm:text-sm font-medium transition-colors border-b border-border/30 truncate ${isActive(child.href)
+                                  ? 'text-[#05133C] font-bold bg-blue-100'
+                                  : 'text-foreground hover:text-primary hover:bg-muted'
+                                }`}
+                              >
+                                {child.name}
+                              </Link>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
                     </div>
                   ) : (
                     <Link
                       to={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 text-xs sm:text-sm font-bold transition-colors border-b ${isActive(item.href)
-                        ? 'text-primary bg-primary/5'
+                      className={`block px-4 text-xs sm:text-sm font-bold transition-colors border-b truncate ${isActive(item.href)
+                        ? 'text-[#05133C] font-bold bg-blue-100'
                         : 'text-foreground hover:text-primary hover:bg-muted'
-                        } truncate`}
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -217,7 +222,9 @@ const Header = () => {
               ))}
             </nav>
           </div>
-        )}
+        )} 
+
+
       </div>
     </header>
   );

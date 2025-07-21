@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,6 +10,13 @@ import StickyContactButton from '@/components/common/StickyContactButton';
 import { Zap, Settings, Users, FileText, Shield, Target, TrendingUp, Globe, Factory, Lightbulb, Gauge, Award, Badge } from 'lucide-react';
 
 const PowerInfrastructure = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500); // Simulate data fetch delay
+    return () => clearTimeout(timer);
+  }, []);
+
   const solutions = [
     {
       title: 'Captive Power Plants (CPPs)',
@@ -158,40 +165,62 @@ const PowerInfrastructure = () => {
   const heroSlides = [
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
+      subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      backgroundVideo: "",
       badgeBg: "bg-blue-500",
       badgeText: "text-white",
       theme: "power",
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
+      subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "/carousels/solars.jpg",
+      backgroundVideo: "",
       badgeBg: "bg-green-600",
       badgeText: "text-white",
       theme: "power",
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
+      subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "/carousels/road.jpg",
+      backgroundVideo: "",
       badgeBg: "bg-yellow-500",
       badgeText: "text-black",
       theme: "power",
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
+      subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
       backgroundImage: "/power/tunnel.png",
+      backgroundVideo: "",
       badgeBg: "bg-purple-600",
       badgeText: "text-white",
       theme: "power",
     }
   ];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="flex flex-col items-center">
+          <svg className="animate-spin h-12 w-12 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+          </svg>
+          <span className="text-blue-700 text-lg font-semibold">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
