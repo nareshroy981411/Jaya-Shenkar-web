@@ -68,30 +68,10 @@ const IndustrialPark = () => {
 
       {/* Hero Section (responsive version only) */}
       <HeroSection
-              title="JayaShankar Multi Product Industrial Park & SEZ Private Limited"
-              description="Integrated Industrial Ecosystems"
-              backgroundImage="/carousels/ind.jpg"
-            />
-      {/* <section className="bg-white relative min-h-[400px] xs:min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(/carousels/ind.jpg)`,
-          }}
-        />
-        <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-6 sm:pb-10 md:pb-14 lg:pb-16 bottom-0">
-          <div className="flex flex-col items-center justify-center w-full max-w-4xl px-2 xs:px-4 sm:px-6">
-            <Badge variant="secondary" className="mb-4 xs:mb-6 px-4 xs:px-6 py-1.5 xs:py-2 rounded-full font-semibold text-base xs:text-lg shadow-lg bg-green-800 text-white border-white/20 hover:bg-green-500">
-              Integrated Industrial Ecosystems
-            </Badge>
-            <h1 className="font-serif drop-shadow-lg text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 xs:mb-6 leading-tight bg-gradient-to-r from-[orange] via-[orange] to-[orange] bg-clip-text text-transparent text-center">
-              JAYASHANKAR MULTI PRODUCT INDUSTRIAL PARK & SEZ PRIVATE LIMITED
-            </h1>
-          </div>
-        </div>
-      </section> */}
-
-
+        title="JayaShankar Multi Product Industrial Park & SEZ Private Limited"
+        description="Integrated Industrial Ecosystems"
+        backgroundImage="/carousels/ind.jpg"
+      />
       {/* Overview Section */}
       <section className="section-padding">
         <div className="container-width">
@@ -131,11 +111,14 @@ const IndustrialPark = () => {
       {/* Focus Areas */}
       <section className="section-padding bg-muted/50">
         <div className="container-width">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-[hsl(var(--industrial-primary))] mb-6">Focus Sectors</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+            {/* Text Left */}
+            <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
+              <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-light text-gray-800 leading-tight">
+                Focus Sectors
+              </h2>
+              <div className="border-t border-gray-400 my-4 xs:my-6 w-full max-w-xs xs:max-w-sm md:max-w-md"></div>
+              <div className="flex items-center space-x-3">
                   <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                   <span>Bulk Drug & Pharmaceutical Manufacturing</span>
                 </div>
@@ -151,19 +134,19 @@ const IndustrialPark = () => {
                   <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                   <span>IT & Data Centers</span>
                 </div>
-              </div>
             </div>
-            <div>
-              <div className="flex justify-center items-center w-full p-2 sm:p-4 md:p-6 lg:p-8">
-                <img
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            {/* Image Right */}
+            <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
+              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden h-full">
+                  <img
+                  src="/odishaparma/pharma4.jpg"
                   alt="Industrial Infrastructure"
                   className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
                   style={{ maxWidth: '500px' }}
                 />
               </div>
-
             </div>
+
           </div>
         </div>
       </section>

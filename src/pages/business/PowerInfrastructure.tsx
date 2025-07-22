@@ -165,7 +165,7 @@ const PowerInfrastructure = () => {
   const heroSlides = [
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
-      subtitle: "Powering Progress",
+      // subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
@@ -176,7 +176,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
-      subtitle: "Powering Progress",
+      // subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "/carousels/solars.jpg",
@@ -187,7 +187,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
-      subtitle: "Powering Progress",
+      // subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
 
       backgroundImage: "/carousels/road.jpg",
@@ -198,7 +198,7 @@ const PowerInfrastructure = () => {
     },
     {
       title: " JayaShankar Power and Infrastructure Private Limited",
-      subtitle: "Powering Progress",
+      // subtitle: "Powering Progress",
       description: "Transforming energy distribution with cutting-edge technology and infrastructure.",
       backgroundImage: "/power/tunnel.png",
       backgroundVideo: "",
