@@ -38,6 +38,7 @@ const Header = () => {
   }, [activeDropdown]);
 
   const navigation = [
+    { name: 'HOME', href: '/' },
     { name: 'ABOUT US', href: '/about' },
     {
       name: 'COMPANIES',

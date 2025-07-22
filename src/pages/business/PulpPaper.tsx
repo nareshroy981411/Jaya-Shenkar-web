@@ -114,27 +114,6 @@ const PulpPaper = () => {
         description="Redefining Sustainable Packaging: West Godavari Mill"
         backgroundImage="/images_jayashankar/paper_mill_1.jpg"
       />
-
-      {/* <section className="bg-white relative min-h-[600px] bg-gradient-to-br from-green-900 via-green-800 to-green-600 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(/images_jayashankar/paper_mill_1.jpg)`,
-          }}
-        />
-        <div className="absolute z-10 w-full left-1/2 -translate-x-1/2 flex flex-col items-center justify-end pb-2 sm:pb-4 md:pb-6 lg:pb-8 bottom-0">
-          <div className="flex flex-col items-center justify-center w-full max-w-4xl px-2 xs:px-4 sm:px-6">
-            <Badge variant="secondary" className="mb-6 px-6 py-2 rounded-full font-semibold text-lg shadow-lg bg-green-800 text-white border-white/20 hover:bg-green-500 sm:text-sm">
-              Redefining Sustainable Packaging: West Godavari Mill
-            </Badge>
-            <h1 className=" drop-shadow-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white text-center"
-            style={{ fontFamily: 'articulatecf, sans-serif' }}>
-              Jayashankar Pulp & Paper Mills
-            </h1>
-          </div>
-        </div>
-      </section> */}
-
       {/* Mill Overview */}
       <section className="section-padding">
         <div className="container-width">
@@ -178,13 +157,13 @@ const PulpPaper = () => {
         </div>
       </section>
 
-      {/* Market Trends */}
+      {/* Market Transformation */}
       <section className="section-padding bg-muted/50">
         <div className="container-width">
           <SectionHeader
             subtitle="Market Transformation"
             title="From Graphic Papers to Sustainable Packaging"
-            theme="industrial"
+            theme="paper"
             centered
           />
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
@@ -203,7 +182,7 @@ const PulpPaper = () => {
 
             {/* Text Right */}
             <div className="px-6 order-2 lg:order-none">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light leading-tight text-[hsl(var(--paper-accent))]">
                 From Paper Decline to Packaging Growth
 
               </h2>

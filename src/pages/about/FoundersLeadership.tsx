@@ -45,79 +45,30 @@ const FoundersLeadership = () => {
             centered
             theme="default"
           />
-                    <div className="flex justify-center">
-                      <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
-                        <CardContent className="p-8">
-                          <div className="flex flex-col items-center text-center">
-                            {/* <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
+          <div className="flex justify-center">
+            <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
+              <CardContent className="p-8">
+                <div className="flex flex-col items-center text-center">
+                  {/* <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
                               <img
                                 src={founders[0].image}
                                 alt={founders[0].name || 'Founder photo'}
                                 className="w-full h-full object-cover"
                               />
                             </div> */}
-                            <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
-                              {founders[0].name}
-                            </h3>
-                            <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
-                            {/* <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
+                  <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
+                    {founders[0].name}
+                  </h3>
+                  <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
+                  {/* <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
                             <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p> */}
-                            <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-        </div>
-      </section>
-
-      {/* Senior Advisory Team */}
-      {/* <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
-        <div className="container-width">
-          <SectionHeader
-            subtitle="Senior Advisory Team"
-            title="Collective Expertise"
-            description="The leadership is supported by a team of veteran professionals from pharma, bulk drugs, infrastructure, and energy, each bringing over three decades of expertise."
-            centered
-          />
-
-          <div className="max-w-4xl mx-auto">
-            <div className="fade-in group border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
-              <div className="p-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[gold]/20 transition-all duration-200">
-                    <Users className="w-8 h-8 text-blue-700 group-hover:text-[gold] transition-all duration-200" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-blue-900 group-hover:text-[gold] transition-all duration-200">Veteran Leadership Team</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Our senior advisory team comprises industry veterans with over 30 years of collective 
-                    experience across multiple domains:
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-blue-800">Core Expertise Areas:</h4>
-                      <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Pharmaceutical Industry</li>
-                        <li>• Bulk Drug Manufacturing</li>
-                        <li>• Infrastructure Development</li>
-                        <li>• Power & Energy Projects</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-blue-800">Key Capabilities:</h4>
-                      <ul className="text-sm text-gray-700 space-y-1">
-                        <li>• Project Development</li>
-                        <li>• Regulatory Compliance</li>
-                        <li>• Global Investment Alignment</li>
-                        <li>• Strategic Planning</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </section> */}
+      </section>
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container-width">
           <SectionHeader
@@ -142,19 +93,19 @@ const FoundersLeadership = () => {
 
             {/* Right Side: Simple Text Content */}
             <div className="w-full md:w-1/2">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Veteran Leadership Team</h3>
-                <p className=" text-bold leading-relaxed">
-                  Our senior advisory team brings over 30 years of experience in pharmaceuticals,
-                  bulk drugs, infrastructure, and energy—delivering excellence and strategic insight
-                  across diverse sectors.
-                </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Veteran Leadership Team</h3>
+              <p className=" text-bold leading-relaxed">
+                Our senior advisory team brings over 30 years of experience in pharmaceuticals,
+                bulk drugs, infrastructure, and energy—delivering excellence and strategic insight
+                across diverse sectors.
+              </p>
 
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Project Development</li>
-                  <li>• Regulatory Compliance</li>
-                  <li>• Global Investment Alignment</li>
-                  <li>• Strategic Planning</li>
-                </ul>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Project Development</li>
+                <li>• Regulatory Compliance</li>
+                <li>• Global Investment Alignment</li>
+                <li>• Strategic Planning</li>
+              </ul>
             </div>
           </div>
         </div>

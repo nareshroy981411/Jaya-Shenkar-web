@@ -85,6 +85,38 @@ const gradientBackgrounds = [
   "bg-gradient-to-r from-[#ffb62f] to-[#ed0000]", // Forest green
   "bg-gradient-to-r from-[#bbb7a3] to-[#89ff89]", // Orange-green
 ]
+const heroSlides = [
+  {
+    title: "Our Projects",
+    description: "Explore our industrial parks, paper mills, and power projects across India",
+    backgroundImage: "/images/p1.jpg",
+    theme: "power"
+  },
+  {
+    title: "Our Projects",
+    description: "Explore our industrial parks, paper mills, and power projects across India",
+    backgroundImage: "/images/t4.jpg",
+    theme: "power"
+  },
+  {
+    title: "Our Projects",
+    description: "Explore our industrial parks, paper mills, and power projects across India",
+    backgroundImage: "/images/p3.jpg",
+    theme: "power"
+  },
+  {
+    title: "Our Projects",
+    description: "Explore our industrial parks, paper mills, and power projects across India",
+    backgroundImage: "/images/t5.jpg",
+    theme: "power"
+  },
+  {
+    title: "Our Projects",
+    description: "Explore our industrial parks, paper mills, and power projects across India",
+    backgroundImage: "/images/t2.jpg",
+    theme: "power"
+  },
+]
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
@@ -97,12 +129,13 @@ const Projects = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <StickyContactButton />
-      <HeroSection
+      <HeroSection slides={heroSlides} />
+      {/* <HeroSection
         title="Our Projects"
         // : Building India's Industrial Future
         description="Explore our industrial parks, paper mills, and power projects across India"
         backgroundImage="/power/thermal-power-1.jpg"
-      />
+      /> */}
       <section id="projects" className="section-padding">
         <div className="container-width">
           <SectionHeader
