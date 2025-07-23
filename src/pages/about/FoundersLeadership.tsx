@@ -49,19 +49,10 @@ const FoundersLeadership = () => {
             <Card className="w-full max-w-xl group hover-lift fade-in border-2 border-transparent bg-white transition-all duration-200 hover:border-[gold] hover:shadow-2xl">
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center">
-                  {/* <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-200 group-hover:border-[gold] transition-all duration-200">
-                              <img
-                                src={founders[0].image}
-                                alt={founders[0].name || 'Founder photo'}
-                                className="w-full h-full object-cover"
-                              />
-                            </div> */}
                   <h3 className="text-xl font-bold mb-2 text-blue-900 transition-all duration-200">
                     {founders[0].name}
                   </h3>
                   <p className="text-green-700 font-medium mb-2">{founders[0].title}</p>
-                  {/* <p className="text-sm text-gray-500 mb-4">{founders[0].experience}</p>
-                            <p className="text-sm font-medium text-blue-700 mb-4">{founders[0].specialization}</p> */}
                   <p className="text-gray-600 leading-relaxed">{founders[0].description}</p>
                 </div>
               </CardContent>
@@ -69,6 +60,115 @@ const FoundersLeadership = () => {
           </div>
         </div>
       </section>
+
+      {/* Jayashankar Group: Industrial Clusters & SEZs */}
+      <section className="section-padding bg-muted/50">
+        <div className="container-width">
+          <SectionHeader
+            title="Industrial Clusters & Special Economic Zones"
+            centered
+            theme="default"
+          />
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+            {/* Text Left */}
+            <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
+              {/* <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-light text-gray-800 leading-tight">
+                The Jayashankar Group: Industrial Clusters & Special Economic Zones
+              </h2> */}
+              {/* <div className="border-t border-gray-400 my-4 xs:my-6 w-full max-w-xs xs:max-w-sm md:max-w-md"></div> */}
+              <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
+                Led by Principal Promoter Mr. Srinivasa Rao, the Jayashankar Group specialises in developing industrial clusters and Special Economic Zones across India. With board positions in more than 10 companies across various sectors, Mr. Rao drives the group's vision for sustainable industrial development.
+              </p>
+              <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
+                The group leverages over 200 man-years of expertise to create world-class infrastructure projects with a combined investment of ₹11,500 crores and a market enterprise value of approximately ₹8,000 crores.
+              </p>
+            </div>
+            {/* Image Right */}
+            <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
+              <div className="keen-slider rounded-lg overflow-hidden h-full">
+                <img
+                  src="/images/Picture1.png"
+                  alt="Industrial Infrastructure"
+                  className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
+                  style={{ maxWidth: '500px' }}
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Portfolio of Strategic Industrial Projects */}
+      <section className="section-padding bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="container-width">
+          <SectionHeader
+            subtitle="Portfolio of Strategic Industrial Projects"
+            title="Our Strategic Infrastructure Initiatives"
+            centered
+            theme="default"
+          />
+
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+            {/* Project 1 */}
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
+              <h4 className="text-lg font-semibold mb-2 text-blue-900">
+                Packaging Paper SEZ, Andhra Pradesh
+              </h4>
+              <p className="text-gray-700 mb-2">
+                Jayashankar Pulp and Paper Mills Pvt. Ltd. is developing an SEZ-based integrated
+                facility for kraft paper and paperboard manufacturing with an annual capacity of
+                7 lakh tonnes.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• 500-acre facility in East Godavari district</li>
+                <li>• ₹4,000 crore investment</li>
+                <li>• All statutory clearances obtained</li>
+                <li>• Site development underway</li>
+                <li>• Financial closure nearing completion</li>
+              </ul>
+            </div>
+
+            {/* Project 2 */}
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
+              <h4 className="text-lg font-semibold mb-2 text-green-900">
+                Pharmaceutical Industry Cluster, Odisha
+              </h4>
+              <p className="text-gray-700 mb-2">
+                Jayashankar Multiproduct Industrial Park and SEZ Pvt. Ltd. is creating a multi-product
+                industrial park and pharma city with world-class infrastructure.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• ₹680 crore total investment</li>
+                <li>• Focus on pharmaceutical sector</li>
+                <li>• Under positive consideration by state government</li>
+                <li>• Expected to boost regional economic growth</li>
+              </ul>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
+              <h4 className="text-lg font-semibold mb-2 text-blue-900">
+                Integrated Industrial Complex, Assam
+              </h4>
+              <p className="text-gray-700 mb-2">
+                Jayashankar Chemicals & Packagings Assam Private Limited is developing a sustainable
+                industrial complex with multiple integrated facilities.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• ₹6,500 crore investment</li>
+                <li>• Bamboo and hardwood-based bleached kraft pulp mills (300,000 TPA each)</li>
+                <li>• Paper production units (230,000 TPA combined)</li>
+                <li>• 60 MW captive co-generation power plant</li>
+                <li>• ~2,300 direct and 10,000 indirect jobs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container-width">
           <SectionHeader
