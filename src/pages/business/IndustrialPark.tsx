@@ -1,47 +1,29 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
-import { Building2, MapPin, Users, Award, Target, Zap, Leaf, Factory } from 'lucide-react';
-import { sub } from 'date-fns';
-import { useKeenSlider } from 'keen-slider/react'
-import { Badge } from "@/components/ui/badge";
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { Zap, Leaf, Award, Building2, Factory } from 'lucide-react';
+import { MapPin, Users, Target, } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
-const imageUrls = [
-  '/images/image.png',
-  '/images/image1.png',
-  '/images/image2.png'
-]
+const overviewImages = ['/images/image.png', '/images/image1.png', '/images/image2.png'];
 
+const IndustrialPark: React.FC = () => {
+  const [overviewRef, overviewInstance] = useKeenSlider<HTMLDivElement>(
+    { loop: true, slides: { perView: 1, spacing: 15 }, mode: 'snap' }
+  );
 
-const IndustrialPark = () => {
-
-  const [sliderRef, slider] = useKeenSlider({
-    loop: true,
-    mode: 'snap',
-    slides: { perView: 1, spacing: 15 }
-  });
-
+  // Autoplay for overview carousel
   useEffect(() => {
-    const interval = setInterval(() => {
-      slider.current?.next();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [slider]);
-  const keyFeatures = [
-    { title: '200 MW Group Captive Thermal Power Plant', icon: Zap },
-    { title: '100 MGD Treated Water Supply', icon: Leaf },
-    { title: 'Single-Window Clearance', icon: Award },
-    { title: 'Ready-to-Use Office/Residential Facilities', icon: Building2 },
-    { title: 'Plug-and-Play Manufacturing Units', icon: Factory },
-    { title: '40% Land for Green Belts (MOEF Norms)', icon: Leaf },
-  ];
+    const iv = setInterval(() => overviewInstance.current?.next(), 3000);
+    return () => clearInterval(iv);
+  }, [overviewInstance]);
 
   const projects = [
     {
@@ -52,14 +34,13 @@ const IndustrialPark = () => {
       href: '/business/industrial/odisha'
     },
     {
-      // subtitle: 'UPCOMING PROJECT ',
+      subtitle: 'UPCOMING PROJECT ',
       title: 'Hindupur Integrated Industrial Park (Upcoming Project)',
       location: 'Anantapur District, Andhra Pradesh',
       area: '1,800 acres (1,000 acres SEZ, 800 acres DTA)',
       distance: '110 km from Bengaluru',
       href: '/business/industrial/hindupur'
-    },
-  ];
+    },];
 
   return (
     <div className="min-h-screen industrial-theme">
@@ -84,15 +65,15 @@ const IndustrialPark = () => {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Image Left */}
             <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
-              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden h-full">
-                {imageUrls.map((src, idx) => (
+              <div ref={overviewRef} className="keen-slider rounded-lg overflow-hidden h-full">
+                {overviewImages.map((src, idx) => (
                   <div className="keen-slider__slide h-full" key={idx}>
                     <img src={src} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
-              <button onClick={() => slider.current?.prev()} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8592;</button>
-              <button onClick={() => slider.current?.next()} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md">&#8594;</button>
+              <button onClick={() => overviewInstance.current?.prev()} className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/70 p-2 rounded-full shadow">&#8592;</button>
+              <button onClick={() => overviewInstance.current?.next()} className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/70 p-2 rounded-full shadow">&#8594;</button>
             </div>
             {/* Text Right */}
             <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
@@ -108,7 +89,7 @@ const IndustrialPark = () => {
         </div>
       </section>
 
-      {/* Focus Areas */}
+      {/* Focus Sectors */}
       <section className="section-padding bg-muted/50">
         <div className="container-width">
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
@@ -119,26 +100,26 @@ const IndustrialPark = () => {
               </h2>
               <div className="border-t border-gray-400 my-4 xs:my-6 w-full max-w-xs xs:max-w-sm md:max-w-md"></div>
               <div className="flex items-center space-x-3">
-                  <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  <span>Bulk Drug & Pharmaceutical Manufacturing</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  <span>Food Processing & Nutraceuticals</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  <span>Biotechnology & Life Sciences</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  <span>IT & Data Centers</span>
-                </div>
+                <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                <span>Bulk Drug & Pharmaceutical Manufacturing</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                <span>Food Processing & Nutraceuticals</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                <span>Biotechnology & Life Sciences</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <svg className="w-4 h-4 text-[hsl(var(--industrial-accent))]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                <span>IT & Data Centers</span>
+              </div>
             </div>
             {/* Image Right */}
             <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
-              <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden h-full">
-                  <img
+              <div className="keen-slider rounded-lg overflow-hidden h-full">
+                <img
                   src="/odishaparma/pharma4.jpg"
                   alt="Industrial Infrastructure"
                   className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
@@ -161,46 +142,10 @@ const IndustrialPark = () => {
             theme="industrial"
             centered
           />
-          {/* <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-6">
-            {projects.map((project, index) => (
-              <Card key={index} className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100">
-                <CardContent className="p-6">
-                  {project.subtitle && <h2 className="text-xl font-bold text-blue-800 mb-3">{project.subtitle}</h2>}
-                  <h3 className="text-xl font-semibold text-[hsl(var(--industrial-primary))] mb-3">{project.title}</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>{project.location}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Building2 className="w-4 h-4" />
-                      <span>{project.area}</span>
-                    </div>
-                    {project.distance && (
-                      <div className="flex items-center space-x-2">
-                        <Target className="w-4 h-4" />
-                        <span>{project.distance}</span>
-                      </div>
-                    )}
-                    {project.jobs && (
-                      <div className="flex items-center space-x-2">
-                        <Users className="w-4 h-4" />
-                        <span>{project.jobs}</span>
-                      </div>
-                    )}
-                  </div>
-                  <Button asChild variant="outline" className="w-full border-[hsl(var(--industrial-accent))] text-[hsl(var(--industrial-accent))] hover:bg-[hsl(var(--industrial-accent))] hover:text-white">
-                    <Link to={project.href}>Learn More</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div> */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-bold text-blue-800 mb-3">{project.subtitle}</h2>
                   <h3 className="text-xl font-semibold text-[hsl(var(--industrial-primary))] mb-3">{project.title}</h3>
                   <div className="space-y-2 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center space-x-2">
