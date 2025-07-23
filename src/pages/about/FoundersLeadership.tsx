@@ -39,7 +39,7 @@ const FoundersLeadership = () => {
       <section className="section-padding bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="container-width">
           <SectionHeader
-            subtitle="Our Founders"
+            subtitle="Our Founder"
             title="Pioneering Leadership"
             description="Two visionary leaders whose combined expertise and shared commitment to excellence have shaped the group's success story."
             centered
@@ -72,10 +72,6 @@ const FoundersLeadership = () => {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Text Left */}
             <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
-              {/* <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-light text-gray-800 leading-tight">
-                The Jayashankar Group: Industrial Clusters & Special Economic Zones
-              </h2> */}
-              {/* <div className="border-t border-gray-400 my-4 xs:my-6 w-full max-w-xs xs:max-w-sm md:max-w-md"></div> */}
               <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
                 Led by Principal Promoter Mr. Srinivasa Rao, the Jayashankar Group specialises in developing industrial clusters and Special Economic Zones across India. With board positions in more than 10 companies across various sectors, Mr. Rao drives the group's vision for sustainable industrial development.
               </p>
@@ -84,17 +80,14 @@ const FoundersLeadership = () => {
               </p>
             </div>
             {/* Image Right */}
-            <div className="relative h-32 xs:h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden order-1 lg:order-none">
-              <div className="keen-slider rounded-lg overflow-hidden h-full">
-                <img
-                  src="/images/Picture1.png"
-                  alt="Industrial Infrastructure"
-                  className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
-                  style={{ maxWidth: '500px' }}
-                />
-              </div>
+            <div className="keen-slider rounded-lg overflow-hidden h-full">
+              <img
+                src="/images/Picture1.png"
+                alt="Industrial Infrastructure"
+                className="rounded-lg shadow-lg w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover max-w-full"
+                style={{ maxWidth: '500px' }}
+              />
             </div>
-
           </div>
         </div>
       </section>
@@ -110,8 +103,7 @@ const FoundersLeadership = () => {
             theme="default"
           />
 
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
-            {/* Project 1 */}
+          {/* <div className="grid md:grid-cols-3 gap-8 mt-10">
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
               <h4 className="text-lg font-semibold mb-2 text-blue-900">
                 Packaging Paper SEZ, Andhra Pradesh
@@ -130,7 +122,6 @@ const FoundersLeadership = () => {
               </ul>
             </div>
 
-            {/* Project 2 */}
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
               <h4 className="text-lg font-semibold mb-2 text-green-900">
                 Pharmaceutical Industry Cluster, Odisha
@@ -147,7 +138,6 @@ const FoundersLeadership = () => {
               </ul>
             </div>
 
-            {/* Project 3 */}
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
               <h4 className="text-lg font-semibold mb-2 text-blue-900">
                 Integrated Industrial Complex, Assam
@@ -164,7 +154,71 @@ const FoundersLeadership = () => {
                 <li>• ~2,300 direct and 10,000 indirect jobs</li>
               </ul>
             </div>
+          </div> */}
+
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+            {/* Project 1 */}
+            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+              <div className="border-l-4 border-white pl-4">
+                <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
+                  Packaging Paper SEZ, Andhra Pradesh
+                </h4>
+                <p className="mb-4">
+                  Jayashankar Pulp and Paper Mills Pvt. Ltd. is developing an SEZ-based
+                  integrated facility for kraft paper and paperboard manufacturing with an
+                  annual capacity of 7 lakh tonnes.
+                </p>
+                <ul className="text-sm space-y-1 font-light">
+                  <li>• 500-acre facility in East Godavari district</li>
+                  <li>• ₹4,000 crore investment</li>
+                  <li>• All statutory clearances obtained</li>
+                  <li>• Site development underway</li>
+                  <li>• Financial closure nearing completion</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+              <div className="border-l-4 border-white pl-4">
+                <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
+                  Pharmaceutical Industry Cluster, Odisha
+                </h4>
+                <p className="mb-4">
+                  Jayashankar Multiproduct Industrial Park and SEZ Pvt. Ltd. is creating a
+                  multi-product industrial park and pharma city with world-class
+                  infrastructure.
+                </p>
+                <ul className="text-sm space-y-1 font-light">
+                  <li>• ₹680 crore total investment</li>
+                  <li>• Focus on pharmaceutical sector</li>
+                  <li>• Under positive consideration by state government</li>
+                  <li>• Expected to boost regional economic growth</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+              <div className="border-l-4 border-white pl-4">
+                <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
+                  Integrated Industrial Complex, Assam
+                </h4>
+                <p className="mb-4">
+                  Jayashankar Chemicals & Packagings Assam Private Limited is developing a
+                  sustainable industrial complex with multiple integrated facilities.
+                </p>
+                <ul className="text-sm space-y-1 font-light">
+                  <li>• ₹6,500 crore investment</li>
+                  <li>• Bamboo and hardwood-based bleached kraft pulp mills (300,000 TPA each)</li>
+                  <li>• Paper production units (230,000 TPA combined)</li>
+                  <li>• 60 MW captive co-generation power plant</li>
+                  <li>• ~2,300 direct and 10,000 indirect jobs</li>
+                </ul>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
