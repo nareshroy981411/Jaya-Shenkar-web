@@ -130,12 +130,6 @@ const Projects = () => {
       <Header />
       <StickyContactButton />
       <HeroSection slides={heroSlides} />
-      {/* <HeroSection
-        title="Our Projects"
-        // : Building India's Industrial Future
-        description="Explore our industrial parks, paper mills, and power projects across India"
-        backgroundImage="/power/thermal-power-1.jpg"
-      /> */}
       <section id="projects" className="section-padding">
         <div className="container-width">
           <SectionHeader

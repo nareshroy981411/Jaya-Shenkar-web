@@ -72,10 +72,10 @@ const FoundersLeadership = () => {
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Text Left */}
             <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
-              <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                 Led by Principal Promoter Mr. Srinivasa Rao, the Jayashankar Group specialises in developing industrial clusters and Special Economic Zones across India. With board positions in more than 10 companies across various sectors, Mr. Rao drives the group's vision for sustainable industrial development.
               </p>
-              <p className="text-xs xs:text-sm md:text-base lg:text-lg text-gray-700 mb-4 md:mb-6 max-w-xs xs:max-w-sm md:max-w-md">
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                 The group leverages over 200 man-years of expertise to create world-class infrastructure projects with a combined investment of ₹11,500 crores and a market enterprise value of approximately ₹8,000 crores.
               </p>
             </div>
@@ -103,72 +103,19 @@ const FoundersLeadership = () => {
             theme="default"
           />
 
-          {/* <div className="grid md:grid-cols-3 gap-8 mt-10">
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
-              <h4 className="text-lg font-semibold mb-2 text-blue-900">
-                Packaging Paper SEZ, Andhra Pradesh
-              </h4>
-              <p className="text-gray-700 mb-2">
-                Jayashankar Pulp and Paper Mills Pvt. Ltd. is developing an SEZ-based integrated
-                facility for kraft paper and paperboard manufacturing with an annual capacity of
-                7 lakh tonnes.
-              </p>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• 500-acre facility in East Godavari district</li>
-                <li>• ₹4,000 crore investment</li>
-                <li>• All statutory clearances obtained</li>
-                <li>• Site development underway</li>
-                <li>• Financial closure nearing completion</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
-              <h4 className="text-lg font-semibold mb-2 text-green-900">
-                Pharmaceutical Industry Cluster, Odisha
-              </h4>
-              <p className="text-gray-700 mb-2">
-                Jayashankar Multiproduct Industrial Park and SEZ Pvt. Ltd. is creating a multi-product
-                industrial park and pharma city with world-class infrastructure.
-              </p>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• ₹680 crore total investment</li>
-                <li>• Focus on pharmaceutical sector</li>
-                <li>• Under positive consideration by state government</li>
-                <li>• Expected to boost regional economic growth</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-[gold] transition-all">
-              <h4 className="text-lg font-semibold mb-2 text-blue-900">
-                Integrated Industrial Complex, Assam
-              </h4>
-              <p className="text-gray-700 mb-2">
-                Jayashankar Chemicals & Packagings Assam Private Limited is developing a sustainable
-                industrial complex with multiple integrated facilities.
-              </p>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• ₹6,500 crore investment</li>
-                <li>• Bamboo and hardwood-based bleached kraft pulp mills (300,000 TPA each)</li>
-                <li>• Paper production units (230,000 TPA combined)</li>
-                <li>• 60 MW captive co-generation power plant</li>
-                <li>• ~2,300 direct and 10,000 indirect jobs</li>
-              </ul>
-            </div>
-          </div> */}
-
           <div className="grid md:grid-cols-3 gap-8 mt-10">
             {/* Project 1 */}
-            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+            <div className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100 text- rounded-md p-6 relative">
               <div className="border-l-4 border-white pl-4">
                 <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
                   Packaging Paper SEZ, Andhra Pradesh
                 </h4>
-                <p className="mb-4">
+                <p className="mb-4 text-muted-foreground">
                   Jayashankar Pulp and Paper Mills Pvt. Ltd. is developing an SEZ-based
                   integrated facility for kraft paper and paperboard manufacturing with an
                   annual capacity of 7 lakh tonnes.
                 </p>
-                <ul className="text-sm space-y-1 font-light">
+                <ul className="text-sm space-y-1 font-light text-muted-foreground">
                   <li>• 500-acre facility in East Godavari district</li>
                   <li>• ₹4,000 crore investment</li>
                   <li>• All statutory clearances obtained</li>
@@ -179,17 +126,17 @@ const FoundersLeadership = () => {
             </div>
 
             {/* Project 2 */}
-            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+            <div className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100 rounded-md p-6 relative">
               <div className="border-l-4 border-white pl-4">
                 <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
                   Pharmaceutical Industry Cluster, Odisha
                 </h4>
-                <p className="mb-4">
+                <p className="mb-4 text-muted-foreground">
                   Jayashankar Multiproduct Industrial Park and SEZ Pvt. Ltd. is creating a
                   multi-product industrial park and pharma city with world-class
                   infrastructure.
                 </p>
-                <ul className="text-sm space-y-1 font-light">
+                <ul className="text-sm space-y-1 font-light text-muted-foreground">
                   <li>• ₹680 crore total investment</li>
                   <li>• Focus on pharmaceutical sector</li>
                   <li>• Under positive consideration by state government</li>
@@ -199,16 +146,16 @@ const FoundersLeadership = () => {
             </div>
 
             {/* Project 3 */}
-            <div className="bg-teal-700 text-white rounded-md p-6 relative">
+            <div className="hover-lift bg-gradient-to-br from-blue-100 via-blue-50 to-green-100 rounded-md p-6 relative">
               <div className="border-l-4 border-white pl-4">
                 <h4 className="text-lg text-[#0f1766] font-semibold mb-2">
                   Integrated Industrial Complex, Assam
                 </h4>
-                <p className="mb-4">
+                <p className="mb-4 text-muted-foreground">
                   Jayashankar Chemicals & Packagings Assam Private Limited is developing a
                   sustainable industrial complex with multiple integrated facilities.
                 </p>
-                <ul className="text-sm space-y-1 font-light">
+                <ul className="text-sm space-y-1 font-light text-muted-foreground">
                   <li>• ₹6,500 crore investment</li>
                   <li>• Bamboo and hardwood-based bleached kraft pulp mills (300,000 TPA each)</li>
                   <li>• Paper production units (230,000 TPA combined)</li>
