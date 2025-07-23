@@ -62,11 +62,11 @@ const CompanyMap = () => (
 
       {/* Text on the right */}
       <div className="flex-1 flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-6">Our Presence Across India</h2>
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+        <h2 className="text-navy-900 text-4xl md:text-5xl font-bold text-center mb-6"style={{ fontFamily: 'articulatecf, sans-serif' }}>Our Presence Across India</h2>
+        <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
           Jaya Shankar Group's companies are strategically located in key states across India, from the heart of Chhattisgarh to the coasts of Andhra Pradesh. Our presence in these regions enables us to drive innovation, foster sustainable growth, and deliver world-class solutions in infrastructure, manufacturing, energy, and logistics.
         </p>
-        <p className="text-base text-gray-500">
+        <p className="text-base text-gray-500"style={{ fontFamily: 'articulatecf, sans-serif' }}>
           With a vision to empower industries and communities, we are committed to building a brighter future for India—one project, one partnership, and one state at a time.
         </p>
       </div>
