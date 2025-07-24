@@ -24,15 +24,16 @@ const PowerInfrastructure = () => {
       icon: Zap,
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['200 MW Capacity Each', 'Thermal Power Technology', 'Industrial Unit Support', 'Cost-Effective Solutions'],
-      stats: { capacity: '400 MW', efficiency: '95%', uptime: '99.5%' }
+      stats: { capacity: '200 MW', efficiency: '95%', uptime: '99.5%' }
     },
     {
       title: 'Transportation Networks',
       description: 'Highway systems, underground tunnels, and supporting logistics infrastructure connecting industrial zones.',
       icon: Target,
-      image: 'https://images.unsplash.com/photo-1736117705678-4d7d49850205?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: '/images/t5.jpg',
       features: ['Highway Construction', 'Underground Tunnels', 'Logistics Support', 'Industrial Connectivity'],
-      stats: { length: '500+ KM', tunnels: '15+', connectivity: '100%' }
+      stats: ''
+      // { length: '500+ KM', tunnels: '15+', connectivity: '100%' }
     },
     {
       title: 'Solar Power Solutions',

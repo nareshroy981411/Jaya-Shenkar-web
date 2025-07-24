@@ -204,7 +204,7 @@ const Index = () => {
         <div className="container-width">
           <SectionHeader
             title="Our Companies"
-            description="Three core companies working in synergy to create comprehensive industrial ecosystems that benefit businesses, communities, and the environment."
+            description="Four core companies working in synergy to create comprehensive industrial ecosystems that benefit businesses, communities, and the environment."
             centered
           />
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-6 md:gap-8 xl:gap-10">

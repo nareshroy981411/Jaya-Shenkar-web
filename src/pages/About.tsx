@@ -96,23 +96,24 @@ const About = () => {
             subtitle="Our Story"
             title="A Journey of Vision, Innovation and Impact"
             description="Jaya Shankar Group was founded with a clear mission: to create sustainable industrial ecosystems that drive economic growth while maintaining our commitment to environmental stewardship and social responsibility."
+            centered
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="fade-in">
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className=" text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                   Our journey began with a simple yet powerful belief: that industrial development and environmental
                   sustainability can coexist harmoniously. Founded by visionary entrepreneurs Shri T. Srinivasa Rao
                   and Smt. T. L. S. Geetha Kameswari, our group has grown from a shared vision into a robust
                   conglomerate with operations across multiple states.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                   With over 200 man-years of combined expertise and a leadership team with 30+ years of specialized
                   experience, we have established ourselves as a trusted partner in Industrial Park & SEZ Development,
                   Pulp & Paper Manufacturing, and Power & Infrastructure projects.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
                   Our core philosophy "For Planet & People" guides every decision we make, ensuring that our growth
                   contributes positively to economic development, social progress, and environmental conservation.
                 </p>
@@ -134,8 +135,8 @@ const About = () => {
       <section className="section-padding bg-white">
         <div className="container-width">
           <SectionHeader
-            subtitle="Founders & Leadership"
-            title="Visionary Leaders Driving Excellence"
+            subtitle="Founder & Leadership"
+            title="Visionary Leader Driving Excellence"
             description="Our founders bring together decades of experience in corporate leadership, international partnerships, and strategic development."
             centered
           />
