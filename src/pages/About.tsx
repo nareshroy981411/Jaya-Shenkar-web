@@ -69,16 +69,21 @@ const About = () => {
     'Regulatory Affairs & Government Relations',
     'International Business Development',
   ];
-
+  const heroSlides = [{
+    title: "ABOUT JAYA SHANKAR GROUP",
+    // subtitle="Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment"
+    description: "Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability",
+    backgroundImage: "/odishaparma/group2.jpg"
+  }]
   return (
     <div className="min-h-screen">
       <Header />
       <StickyContactButton />
-      <HeroSection
-        title="ABOUT JAYA SHANKAR GROUP"
-        // subtitle="Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment"
-        description="Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability."
-        backgroundImage="/odishaparma/group.jpg"
+      <HeroSection slides={heroSlides}
+      // title="ABOUT JAYA SHANKAR GROUP"
+      // // subtitle="Pioneering Sustainable Industrial Development with Vision, Expertise, and Commitment"
+      // description="Founded by first-generation entrepreneurs with a shared vision of economic development, social progress, and environmental sustainability."
+      // backgroundImage="/odishaparma/group.jpg"
       />
 
 
@@ -89,7 +94,7 @@ const About = () => {
         <div className="container-width">
           <SectionHeader
             subtitle="Our Story"
-            title="A Journey of Vision, Innovation, and Impact"
+            title="A Journey of Vision, Innovation and Impact"
             description="Jaya Shankar Group was founded with a clear mission: to create sustainable industrial ecosystems that drive economic growth while maintaining our commitment to environmental stewardship and social responsibility."
           />
 
