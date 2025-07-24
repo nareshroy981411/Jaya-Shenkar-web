@@ -37,7 +37,7 @@ const projects = [
     ],
   },
   {
-    title: 'Bayyavaram Pulp & Paper Mill',
+    title: 'Jaya Shankar Paper And Pulp',
     location: 'West Godavari District, Andhra Pradesh',
     area: '271 acres in SEZ',
     capacity: '1,200 t/day Carton Board',
