@@ -8,7 +8,7 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import { TrendingUp, Users, DollarSign, Building2, Award, Globe, Target, BarChart3 } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
-import Loader from '@/components/ui/Loader';
+// import Loader from '@/components/ui/Loader';
 
 const Investors = () => {
   const [loading, setLoading] = useState(true);
@@ -87,7 +87,7 @@ const Investors = () => {
     },
   ];
 
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-white">

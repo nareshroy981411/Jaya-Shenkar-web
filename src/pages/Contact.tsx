@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from "framer-motion";
-import Loader from '@/components/ui/Loader';
+// import Loader from '@/components/ui/Loader';
 
 
 const Contact = () => {
@@ -128,7 +128,7 @@ const Contact = () => {
     { bg: 'bg-gray-100', text: 'text-black-700', title: 'text-black-800', role: 'text-blue-600' },
   ];
 
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
@@ -290,7 +290,7 @@ const Contact = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="/bg-video/winds.mp4"
+          src="https://cdn.jsdelivr.net/gh/nareshroy981411/Jaya_shankar_web@main/public/bg-video/winds.mp4"
         />
         {/* Overlay for readability */}
         <div className="absolute inset-0 z-0 pointer-events-none" />

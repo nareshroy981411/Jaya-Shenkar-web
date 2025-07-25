@@ -11,7 +11,7 @@ import SectionHeader from '@/components/common/SectionHeader';
 import StickyContactButton from '@/components/common/StickyContactButton';
 import { ArrowRight, Building2, Factory, Zap, Users, Award, Globe, Leaf } from 'lucide-react';
 import CompanyMap from './CompanyMap';
-import Loader from '@/components/ui/Loader';
+// import Loader from '@/components/ui/Loader';
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -20,28 +20,28 @@ const Index = () => {
         {
       title: 'Jaya Shankar Group',
       description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
-      backgroundVideo: '/bg-video/forest.mp4',
+      backgroundVideo: '/bg-video/jaya-shankar-video.mp4',
     },
-    {
-      title: 'Jaya Shankar Group',
-      description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
-      backgroundImage: '/banner2.png',
-    },
-    {
-      title: 'Enabling a Sustainable Tomorrow',
-      description: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
-      backgroundImage: '/paper.png',
-    },
-    {
-      title: 'World-Class Industrial Parks & Special Economic Zones',
-      description: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
-      backgroundImage: '/odishaparma/pharma6.png',
-    },
-    {
-      title: 'Powering Progress: Robust Infrastructure Solutions',
-      description: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
-      backgroundImage: '/power/solar_power.png',
-    },
+    // {
+    //   title: 'Jaya Shankar Group',
+    //   description: 'Leading the way in Industrial Park & SEZ Development, Pulp & Paper, and Power & Infrastructure with a commitment to Planet & People.',
+    //   backgroundImage: '/banner2.png',
+    // },
+    // {
+    //   title: 'Enabling a Sustainable Tomorrow',
+    //   description: 'Delivering sustainable initiatives in carbon neutrality, water positivity, circularity and green supply chain.',
+    //   backgroundImage: '/paper.png',
+    // },
+    // {
+    //   title: 'World-Class Industrial Parks & Special Economic Zones',
+    //   description: 'Developing state-of-the-art industrial infrastructure across India, fostering innovation and economic growth.',
+    //   backgroundImage: '/odishaparma/pharma6.png',
+    // },
+    // {
+    //   title: 'Powering Progress: Robust Infrastructure Solutions',
+    //   description: 'Building critical energy and transportation infrastructure to support India\'s industrial transformation.',
+    //   backgroundImage: '/power/solar_power.png',
+    // },
   ];
 
   const companies = [
@@ -189,7 +189,7 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen font-[Poppins,sans-serif] bg-white text-[#1a2233]">
