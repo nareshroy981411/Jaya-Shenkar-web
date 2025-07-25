@@ -8,7 +8,7 @@ import HeroSection from '@/components/common/HeroSection';
 import SectionHeader from '@/components/common/SectionHeader';
 import { Leaf, Users, Shield, Award, Droplets, Recycle } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
-import Loader from '@/components/ui/Loader';
+// import Loader from '@/components/ui/Loader';
 
 // import { heroSlides } from './Index';
 
@@ -20,7 +20,7 @@ const Sustainability = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
 
   const commitments = [
     {

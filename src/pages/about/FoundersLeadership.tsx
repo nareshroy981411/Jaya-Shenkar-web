@@ -257,7 +257,7 @@
 // export default FoundersLeadership;
 
 'use client';
-import React,{ useRef, useState, useEffect }  from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/common/HeroSection';
@@ -314,37 +314,37 @@ industrial complex with multiple integrated facilities.
 
 const FoundersLeadership = () => {
 
-const [sliderRef, slider] = useKeenSlider({
-  loop: true,
-  slides: {
-    perView: 1,
-    spacing: 24,
-  },
-  breakpoints: {
-    '(min-width: 768px)': {
-      slides: {
-        perView: 1,
-        spacing: 32,
+  const [sliderRef, slider] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 24,
+    },
+    breakpoints: {
+      '(min-width: 768px)': {
+        slides: {
+          perView: 1,
+          spacing: 32,
+        },
       },
     },
-  },
-});
+  });
 
-const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-// Auto-play every 5s
-useEffect(() => {
-  const next = () => {
-    if (slider.current) {
-      slider.current.next();
-    }
-  };
-  timeoutRef.current = setInterval(next, 5000);
+  // Auto-play every 5s
+  useEffect(() => {
+    const next = () => {
+      if (slider.current) {
+        slider.current.next();
+      }
+    };
+    timeoutRef.current = setInterval(next, 5000);
 
-  return () => {
-    if (timeoutRef.current) clearInterval(timeoutRef.current);
-  };
-}, [slider]);
+    return () => {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
+    };
+  }, [slider]);
 
   const founders = [
     {
@@ -497,53 +497,53 @@ useEffect(() => {
         </div>
       </section> */}
 
-<section className="section-padding relative">
-  <div className="relative z-10 container-width">
-    <SectionHeader
-      subtitle="Portfolio of Strategic Industrial Projects"
-      title="Our Strategic Infrastructure Initiatives"
-      centered
-      theme="default"
-    />
+      <section className="section-padding relative">
+        <div className="relative z-10 container-width">
+          <SectionHeader
+            subtitle="Portfolio of Strategic Industrial Projects"
+            title="Our Strategic Infrastructure Initiatives"
+            centered
+            theme="default"
+          />
 
-    <div className="relative flex justify-center items-center">
-      <div ref={sliderRef} className="keen-slider w-full max-w-5xl">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="keen-slider__slide flex flex-col md:flex-row items-center md:items-start justify-center gap-6 text-center md:text-left bg-white p-6 rounded-lg shadow-md transition-all duration-300"
-          >
-            <img
-              className="w-full max-w-[280px] md:max-w-[300px] aspect-square rounded-lg border-4 border-white object-cover shadow-md"
-              src={project.image}
-              alt={project.title}
-            />
-            <div className="flex-1 flex flex-col gap-4 max-w-2xl">
-              <h4 className="text-xl font-bold text-blue-900">{project.title}</h4>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                {project.description}
-              </p>
+          <div className="relative flex justify-center items-center">
+            <div ref={sliderRef} className="keen-slider w-full max-w-5xl">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="keen-slider__slide flex flex-col md:flex-row items-center md:items-start justify-center gap-6 text-center md:text-left bg-white p-6 rounded-lg shadow-md transition-all duration-300"
+                >
+                  <img
+                    className="w-full max-w-[280px] md:max-w-[300px] aspect-square rounded-lg border-4 border-white object-cover shadow-md"
+                    src={project.image}
+                    alt={project.title}
+                  />
+                  <div className="flex-1 flex flex-col gap-4 max-w-2xl">
+                    <h4 className="text-xl font-bold text-blue-900">{project.title}</h4>
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line text-sm sm:text-base">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </div>
 
-      {/* Arrows */}
-      <button
-        onClick={() => slider.current?.prev()}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
-      >
-        ❮
-      </button>
-      <button
-        onClick={() => slider.current?.next()}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
-      >
-        ❯
-      </button>
-    </div>
-  </div>
-</section>
+            {/* Arrows */}
+            <button
+              onClick={() => slider.current?.prev()}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
+            >
+              ❮
+            </button>
+            <button
+              onClick={() => slider.current?.next()}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
+            >
+              ❯
+            </button>
+          </div>
+        </div>
+      </section>
 
 
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
