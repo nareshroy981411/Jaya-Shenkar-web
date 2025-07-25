@@ -19,6 +19,7 @@ export default {
       },
     },
     fontFamily: {
+      articulate: ['articulatecf', 'sans-serif'],
       sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       heading: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"],
       serif: ["Merriweather", "serif"],

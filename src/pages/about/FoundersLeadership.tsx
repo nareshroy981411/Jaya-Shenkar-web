@@ -257,7 +257,7 @@
 // export default FoundersLeadership;
 
 'use client';
-import React from 'react';
+import React,{ useRef, useState, useEffect }  from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/common/HeroSection';
@@ -266,10 +266,86 @@ import AboutNavigation from '@/components/about/AboutNavigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Crown, Globe, Users } from 'lucide-react';
 import StickyContactButton from '@/components/common/StickyContactButton';
+import 'keen-slider/keen-slider.min.css';
+import { useKeenSlider } from 'keen-slider/react';
 
-import './cards.css'; // ✅ Import the animation CSS
+// import './cards.css'; // ✅ Import the animation CSS
+
+const projects = [
+  {
+    id: 1,
+    image: '/images/image.png',
+    title: 'Packaging Paper SEZ, Andhra Pradesh',
+    description: `Jayashankar Pulp and Paper Mills Pvt. Ltd. is developing an SEZ-based integrated facility
+for kraft paper and paperboard manufacturing with an annual capacity of 7 lakh tonnes.
+
+• 500-acre facility in East Godavari district
+• ₹4,000 crore investment
+• All statutory clearances obtained
+• Site development underway
+• Financial closure nearing completion`,
+  },
+  {
+    id: 2,
+    image: '/odishaparma/pharmapark.jpg',
+    title: 'Pharmaceutical Industry Cluster, Odisha',
+    description: `Jayashankar Multiproduct Industrial Park and SEZ Pvt. Ltd. is creating a multi-product
+industrial park and pharma city with world-class infrastructure.
+
+• ₹680 crore total investment
+• Focus on pharmaceutical sector
+• Under positive consideration by state government
+• Expected to boost regional economic growth`,
+  },
+  {
+    id: 3,
+    image: '/images/bamboo_pulp_and_paper.png',
+    title: 'Integrated Industrial Complex, Assam',
+    description: `Jayashankar Chemicals & Packagings Assam Private Limited is developing a sustainable
+industrial complex with multiple integrated facilities.
+
+• ₹6,500 crore investment
+• Bamboo and hardwood-based bleached kraft pulp mills (300,000 TPA each)
+• Paper production units (230,000 TPA combined)
+• 60 MW captive co-generation power plant
+• ~2,300 direct and 10,000 indirect jobs`,
+  },
+];
 
 const FoundersLeadership = () => {
+
+const [sliderRef, slider] = useKeenSlider({
+  loop: true,
+  slides: {
+    perView: 1,
+    spacing: 24,
+  },
+  breakpoints: {
+    '(min-width: 768px)': {
+      slides: {
+        perView: 1,
+        spacing: 32,
+      },
+    },
+  },
+});
+
+const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+// Auto-play every 5s
+useEffect(() => {
+  const next = () => {
+    if (slider.current) {
+      slider.current.next();
+    }
+  };
+  timeoutRef.current = setInterval(next, 5000);
+
+  return () => {
+    if (timeoutRef.current) clearInterval(timeoutRef.current);
+  };
+}, [slider]);
+
   const founders = [
     {
       name: 'Shri T. Srinivasa Rao',
@@ -327,10 +403,10 @@ const FoundersLeadership = () => {
           />
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
             <div className="px-2 xs:px-4 md:px-6 order-2 lg:order-none">
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center font-articulate">
                 Led by Principal Promoter Mr. Srinivasa Rao, the Jayashankar Group specialises in developing industrial clusters and Special Economic Zones across India. With board positions in more than 10 companies across various sectors, Mr. Rao drives the group's vision for sustainable industrial development.
               </p>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center" style={{ fontFamily: 'articulatecf, sans-serif' }}>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed max-w-3xl text-center font-articulate">
                 The group leverages over 200 man-years of expertise to create world-class infrastructure projects with a combined investment of ₹11,500 crores and a market enterprise value of approximately ₹8,000 crores.
               </p>
             </div>
@@ -346,7 +422,7 @@ const FoundersLeadership = () => {
         </div>
       </section>
 
-      <section  
+      {/* <section  
        className="section-padding bg-gradient-to-br from-green-50 via-green to-green-50"> 
         <div className="container-width">
           <SectionHeader
@@ -419,7 +495,56 @@ const FoundersLeadership = () => {
             </article>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section className="section-padding relative">
+  <div className="relative z-10 container-width">
+    <SectionHeader
+      subtitle="Portfolio of Strategic Industrial Projects"
+      title="Our Strategic Infrastructure Initiatives"
+      centered
+      theme="default"
+    />
+
+    <div className="relative flex justify-center items-center">
+      <div ref={sliderRef} className="keen-slider w-full max-w-5xl">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="keen-slider__slide flex flex-col md:flex-row items-center md:items-start justify-center gap-6 text-center md:text-left bg-white p-6 rounded-lg shadow-md transition-all duration-300"
+          >
+            <img
+              className="w-full max-w-[280px] md:max-w-[300px] aspect-square rounded-lg border-4 border-white object-cover shadow-md"
+              src={project.image}
+              alt={project.title}
+            />
+            <div className="flex-1 flex flex-col gap-4 max-w-2xl">
+              <h4 className="text-xl font-bold text-blue-900">{project.title}</h4>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line text-sm sm:text-base">
+                {project.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Arrows */}
+      <button
+        onClick={() => slider.current?.prev()}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
+      >
+        ❮
+      </button>
+      <button
+        onClick={() => slider.current?.next()}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-gray-200 hover:bg-blue-500 hover:text-white p-2 rounded-full shadow transition"
+      >
+        ❯
+      </button>
+    </div>
+  </div>
+</section>
+
 
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container-width">
@@ -427,7 +552,7 @@ const FoundersLeadership = () => {
             subtitle="Senior Advisory Team"
             title="Collective Expertise"
             description="The leadership is supported by a team of veteran professionals from pharma, bulk drugs, infrastructure, and energy."
-            centered={false}
+            centered
             theme="default"
           />
 
@@ -468,6 +593,7 @@ const FoundersLeadership = () => {
             title="Building Tomorrow, Today"
             description="Our leadership approach is grounded in transparency, innovation, and sustainable growth, ensuring that every decision creates long-term value for all stakeholders."
             theme="default"
+            centered
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
