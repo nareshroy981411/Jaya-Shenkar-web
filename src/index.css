@@ -1,3 +1,13 @@
+body {
+  font-family: 'articulatecf', sans-serif;
+}
+@font-face {
+  font-family: 'articulatecf';
+  src: url('/fonts/articulatecf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
